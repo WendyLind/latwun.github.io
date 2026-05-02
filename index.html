@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Latwun</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Latwun</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -27,25 +27,36 @@
 
   <!-- DERECHA -->
   <div class="right">
+
+    <h2 class="meta-title">Mini Metacritic</h2>
+
     <div class="movie-track">
 
       <!-- LOOK BACK -->
-      <div class="movie" onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
-        <img src="img/1.jpg">
+      <div class="movie"
+           onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
+
+        <img src="img/1.jpg" alt="Look Back">
+
         <div class="movie-title">Look Back</div>
 
-        <!-- estrellas dinámicas -->
+        <!-- ⭐ estrellas dinámicas -->
         <div class="stars" data-rating="5"></div>
       </div>
 
-      <!-- duplicado para loop -->
-      <div class="movie" onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
-        <img src="img/1.jpg">
+      <!-- DUPLICADO PARA LOOP -->
+      <div class="movie"
+           onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
+
+        <img src="img/1.jpg" alt="Look Back">
+
         <div class="movie-title">Look Back</div>
+
         <div class="stars" data-rating="5"></div>
       </div>
 
     </div>
+
   </div>
 
 </div>
@@ -64,7 +75,7 @@
 <div id="musicPlayer" class="player">
   <div class="player-header">🎵</div>
   <div class="player-body">
-    <p id="songName">Song</p>
+    <p id="songName">song1.mp3</p>
     <button onclick="prevSong()">⏮</button>
     <button onclick="togglePlay()">⏯</button>
     <button onclick="nextSong()">⏭</button>
@@ -73,6 +84,7 @@
 
 <audio id="audio"></audio>
 
+<!-- VHS -->
 <div class="vhs-overlay"></div>
 
 <script src="script.js"></script>
