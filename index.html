@@ -29,23 +29,20 @@
   <div class="right">
     <div class="movie-track">
 
-      <div class="movie" onclick="openMovie('Blade Runner', 'Una obra maestra cyberpunk.', '9/10')">
-        <img src="img/bladerunner.jpg">
-        <div class="movie-title">Blade Runner</div>
-        <div class="rating">9/10</div>
+      <!-- LOOK BACK -->
+      <div class="movie" onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
+        <img src="img/1.jpg">
+        <div class="movie-title">Look Back</div>
+
+        <!-- estrellas dinámicas -->
+        <div class="stars" data-rating="5"></div>
       </div>
 
-      <div class="movie" onclick="openMovie('Interstellar', 'Viaje emocional y espacial.', '10/10')">
-        <img src="img/interstellar.jpg">
-        <div class="movie-title">Interstellar</div>
-        <div class="rating">10/10</div>
-      </div>
-
-      <!-- DUPLICADO -->
-      <div class="movie" onclick="openMovie('Blade Runner', 'Una obra maestra cyberpunk.', '9/10')">
-        <img src="img/bladerunner.jpg">
-        <div class="movie-title">Blade Runner</div>
-        <div class="rating">9/10</div>
+      <!-- duplicado para loop -->
+      <div class="movie" onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
+        <img src="img/1.jpg">
+        <div class="movie-title">Look Back</div>
+        <div class="stars" data-rating="5"></div>
       </div>
 
     </div>
@@ -53,7 +50,7 @@
 
 </div>
 
-<!-- 🎬 VENTANA PELÍCULA -->
+<!-- 🎬 MODAL -->
 <div id="movieModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeMovie()">X</span>
@@ -63,11 +60,11 @@
   </div>
 </div>
 
-<!-- 🎵 MINI PLAYER -->
+<!-- 🎵 PLAYER -->
 <div id="musicPlayer" class="player">
   <div class="player-header">🎵</div>
   <div class="player-body">
-    <p id="songName">Song 1</p>
+    <p id="songName">Song</p>
     <button onclick="prevSong()">⏮</button>
     <button onclick="togglePlay()">⏯</button>
     <button onclick="nextSong()">⏭</button>
