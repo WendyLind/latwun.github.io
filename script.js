@@ -10,7 +10,7 @@ function closeMovie() {
   movieModal.style.display = "none";
 }
 
-// ⭐ GENERAR ESTRELLAS
+// ⭐ ESTRELLAS DINÁMICAS
 document.querySelectorAll(".stars").forEach(container => {
   const rating = parseInt(container.dataset.rating);
 
@@ -23,6 +23,40 @@ document.querySelectorAll(".stars").forEach(container => {
 
     container.appendChild(star);
   }
+});
+
+// 🎬 CONTROL SCROLL + PAUSA
+const right = document.querySelector(".right");
+const track = document.querySelector(".movie-track");
+
+right.addEventListener("mouseenter", () => {
+  track.style.animationPlayState = "paused";
+});
+
+right.addEventListener("mouseleave", () => {
+  track.style.animationPlayState = "running";
+});
+
+// 🖱 DRAG SCROLL
+let isDown = false;
+let startY;
+let scrollTop;
+
+right.addEventListener("mousedown", (e) => {
+  isDown = true;
+  startY = e.pageY - right.offsetTop;
+  scrollTop = right.scrollTop;
+});
+
+right.addEventListener("mouseleave", () => isDown = false);
+right.addEventListener("mouseup", () => isDown = false);
+
+right.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const y = e.pageY - right.offsetTop;
+  const walk = (y - startY) * 2;
+  right.scrollTop = scrollTop - walk;
 });
 
 // 🎵 PLAYER
