@@ -13,7 +13,6 @@
   <!-- IZQUIERDA -->
   <div class="left">
     <h2>Redes</h2>
-
     <a class="link" href="#">Instagram</a>
     <a class="link" href="#">YouTube</a>
     <a class="link" href="#">Itch.io</a>
@@ -23,64 +22,62 @@
   <!-- CENTRO -->
   <div class="center">
     <h1 class="glitch" data-text="Latwun">Latwun</h1>
-    <p>
-      Bienvenido a mi espacio digital.  
-      Aquí mezclo videojuegos, cine y proyectos experimentales.  
-      Esta es una consola viva en constante evolución.
-    </p>
+    <p>Mi consola digital: cine, juegos y caos controlado.</p>
   </div>
 
   <!-- DERECHA -->
   <div class="right">
-
     <div class="movie-track">
 
-      <!-- PELÍCULAS -->
-      <div class="movie">
+      <div class="movie" onclick="openMovie('Blade Runner', 'Una obra maestra cyberpunk.', '9/10')">
         <img src="img/bladerunner.jpg">
         <div class="movie-title">Blade Runner</div>
         <div class="rating">9/10</div>
       </div>
 
-      <div class="movie">
+      <div class="movie" onclick="openMovie('Interstellar', 'Viaje emocional y espacial.', '10/10')">
         <img src="img/interstellar.jpg">
         <div class="movie-title">Interstellar</div>
         <div class="rating">10/10</div>
       </div>
 
-      <div class="movie">
-        <img src="img/batman.jpg">
-        <div class="movie-title">The Batman</div>
-        <div class="rating">8/10</div>
-      </div>
-
-      <div class="movie">
-        <img src="img/drive.jpg">
-        <div class="movie-title">Drive</div>
-        <div class="rating">9/10</div>
-      </div>
-
-      <!-- DUPLICADO PARA LOOP -->
-      <div class="movie">
+      <!-- DUPLICADO -->
+      <div class="movie" onclick="openMovie('Blade Runner', 'Una obra maestra cyberpunk.', '9/10')">
         <img src="img/bladerunner.jpg">
         <div class="movie-title">Blade Runner</div>
         <div class="rating">9/10</div>
-      </div>
-
-      <div class="movie">
-        <img src="img/interstellar.jpg">
-        <div class="movie-title">Interstellar</div>
-        <div class="rating">10/10</div>
       </div>
 
     </div>
-
   </div>
 
 </div>
 
-<!-- CAPA VHS -->
+<!-- 🎬 VENTANA PELÍCULA -->
+<div id="movieModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeMovie()">X</span>
+    <h2 id="movieTitle"></h2>
+    <p id="movieDesc"></p>
+    <p id="movieRating"></p>
+  </div>
+</div>
+
+<!-- 🎵 MINI PLAYER -->
+<div id="musicPlayer" class="player">
+  <div class="player-header">🎵</div>
+  <div class="player-body">
+    <p id="songName">Song 1</p>
+    <button onclick="prevSong()">⏮</button>
+    <button onclick="togglePlay()">⏯</button>
+    <button onclick="nextSong()">⏭</button>
+  </div>
+</div>
+
+<audio id="audio"></audio>
+
 <div class="vhs-overlay"></div>
 
+<script src="script.js"></script>
 </body>
 </html>
