@@ -1,3 +1,106 @@
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: Arial;
+  overflow: hidden;
+}
+
+/* LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100vh;
+}
+
+/* COLUMNAS */
+.left, .right {
+  padding: 20px;
+  background: #0a0a0a;
+}
+
+.left { border-right: 1px solid #ff00ff33; }
+.right {
+  border-left: 1px solid #ff00ff33;
+  overflow: hidden;
+  position: relative;
+}
+
+/* CENTRO */
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #1a001a, #000);
+  text-align: center;
+}
+
+/* LINKS */
+.link {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  color: #ff00ff;
+  border: 1px solid #ff00ff55;
+  text-decoration: none;
+}
+
+.link:hover {
+  background: #ff00ff;
+  color: black;
+}
+
+/* MOVIES */
+.movie-track {
+  display: flex;
+  flex-direction: column;
+  animation: scrollDown 20s linear infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.right:hover .movie-track {
+  animation-play-state: paused;
+}
+
+.movie {
+  margin: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.movie:hover {
+  transform: scale(1.1);
+}
+
+.movie img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ESTRELLAS */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.star {
+  width: 20px;
+  opacity: 0.3;
+}
+
+.star.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px #ff00ff)
+          drop-shadow(0 0 10px #ff00ff);
+}
+
 /* MODAL */
 .modal {
   display: none;
@@ -13,13 +116,10 @@
   background: #111;
   padding: 20px;
   border: 2px solid #ff00ff;
-  width: 300px;
-  text-align: center;
 }
 
 .close {
   cursor: pointer;
-  float: right;
 }
 
 /* PLAYER */
@@ -34,16 +134,17 @@
   cursor: move;
 }
 
-.player-header {
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.player button {
-  background: none;
-  border: 1px solid #ff00ff;
-  color: #ff00ff;
-  margin: 2px;
-  cursor: pointer;
+/* VHS */
+.vhs-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
 }
