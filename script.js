@@ -1,33 +1,42 @@
 // 🎬 MODAL
 function openMovie(title, desc, rating) {
-  document.getElementById("movieModal").style.display = "flex";
-  document.getElementById("movieTitle").innerText = title;
-  document.getElementById("movieDesc").innerText = desc;
-  document.getElementById("movieRating").innerText = rating;
+  movieModal.style.display = "flex";
+  movieTitle.innerText = title;
+  movieDesc.innerText = desc;
+  movieRating.innerText = rating;
 }
 
 function closeMovie() {
-  document.getElementById("movieModal").style.display = "none";
+  movieModal.style.display = "none";
 }
 
-// 🎵 MUSIC PLAYER
-const songs = [
-  "music/song1.mp3",
-  "music/song2.mp3",
-  "music/song3.mp3"
-];
+// ⭐ GENERAR ESTRELLAS
+document.querySelectorAll(".stars").forEach(container => {
+  const rating = parseInt(container.dataset.rating);
 
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement("img");
+    star.src = "img/star.jpg";
+    star.classList.add("star");
+
+    if (i <= rating) star.classList.add("active");
+
+    container.appendChild(star);
+  }
+});
+
+// 🎵 PLAYER
+const songs = ["music/song1.mp3"];
 let index = 0;
 const audio = document.getElementById("audio");
 
 function loadSong() {
   audio.src = songs[index];
-  document.getElementById("songName").innerText = songs[index];
+  songName.innerText = songs[index];
 }
 
 function togglePlay() {
-  if (audio.paused) audio.play();
-  else audio.pause();
+  audio.paused ? audio.play() : audio.pause();
 }
 
 function nextSong() {
@@ -44,26 +53,21 @@ function prevSong() {
 
 loadSong();
 
-// 🖱️ DRAG PLAYER
+// 🖱 DRAG PLAYER
 const player = document.getElementById("musicPlayer");
 
 player.onmousedown = function(e) {
-  let shiftX = e.clientX - player.getBoundingClientRect().left;
-  let shiftY = e.clientY - player.getBoundingClientRect().top;
+  let shiftX = e.clientX - player.offsetLeft;
+  let shiftY = e.clientY - player.offsetTop;
 
-  function moveAt(pageX, pageY) {
-    player.style.left = pageX - shiftX + 'px';
-    player.style.top = pageY - shiftY + 'px';
+  function move(e) {
+    player.style.left = e.pageX - shiftX + "px";
+    player.style.top = e.pageY - shiftY + "px";
   }
 
-  function onMouseMove(e) {
-    moveAt(e.pageX, e.pageY);
-  }
+  document.addEventListener("mousemove", move);
 
-  document.addEventListener('mousemove', onMouseMove);
-
-  document.onmouseup = function() {
-    document.removeEventListener('mousemove', onMouseMove);
-    document.onmouseup = null;
+  document.onmouseup = () => {
+    document.removeEventListener("mousemove", move);
   };
 };
