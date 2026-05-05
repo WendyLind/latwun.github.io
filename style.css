@@ -3,6 +3,7 @@ body {
   background: #050505;
   color: white;
   font-family: Arial;
+  overflow: hidden; /* 🚫 sin scroll global */
 }
 
 /* GRID */
@@ -12,91 +13,95 @@ body {
   height: 100vh;
 }
 
-/* COLUMNAS */
-.left, .right {
+/* IZQUIERDA */
+.left {
   padding: 20px;
   background: #0a0a0a;
 }
 
-.right {
-  position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
+/* BOTONES PSP */
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 10px;
+  color: #ff00ff;
+  border: 1px solid #ff00ff33;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
-/* HEADER FIJO */
+.link img {
+  width: 20px;
+}
+
+/* ✨ EFECTO PSP */
+.link:hover {
+  transform: scale(1.1);
+  background: #ff00ff;
+  color: black;
+  box-shadow: 0 0 15px #ff00ff;
+}
+
+/* CENTRO */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* DERECHA */
+.right {
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+
+  /* 🚫 ocultar scrollbar */
+  scrollbar-width: none;
+}
+
+.right::-webkit-scrollbar {
+  display: none;
+}
+
+/* HEADER */
 .meta-header {
   position: sticky;
   top: 0;
   background: #0a0a0a;
   z-index: 10;
-}
-
-.meta-header h2 {
   text-align: center;
   color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff;
-  margin: 0;
 }
 
-/* LINKS */
-.link {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  color: #ff00ff;
-  border: 1px solid #ff00ff55;
-  text-decoration: none;
-}
-
-/* MOVIES */
+/* TRACK */
 .movie-track {
   display: flex;
   flex-direction: column;
-  animation: scrollLoop 12s linear infinite;
-}
-
-@keyframes scrollLoop {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
-
-.right:hover .movie-track {
-  animation-play-state: paused;
 }
 
 .movie {
-  margin: 20px;
+  margin: 15px;
   text-align: center;
-  transition: 0.3s;
 }
 
-.movie:hover {
-  transform: scale(1.1);
-}
-
-/* POSTER */
 .movie img {
   width: 140px;
   height: 200px;
   object-fit: cover;
 }
 
-/* ⭐ ESTRELLAS ARREGLADAS */
+/* ⭐ ESTRELLAS */
 .stars {
   display: flex;
   justify-content: center;
   gap: 3px;
-  margin-top: 6px;
 }
 
 .stars img {
   width: 10px !important;
   height: 10px !important;
-  max-width: 10px;
-  max-height: 10px;
-  object-fit: contain;
-  display: block;
   opacity: 0.3;
 }
 
@@ -105,16 +110,12 @@ body {
   filter: drop-shadow(0 0 4px #ff00ff);
 }
 
-/* 📼 VHS */
+/* VHS */
 .vhs-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 999;
-
   background: repeating-linear-gradient(
     to bottom,
     rgba(255,255,255,0.03) 0px,
@@ -122,23 +123,4 @@ body {
     transparent 1px,
     transparent 3px
   );
-
-  animation: flicker 0.12s infinite;
-}
-
-@keyframes flicker {
-  0% { opacity: 0.85; }
-  50% { opacity: 1; }
-  100% { opacity: 0.9; }
-}
-
-/* leve distorsión */
-body {
-  animation: vhsShift 6s infinite;
-}
-
-@keyframes vhsShift {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(0.5px,-0.5px); }
-  100% { transform: translate(0,0); }
 }
