@@ -16,43 +16,50 @@
     <a class="link" href="#">Instagram</a>
     <a class="link" href="#">YouTube</a>
     <a class="link" href="#">Itch.io</a>
-    <a class="link" href="#">Twitter / X</a>
   </div>
 
   <!-- CENTRO -->
   <div class="center">
-    <h1 class="glitch" data-text="Latwun">Latwun</h1>
-    <p>Mi consola digital: cine, juegos y caos controlado.</p>
+    <h1>Latwun</h1>
+    <p>Mi consola digital.</p>
   </div>
 
   <!-- DERECHA -->
   <div class="right">
 
-    <h2 class="meta-title">Mini Metacritic</h2>
+    <!-- HEADER FIJO -->
+    <div class="meta-header">
+      <h2>Mini Metacritic</h2>
+    </div>
 
+    <!-- TRACK -->
     <div class="movie-track">
 
       <!-- LOOK BACK -->
-      <div class="movie"
-           onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
-
-        <img src="img/1.jpg" alt="Look Back">
-
+      <div class="movie">
+        <img src="img/1.jpg">
         <div class="movie-title">Look Back</div>
-
-        <!-- ⭐ estrellas dinámicas -->
         <div class="stars" data-rating="5"></div>
       </div>
 
+      <!-- CHAINSAW -->
+      <div class="movie">
+        <img src="img/2.jpg">
+        <div class="movie-title">Chainsaw Man: Reze Arc</div>
+        <div class="stars" data-rating="3"></div>
+      </div>
+
       <!-- DUPLICADO PARA LOOP -->
-      <div class="movie"
-           onclick="openMovie('Look Back','Una historia íntima sobre arte y crecimiento.','★★★★★')">
-
-        <img src="img/1.jpg" alt="Look Back">
-
+      <div class="movie">
+        <img src="img/1.jpg">
         <div class="movie-title">Look Back</div>
-
         <div class="stars" data-rating="5"></div>
+      </div>
+
+      <div class="movie">
+        <img src="img/2.jpg">
+        <div class="movie-title">Chainsaw Man: Reze Arc</div>
+        <div class="stars" data-rating="3"></div>
       </div>
 
     </div>
@@ -61,32 +68,10 @@
 
 </div>
 
-<!-- 🎬 MODAL -->
-<div id="movieModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeMovie()">X</span>
-    <h2 id="movieTitle"></h2>
-    <p id="movieDesc"></p>
-    <p id="movieRating"></p>
-  </div>
-</div>
-
-<!-- 🎵 PLAYER -->
-<div id="musicPlayer" class="player">
-  <div class="player-header">🎵</div>
-  <div class="player-body">
-    <p id="songName">song1.mp3</p>
-    <button onclick="prevSong()">⏮</button>
-    <button onclick="togglePlay()">⏯</button>
-    <button onclick="nextSong()">⏭</button>
-  </div>
-</div>
-
-<audio id="audio"></audio>
-
 <!-- VHS -->
 <div class="vhs-overlay"></div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
