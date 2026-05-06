@@ -52,3 +52,46 @@ container.addEventListener("mouseleave", () => {
     }
   }, 16);
 });
+
+/* VHS MÁS INTENSO */
+.vhs-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    linear-gradient(
+      rgba(255,0,255,0.02),
+      rgba(0,255,255,0.02)
+    );
+
+  animation: vhsFlicker 0.12s infinite;
+}
+
+@keyframes vhsFlicker {
+  0% { opacity: 0.85; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+/* micro distorsión */
+body {
+  animation: vhsShift 5s infinite;
+}
+
+@keyframes vhsShift {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(0.3px,-0.3px); }
+  100% { transform: translate(0,0); }
+}
