@@ -1,4 +1,4 @@
-// ⭐ ESTRELLAS
+// ⭐ estrellas
 document.querySelectorAll(".stars").forEach(container => {
   const rating = parseInt(container.dataset.rating);
 
@@ -12,44 +12,19 @@ document.querySelectorAll(".stars").forEach(container => {
   }
 });
 
-// 🎬 CARRUSEL INFINITO FAKE
-const right = document.querySelector(".right");
-const track = document.querySelector(".movie-track");
+// 🔁 LOOP SUAVE SIN ROMPER ORDEN
+const track = document.getElementById("track");
 
-right.addEventListener("wheel", (e) => {
-  e.preventDefault();
-  right.scrollTop += e.deltaY;
-
+setInterval(() => {
   const first = track.firstElementChild;
-  const last = track.lastElementChild;
 
-  // si baja mucho → mueve el primero al final
-  if (right.scrollTop > 150) {
+  track.style.transition = "transform 0.5s ease";
+  track.style.transform = "translateY(-180px)";
+
+  setTimeout(() => {
     track.appendChild(first);
-    right.scrollTop -= 150;
-  }
+    track.style.transition = "none";
+    track.style.transform = "translateY(0)";
+  }, 500);
 
-  // si sube mucho → mueve el último arriba
-  if (right.scrollTop < 0) {
-    track.prepend(last);
-    right.scrollTop += 150;
-  }
-});
-
-// 🖱️ DRAG SCROLL
-let isDown = false;
-let startY, scrollTop;
-
-right.addEventListener("mousedown", (e) => {
-  isDown = true;
-  startY = e.pageY;
-  scrollTop = right.scrollTop;
-});
-
-right.addEventListener("mouseup", () => isDown = false);
-
-right.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  const y = e.pageY;
-  right.scrollTop = scrollTop - (y - startY);
-});
+}, 3000);
