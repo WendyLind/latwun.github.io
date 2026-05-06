@@ -3,7 +3,7 @@ body {
   background: #050505;
   color: white;
   font-family: Arial;
-  overflow: hidden; /* 🚫 sin scroll global */
+  overflow: hidden;
 }
 
 /* GRID */
@@ -13,35 +13,41 @@ body {
   height: 100vh;
 }
 
-/* IZQUIERDA */
+/* ✨ NEON */
+.neon {
+  color: #ff00ff;
+  text-shadow: 0 0 8px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* IZQUIERDA PSP */
 .left {
   padding: 20px;
-  background: #0a0a0a;
+  text-align: center;
 }
 
-/* BOTONES PSP */
-.link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 12px 0;
-  padding: 10px;
-  color: #ff00ff;
-  border: 1px solid #ff00ff33;
+.icon-link {
+  display: block;
+  margin: 20px 0;
   text-decoration: none;
-  transition: 0.2s;
+  color: white;
+  transition: 0.3s;
 }
 
-.link img {
-  width: 20px;
+.icon-link img {
+  width: 60px;
+  display: block;
+  margin: auto;
 }
 
-/* ✨ EFECTO PSP */
-.link:hover {
-  transform: scale(1.1);
-  background: #ff00ff;
-  color: black;
-  box-shadow: 0 0 15px #ff00ff;
+.icon-link span {
+  display: block;
+  margin-top: 5px;
+}
+
+/* efecto selección PSP */
+.icon-link:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #ff00ff);
 }
 
 /* CENTRO */
@@ -49,41 +55,53 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 /* DERECHA */
 .right {
-  padding: 10px;
   overflow: hidden;
   position: relative;
-
-  /* 🚫 ocultar scrollbar */
-  scrollbar-width: none;
-}
-
-.right::-webkit-scrollbar {
-  display: none;
 }
 
 /* HEADER */
 .meta-header {
   position: sticky;
   top: 0;
+  text-align: center;
+  padding: 10px;
   background: #0a0a0a;
   z-index: 10;
-  text-align: center;
-  color: #ff00ff;
 }
 
-/* TRACK */
+/* 🎬 TRACK SUAVE */
 .movie-track {
   display: flex;
   flex-direction: column;
+  animation: scroll 20s linear infinite;
 }
 
+@keyframes scroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+/* pausa */
+.right:hover .movie-track {
+  animation-play-state: paused;
+}
+
+/* MOVIES */
 .movie {
-  margin: 15px;
+  margin: 20px;
   text-align: center;
+  transition: 0.3s;
+}
+
+/* hover tipo selección */
+.movie:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px #ff00ff);
 }
 
 .movie img {
@@ -92,7 +110,7 @@ body {
   object-fit: cover;
 }
 
-/* ⭐ ESTRELLAS */
+/* ⭐ */
 .stars {
   display: flex;
   justify-content: center;
@@ -107,7 +125,7 @@ body {
 
 .stars img.active {
   opacity: 1;
-  filter: drop-shadow(0 0 4px #ff00ff);
+  filter: drop-shadow(0 0 5px #ff00ff);
 }
 
 /* VHS */
