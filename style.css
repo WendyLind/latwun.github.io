@@ -52,7 +52,7 @@ body {
   padding: 20px;
 }
 
-/* ICONOS */
+/* 🎮 ICONOS PSP */
 
 .icon-link {
   display: block;
@@ -75,7 +75,7 @@ body {
   margin: auto;
 }
 
-/* TEXTO */
+/* TEXTO ICONOS */
 
 .icon-link span {
   display: block;
@@ -93,7 +93,7 @@ body {
     0 0 10px #ff00ff;
 }
 
-/* EFECTO PSP */
+/* ✨ EFECTO PSP */
 
 .icon-link:hover {
   transform: scale(1.15);
@@ -120,11 +120,15 @@ body {
   padding: 40px;
 }
 
+/* TITULO */
+
 .main-title {
   font-size: 32px;
 
   margin-bottom: 30px;
 }
+
+/* DESCRIPCIÓN */
 
 .description {
   max-width: 600px;
@@ -152,7 +156,9 @@ body {
   display: none;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .meta-header {
   position: sticky;
@@ -168,7 +174,9 @@ body {
   text-align: center;
 }
 
-/* TRACK */
+/* =========================
+   TRACK
+========================= */
 
 .movie-track {
   display: flex;
@@ -176,7 +184,9 @@ body {
   flex-direction: column;
 }
 
-/* MOVIES */
+/* =========================
+   MOVIES
+========================= */
 
 .movie {
   margin: 20px;
@@ -185,6 +195,8 @@ body {
 
   transition: 0.3s;
 }
+
+/* 🎬 HOVER */
 
 .movie:hover {
   transform: scale(1.12);
@@ -205,7 +217,7 @@ body {
   border-radius: 4px;
 }
 
-/* TITULO */
+/* TITULOS */
 
 .movie-title {
   margin-top: 10px;
@@ -254,7 +266,7 @@ body {
 }
 
 /* =========================
-   📼 VHS REAL
+   📼 VHS MALA CALIDAD
 ========================= */
 
 .vhs-overlay {
@@ -270,38 +282,50 @@ body {
 
   z-index: 999999;
 
-  opacity: 0.18;
+  opacity: 0.28;
 
   background:
     repeating-linear-gradient(
       to bottom,
-      rgba(255,255,255,0.08) 0px,
-      rgba(255,255,255,0.08) 1px,
-      transparent 1px,
-      transparent 4px
+
+      rgba(255,255,255,0.12) 0px,
+      rgba(255,255,255,0.12) 2px,
+
+      transparent 2px,
+      transparent 6px
     );
 
-  animation: flicker 0.08s infinite;
+  mix-blend-mode: screen;
+
+  animation: flicker 0.05s infinite;
 }
 
-/* scanline flicker */
+/* 📼 PARPADEO CRT */
 
 @keyframes flicker {
 
   0% {
-    opacity: 0.14;
+    opacity: 0.22;
+  }
+
+  25% {
+    opacity: 0.30;
   }
 
   50% {
-    opacity: 0.20;
+    opacity: 0.26;
+  }
+
+  75% {
+    opacity: 0.32;
   }
 
   100% {
-    opacity: 0.16;
+    opacity: 0.24;
   }
 }
 
-/* distorsión leve */
+/* 🌈 COLOR BLEED */
 
 body::before {
   content: "";
@@ -316,9 +340,30 @@ body::before {
 
   background:
     linear-gradient(
-      rgba(255,0,255,0.015),
-      rgba(0,255,255,0.015)
+      rgba(255,0,255,0.03),
+      rgba(0,255,255,0.03)
     );
+
+  mix-blend-mode: screen;
+}
+
+/* 📼 RUIDO CRT */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 999997;
+
+  opacity: 0.04;
+
+  background-image:
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 
   mix-blend-mode: screen;
 }
