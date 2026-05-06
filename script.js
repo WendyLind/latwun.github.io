@@ -26,3 +26,29 @@ right.addEventListener("mouseleave", () => {
     right.scrollTop += 0.5;
   }, 16);
 });
+// 🔁 LOOP INFINITO SUAVE
+const trackEl = document.getElementById("track");
+const container = document.querySelector(".right");
+
+// duplicamos contenido UNA vez (no infinito)
+trackEl.innerHTML += trackEl.innerHTML;
+
+let scrolling = setInterval(() => {
+  container.scrollTop += 0.5;
+
+  // cuando llega a la mitad (fin del contenido original)
+  if (container.scrollTop >= trackEl.scrollHeight / 2) {
+    container.scrollTop = 0;
+  }
+}, 16);
+
+// pausa al interactuar (mantiene lo que ya tenías)
+container.addEventListener("mouseenter", () => clearInterval(scrolling));
+container.addEventListener("mouseleave", () => {
+  scrolling = setInterval(() => {
+    container.scrollTop += 0.5;
+    if (container.scrollTop >= trackEl.scrollHeight / 2) {
+      container.scrollTop = 0;
+    }
+  }, 16);
+});
