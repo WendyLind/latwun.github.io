@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
+
   <title>Latwun</title>
 
   <!-- 🧱 FUENTE PIXEL -->
@@ -12,61 +14,150 @@
 
 <body>
 
-<div class="layout">
+  <!-- 📼 VHS -->
+  <div class="vhs-overlay"></div>
 
-  <!-- IZQUIERDA -->
-  <div class="left">
-    <h2 class="neon">Redes</h2>
+  <div class="layout">
 
-    <a class="icon-link" href="https://www.instagram.com/latwun_lel/" target="_blank">
-      <img src="img/ig.png" alt="IG">
-      <span>Instagram</span>
-    </a>
+    <!-- =========================
+         IZQUIERDA
+    ========================== -->
 
-    <a class="icon-link" href="https://www.youtube.com/@Latwun_2007" target="_blank">
-      <img src="img/yt.png" alt="YT">
-      <span>YouTube</span>
-    </a>
+    <div class="left">
 
-    <a class="icon-link" href="https://latwun.itch.io" target="_blank">
-      <img src="img/itch.png" alt="Itch">
-      <span>Itch.io</span>
-    </a>
-  </div>
+      <h2 class="neon">Redes</h2>
 
-  <!-- CENTRO -->
-  <div class="center">
-    <h1 class="neon">Latwun</h1>
-  </div>
+      <!-- Instagram -->
+      <a class="icon-link"
+         href="https://www.instagram.com/latwun_lel/"
+         target="_blank">
 
-  <!-- DERECHA -->
-  <div class="right">
+        <img src="img/ig.png" alt="Instagram">
 
-    <div class="meta-header neon">
-      Mini Metacritic
+        <span>Instagram</span>
+
+      </a>
+
+      <!-- YouTube -->
+      <a class="icon-link"
+         href="https://www.youtube.com/@Latwun_2007"
+         target="_blank">
+
+        <img src="img/yt.png" alt="YouTube">
+
+        <span>YouTube</span>
+
+      </a>
+
+      <!-- Itch -->
+      <a class="icon-link"
+         href="https://latwun.itch.io"
+         target="_blank">
+
+        <img src="img/itch.png" alt="Itch.io">
+
+        <span>Itch.io</span>
+
+      </a>
+
     </div>
 
-    <div class="movie-track" id="track">
+    <!-- =========================
+         CENTRO
+    ========================== -->
 
-      <div class="movie"><img src="img/1.jpg"><div>Look Back</div><div class="stars" data-rating="5"></div></div>
-      <div class="movie"><img src="img/2.jpg"><div>Chainsaw Man: Reze Arc</div><div class="stars" data-rating="5"></div></div>
+    <div class="center">
 
-      <div class="movie"><img src="img/placeholder.png"><div>Próximamente</div><div class="stars" data-rating="0"></div></div>
-      <div class="movie"><img src="img/placeholder.png"><div>Próximamente</div><div class="stars" data-rating="0"></div></div>
-      <div class="movie"><img src="img/placeholder.png"><div>Próximamente</div><div class="stars" data-rating="0"></div></div>
-      <div class="movie"><img src="img/placeholder.png"><div>Próximamente</div><div class="stars" data-rating="0"></div></div>
-      <div class="movie"><img src="img/placeholder.png"><div>Próximamente</div><div class="stars" data-rating="0"></div></div>
+      <h1 class="neon main-title">
+        Latwun
+      </h1>
+
+      <p class="description">
+        Desarrollador indie enfocado en videojuegos,
+        estética retro, pixelart y experiencias
+        experimentales inspiradas en consolas clásicas.
+      </p>
+
+    </div>
+
+    <!-- =========================
+         DERECHA
+    ========================== -->
+
+    <div class="right">
+
+      <!-- HEADER -->
+      <div class="meta-header neon">
+        Mini Metacritic
+      </div>
+
+      <!-- TRACK -->
+      <div class="movie-track" id="track">
+
+        <!-- LOOK BACK -->
+        <div class="movie">
+
+          <img src="img/1.jpg">
+
+          <div class="movie-title">
+            Look Back
+          </div>
+
+          <div class="stars" data-rating="5"></div>
+
+        </div>
+
+        <!-- CSM -->
+        <div class="movie">
+
+          <img src="img/2.jpg">
+
+          <div class="movie-title">
+            Chainsaw Man: Reze Arc
+          </div>
+
+          <div class="stars" data-rating="5"></div>
+
+        </div>
+
+        <!-- placeholders -->
+        <div class="movie">
+          <img src="img/placeholder.png">
+          <div class="movie-title">Próximamente</div>
+          <div class="stars" data-rating="0"></div>
+        </div>
+
+        <div class="movie">
+          <img src="img/placeholder.png">
+          <div class="movie-title">Próximamente</div>
+          <div class="stars" data-rating="0"></div>
+        </div>
+
+        <div class="movie">
+          <img src="img/placeholder.png">
+          <div class="movie-title">Próximamente</div>
+          <div class="stars" data-rating="0"></div>
+        </div>
+
+        <div class="movie">
+          <img src="img/placeholder.png">
+          <div class="movie-title">Próximamente</div>
+          <div class="stars" data-rating="0"></div>
+        </div>
+
+        <div class="movie">
+          <img src="img/placeholder.png">
+          <div class="movie-title">Próximamente</div>
+          <div class="stars" data-rating="0"></div>
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
-
-<!-- 📼 VHS -->
-<div class="vhs-overlay"></div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
