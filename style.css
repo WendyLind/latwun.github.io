@@ -13,38 +13,45 @@ body {
   height: 100vh;
 }
 
-/* ✨ NEON */
+/* NEON */
 .neon {
   color: #ff00ff;
   text-shadow: 0 0 8px #ff00ff, 0 0 20px #ff00ff;
+  font-weight: bold;
 }
 
-/* IZQUIERDA PSP */
+/* IZQUIERDA */
 .left {
-  padding: 20px;
   text-align: center;
+  padding: 20px;
 }
 
+/* ICONOS PSP */
 .icon-link {
   display: block;
-  margin: 20px 0;
+  margin: 25px 0;
   text-decoration: none;
   color: white;
   transition: 0.3s;
 }
 
 .icon-link img {
-  width: 60px;
+  width: 50px;   /* 🔥 tamaño correcto */
+  height: 50px;
+  object-fit: contain;
   display: block;
   margin: auto;
 }
 
 .icon-link span {
   display: block;
-  margin-top: 5px;
+  margin-top: 8px;
+  color: #ff00ff;
+  font-weight: bold;
+  text-align: center;
 }
 
-/* efecto selección PSP */
+/* hover PSP */
 .icon-link:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 0 10px #ff00ff);
@@ -55,40 +62,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 /* DERECHA */
 .right {
-  overflow: hidden;
-  position: relative;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.right::-webkit-scrollbar {
+  display: none;
 }
 
 /* HEADER */
 .meta-header {
   position: sticky;
   top: 0;
+  background: #0a0a0a;
   text-align: center;
   padding: 10px;
-  background: #0a0a0a;
   z-index: 10;
 }
 
-/* 🎬 TRACK SUAVE */
+/* TRACK */
 .movie-track {
   display: flex;
   flex-direction: column;
-  animation: scroll 20s linear infinite;
-}
-
-@keyframes scroll {
-  from { transform: translateY(0); }
-  to { transform: translateY(-50%); }
-}
-
-/* pausa */
-.right:hover .movie-track {
-  animation-play-state: paused;
 }
 
 /* MOVIES */
@@ -98,7 +97,6 @@ body {
   transition: 0.3s;
 }
 
-/* hover tipo selección */
 .movie:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 0 10px #ff00ff);
@@ -110,7 +108,7 @@ body {
   object-fit: cover;
 }
 
-/* ⭐ */
+/* ESTRELLAS */
 .stars {
   display: flex;
   justify-content: center;
@@ -120,11 +118,9 @@ body {
 .stars img {
   width: 10px !important;
   height: 10px !important;
-  opacity: 0.3;
 }
 
 .stars img.active {
-  opacity: 1;
   filter: drop-shadow(0 0 5px #ff00ff);
 }
 
