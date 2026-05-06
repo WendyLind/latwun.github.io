@@ -12,19 +12,17 @@ document.querySelectorAll(".stars").forEach(container => {
   }
 });
 
-// 🔁 LOOP SUAVE SIN ROMPER ORDEN
-const track = document.getElementById("track");
+// 🎬 AUTO SCROLL SUAVE
+const right = document.querySelector(".right");
 
-setInterval(() => {
-  const first = track.firstElementChild;
+let autoScroll = setInterval(() => {
+  right.scrollTop += 0.5;
+}, 16);
 
-  track.style.transition = "transform 0.5s ease";
-  track.style.transform = "translateY(-180px)";
-
-  setTimeout(() => {
-    track.appendChild(first);
-    track.style.transition = "none";
-    track.style.transform = "translateY(0)";
-  }, 500);
-
-}, 3000);
+// 🖱️ PAUSAR CUANDO INTERACTÚA
+right.addEventListener("mouseenter", () => clearInterval(autoScroll));
+right.addEventListener("mouseleave", () => {
+  autoScroll = setInterval(() => {
+    right.scrollTop += 0.5;
+  }, 16);
+});
