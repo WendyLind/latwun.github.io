@@ -1,159 +1,319 @@
+/* =========================
+   🌌 LATWUN PSP / VHS STYLE
+========================= */
+
+html,
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
+  overflow: hidden;
+
   background: #050505;
   color: white;
+
   font-family: 'Press Start 2P', cursive;
-  overflow: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  animation: vhsShift 5s infinite;
 }
 
-/* GRID */
+/* =========================
+   GRID
+========================= */
+
 .layout {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   height: 100vh;
 }
 
-/* NEON */
+/* =========================
+   ✨ NEON
+========================= */
+
 .neon {
   color: #ff00ff;
-  text-shadow: 0 0 8px #ff00ff, 0 0 20px #ff00ff;
   font-weight: bold;
+
+  text-shadow:
+    0 0 5px #ff00ff,
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff;
 }
 
-/* IZQUIERDA */
+/* =========================
+   IZQUIERDA
+========================= */
+
 .left {
   text-align: center;
   padding: 20px;
 }
 
+/* 🎮 ICONOS PSP */
+
 .icon-link {
   display: block;
-  margin: 25px 0;
+
+  margin: 30px 0;
+
   text-decoration: none;
-  color: white;
+
   transition: 0.3s;
 }
 
 .icon-link img {
   width: 50px;
   height: 50px;
+
   object-fit: contain;
+
   display: block;
   margin: auto;
+
+  image-rendering: auto;
 }
 
 .icon-link span {
   display: block;
-  margin-top: 8px;
+
+  margin-top: 10px;
+
   color: #ff00ff;
+
   font-weight: bold;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 0 5px #ff00ff,
+    0 0 10px #ff00ff;
 }
 
-/* efecto PSP */
+/* ✨ EFECTO PSP */
+
 .icon-link:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0 0 10px #ff00ff);
+
+  filter:
+    drop-shadow(0 0 10px #ff00ff)
+    drop-shadow(0 0 20px #ff00ff);
 }
 
-/* CENTRO */
+/* =========================
+   CENTRO
+========================= */
+
 .center {
   display: flex;
+
   justify-content: center;
   align-items: center;
+
+  flex-direction: column;
+
+  text-align: center;
 }
 
-/* DERECHA */
+/* =========================
+   DERECHA
+========================= */
+
 .right {
   overflow-y: auto;
-  scrollbar-width: none;
-}
-.right::-webkit-scrollbar { display: none; }
 
-/* HEADER */
+  scrollbar-width: none;
+
+  position: relative;
+}
+
+.right::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 .meta-header {
   position: sticky;
+
   top: 0;
-  background: #0a0a0a;
-  text-align: center;
-  padding: 10px;
+
   z-index: 10;
+
+  background: rgba(10,10,10,0.9);
+
+  padding: 15px;
+
+  text-align: center;
 }
 
-/* MOVIES */
+/* =========================
+   MOVIES
+========================= */
+
+.movie-track {
+  display: flex;
+  flex-direction: column;
+}
+
 .movie {
   margin: 20px;
+
   text-align: center;
+
   transition: 0.3s;
 }
 
+/* 🎬 SELECCIÓN */
+
 .movie:hover {
   transform: scale(1.15);
-  filter: drop-shadow(0 0 10px #ff00ff);
+
+  filter:
+    drop-shadow(0 0 10px #ff00ff)
+    drop-shadow(0 0 20px #ff00ff);
 }
+
+/* POSTERS */
 
 .movie img {
   width: 140px;
   height: 200px;
+
   object-fit: cover;
+
+  border-radius: 4px;
 }
 
-/* ⭐ */
+/* TÍTULOS */
+
+.movie div {
+  margin-top: 8px;
+
+  text-shadow:
+    0 0 5px #ff00ff;
+}
+
+/* =========================
+   ⭐ ESTRELLAS
+========================= */
+
 .stars {
   display: flex;
+
   justify-content: center;
+
   gap: 3px;
+
+  margin-top: 5px;
 }
 
 .stars img {
   width: 10px !important;
   height: 10px !important;
+
+  min-width: 10px;
+  min-height: 10px;
+
+  max-width: 10px;
+  max-height: 10px;
+
   opacity: 0.3;
+
+  object-fit: contain;
 }
 
 .stars img.active {
   opacity: 1;
-  filter: drop-shadow(0 0 5px #ff00ff);
+
+  filter:
+    drop-shadow(0 0 5px #ff00ff)
+    drop-shadow(0 0 10px #ff00ff);
 }
 
-/* 📼 VHS PRO */
+/* =========================
+   📼 VHS GLOBAL
+========================= */
+
 .vhs-overlay {
   position: fixed;
+
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+
+  width: 100vw;
+  height: 100vh;
+
   pointer-events: none;
-  z-index: 999;
+
+  z-index: 999999;
+
+  opacity: 0.18;
 
   background:
     repeating-linear-gradient(
       to bottom,
-      rgba(255,255,255,0.04) 0px,
-      rgba(255,255,255,0.04) 1px,
+      rgba(255,255,255,0.08) 0px,
+      rgba(255,255,255,0.08) 1px,
       transparent 1px,
-      transparent 3px
-    ),
-    linear-gradient(
-      rgba(255,0,255,0.02),
-      rgba(0,255,255,0.02)
+      transparent 4px
     );
 
-  animation: vhsFlicker 0.12s infinite;
+  mix-blend-mode: screen;
+
+  animation: vhsFlicker 0.08s infinite;
 }
+
+/* 🌈 COLOR BLEED */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 999998;
+
+  background:
+    linear-gradient(
+      rgba(255,0,255,0.015),
+      rgba(0,255,255,0.015)
+    );
+
+  mix-blend-mode: screen;
+}
+
+/* =========================
+   📼 VHS ANIMACIONES
+========================= */
 
 @keyframes vhsFlicker {
-  0% { opacity: 0.85; }
-  50% { opacity: 1; }
-  100% { opacity: 0.9; }
+  0% { opacity: 0.14; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.16; }
 }
 
-/* micro distorsión */
-body {
-  animation: vhsShift 5s infinite;
-}
+/* MICRO DISTORSIÓN */
 
 @keyframes vhsShift {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(0.3px,-0.3px); }
-  100% { transform: translate(0,0); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0.3px, -0.3px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
