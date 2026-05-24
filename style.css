@@ -27,10 +27,34 @@ body {
   grid-template-columns: 1fr 2fr 1fr;
 
   height: 100vh;
+
+  gap: 14px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
 }
 
 /* =========================
-   🔴 NEON
+   🔴 PANELS
+========================= */
+
+.panel {
+  background: rgba(20,20,20,0.82);
+
+  border: 1px solid rgba(255,49,49,0.22);
+
+  box-shadow:
+    inset 0 0 15px rgba(255,49,49,0.05),
+    0 0 20px rgba(255,49,49,0.08);
+
+  backdrop-filter: blur(2px);
+
+  overflow: hidden;
+}
+
+/* =========================
+   ✨ NEON
 ========================= */
 
 .neon {
@@ -42,42 +66,82 @@ body {
 }
 
 /* =========================
-   IZQUIERDA
+   LEFT / RIGHT / CENTER
 ========================= */
 
-.left {
+.left,
+.center,
+.right {
   display: flex;
 
   flex-direction: column;
 
-  justify-content: space-between;
+  gap: 14px;
 
-  padding: 20px;
+  height: 100%;
 }
 
-.section-title {
+/* columnas mitad y mitad */
+
+.left > .panel,
+.center > .panel,
+.right > .panel {
+  flex: 1;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.panel-title,
+.meta-header {
   text-align: center;
 
-  margin-bottom: 25px;
+  padding: 18px 10px;
+
+  border-bottom: 1px solid rgba(255,49,49,0.18);
+
+  background: rgba(255,49,49,0.04);
+
+  font-size: 12px;
 }
 
-/* ICONOS */
+/* =========================
+   REDES
+========================= */
+
+.social-panel {
+  display: flex;
+
+  flex-direction: column;
+}
+
+/* ICON GRID */
+
+.social-icons {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+/* ICONS */
 
 .icon-link {
-  display: block;
-
-  margin: 25px 0;
-
   text-decoration: none;
 
   text-align: center;
 
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .icon-link img {
-  width: 55px;
-  height: 55px;
+  width: 42px;
+  height: 42px;
 
   object-fit: contain;
 
@@ -86,15 +150,19 @@ body {
   margin: auto;
 }
 
+/* TEXT */
+
 .icon-link span {
   display: block;
 
   margin-top: 10px;
 
+  font-size: 9px;
+
   color: #ff3131;
 
   text-shadow:
-    0 0 3px #ff3131;
+    0 0 5px #ff3131;
 }
 
 /* HOVER */
@@ -103,39 +171,54 @@ body {
   transform: scale(1.12);
 
   filter:
-    drop-shadow(0 0 10px #ff3131);
+    drop-shadow(0 0 10px #ff3131)
+    drop-shadow(0 0 20px #ff3131);
 }
 
-/* SYSTEM */
+/* =========================
+   SYSTEM
+========================= */
+
+.system-panel {
+  display: flex;
+
+  flex-direction: column;
+}
 
 .system-box {
-  font-size: 8px;
+  flex: 1;
 
-  line-height: 2;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
 
   text-align: center;
 
-  color: #bbbbbb;
+  font-size: 8px;
+
+  line-height: 2.2;
+
+  color: #cccccc;
 }
 
 /* =========================
    CENTRO
 ========================= */
 
-.center {
+.center-top {
   display: flex;
+
+  justify-content: center;
+  align-items: center;
 
   flex-direction: column;
 
-  justify-content: space-between;
-
-  padding: 40px;
-}
-
-/* ARRIBA */
-
-.center-top {
   text-align: center;
+
+  padding: 30px;
 }
 
 /* LOGO */
@@ -146,16 +229,14 @@ body {
   margin-bottom: 30px;
 
   filter:
-    drop-shadow(0 0 20px #ff3131aa)
-    drop-shadow(0 0 40px #ff313155);
+    drop-shadow(0 0 20px rgba(255,49,49,0.9))
+    drop-shadow(0 0 40px rgba(255,49,49,0.35));
 }
 
-/* DESCRIPCIÓN */
+/* DESCRIPTION */
 
 .description {
-  max-width: 650px;
-
-  margin: auto;
+  max-width: 600px;
 
   line-height: 2;
 
@@ -164,71 +245,56 @@ body {
   color: #dddddd;
 }
 
-/* ABAJO */
+/* BOTTOM */
 
 .center-bottom {
   display: flex;
 
   justify-content: center;
   align-items: center;
-
-  height: 40%;
 }
 
-/* PLACEHOLDER */
+/* FUTURE */
 
 .placeholder-box {
-  border: 1px solid #ff313144;
+  width: 70%;
 
   padding: 30px;
 
-  width: 70%;
-
   text-align: center;
+
+  border:
+    1px solid rgba(255,49,49,0.2);
 }
 
 /* =========================
-   DERECHA
+   METACRITIC
 ========================= */
 
-.right {
+.metacritic-panel {
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.movie-track {
+  flex: 1;
+
   overflow-y: auto;
 
   scrollbar-width: none;
 }
 
-.right::-webkit-scrollbar {
+.movie-track::-webkit-scrollbar {
   display: none;
-}
-
-/* HEADER */
-
-.meta-header {
-  position: sticky;
-
-  top: 0;
-
-  padding: 15px;
-
-  background: rgba(5,5,5,0.95);
-
-  text-align: center;
-
-  z-index: 10;
-}
-
-/* TRACK */
-
-.movie-track {
-  display: flex;
-
-  flex-direction: column;
 }
 
 /* MOVIES */
 
 .movie {
-  margin: 20px;
+  margin: 22px;
 
   text-align: center;
 
@@ -236,7 +302,7 @@ body {
 }
 
 .movie:hover {
-  transform: scale(1.12);
+  transform: scale(1.08);
 
   filter:
     drop-shadow(0 0 10px #ff3131);
@@ -245,25 +311,27 @@ body {
 /* POSTERS */
 
 .movie img {
-  width: 140px;
-  height: 200px;
+  width: 130px;
+  height: 190px;
 
   object-fit: cover;
+
+  border-radius: 4px;
 }
 
-/* TITULOS */
+/* TITLES */
 
 .movie-title {
   margin-top: 10px;
 
-  font-size: 10px;
+  font-size: 9px;
 
   text-shadow:
-    0 0 3px #ff3131;
+    0 0 4px #ff3131;
 }
 
 /* =========================
-   ⭐ ESTRELLAS
+   ⭐ STARS
 ========================= */
 
 .stars {
@@ -327,7 +395,7 @@ body {
 
 }
 
-/* CRT */
+/* CRT NOISE */
 
 body::after {
   content: "";
