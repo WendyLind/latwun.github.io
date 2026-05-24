@@ -10,7 +10,7 @@ body {
 
   overflow: hidden;
 
-  background: #050505;
+  background: #030303;
 
   color: white;
 
@@ -30,16 +30,16 @@ body {
 }
 
 /* =========================
-   ✨ NEON
+   🔴 NEON ROJO
 ========================= */
 
 .neon {
-  color: #ff00ff;
+  color: #ff3131;
 
   text-shadow:
-    0 0 5px #ff00ff,
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff;
+    0 0 5px #ff3131,
+    0 0 10px #ff3131,
+    0 0 20px #ff3131;
 }
 
 /* =========================
@@ -52,7 +52,7 @@ body {
   padding: 20px;
 }
 
-/* 🎮 ICONOS PSP */
+/* ICONOS */
 
 .icon-link {
   display: block;
@@ -75,32 +75,28 @@ body {
   margin: auto;
 }
 
-/* TEXTO ICONOS */
-
 .icon-link span {
   display: block;
 
   margin-top: 10px;
 
-  color: #ff00ff;
+  color: #ff3131;
 
   font-weight: bold;
 
-  text-decoration: none;
-
   text-shadow:
-    0 0 5px #ff00ff,
-    0 0 10px #ff00ff;
+    0 0 5px #ff3131,
+    0 0 10px #ff3131;
 }
 
-/* ✨ EFECTO PSP */
+/* PSP HOVER */
 
 .icon-link:hover {
   transform: scale(1.15);
 
   filter:
-    drop-shadow(0 0 10px #ff00ff)
-    drop-shadow(0 0 20px #ff00ff);
+    drop-shadow(0 0 10px #ff3131)
+    drop-shadow(0 0 20px #ff3131);
 }
 
 /* =========================
@@ -118,6 +114,17 @@ body {
   text-align: center;
 
   padding: 40px;
+}
+
+/* ☕ LOGO */
+
+.main-logo {
+  width: 170px;
+
+  margin-bottom: 25px;
+
+  filter:
+    drop-shadow(0 0 10px #ff313155);
 }
 
 /* TITULO */
@@ -156,9 +163,7 @@ body {
   display: none;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .meta-header {
   position: sticky;
@@ -169,14 +174,12 @@ body {
 
   padding: 15px;
 
-  background: rgba(10,10,10,0.95);
+  background: rgba(5,5,5,0.95);
 
   text-align: center;
 }
 
-/* =========================
-   TRACK
-========================= */
+/* TRACK */
 
 .movie-track {
   display: flex;
@@ -184,9 +187,7 @@ body {
   flex-direction: column;
 }
 
-/* =========================
-   MOVIES
-========================= */
+/* MOVIES */
 
 .movie {
   margin: 20px;
@@ -196,14 +197,12 @@ body {
   transition: 0.3s;
 }
 
-/* 🎬 HOVER */
-
 .movie:hover {
   transform: scale(1.12);
 
   filter:
-    drop-shadow(0 0 10px #ff00ff)
-    drop-shadow(0 0 20px #ff00ff);
+    drop-shadow(0 0 10px #ff3131)
+    drop-shadow(0 0 20px #ff3131);
 }
 
 /* POSTERS */
@@ -225,7 +224,7 @@ body {
   font-size: 10px;
 
   text-shadow:
-    0 0 5px #ff00ff;
+    0 0 5px #ff3131;
 }
 
 /* =========================
@@ -246,12 +245,6 @@ body {
   width: 10px !important;
   height: 10px !important;
 
-  min-width: 10px;
-  min-height: 10px;
-
-  max-width: 10px;
-  max-height: 10px;
-
   opacity: 0.25;
 
   object-fit: contain;
@@ -261,12 +254,12 @@ body {
   opacity: 1;
 
   filter:
-    drop-shadow(0 0 5px #ff00ff)
-    drop-shadow(0 0 10px #ff00ff);
+    drop-shadow(0 0 5px #ff3131)
+    drop-shadow(0 0 10px #ff3131);
 }
 
 /* =========================
-   📼 VHS MALA CALIDAD
+   📼 VHS CRT
 ========================= */
 
 .vhs-overlay {
@@ -288,8 +281,8 @@ body {
     repeating-linear-gradient(
       to bottom,
 
-      rgba(255,255,255,0.12) 0px,
-      rgba(255,255,255,0.12) 2px,
+      rgba(255,255,255,0.10) 0px,
+      rgba(255,255,255,0.10) 2px,
 
       transparent 2px,
       transparent 6px
@@ -300,32 +293,17 @@ body {
   animation: flicker 0.05s infinite;
 }
 
-/* 📼 PARPADEO CRT */
-
 @keyframes flicker {
 
-  0% {
-    opacity: 0.22;
-  }
+  0% { opacity: 0.22; }
+  25% { opacity: 0.30; }
+  50% { opacity: 0.26; }
+  75% { opacity: 0.32; }
+  100% { opacity: 0.24; }
 
-  25% {
-    opacity: 0.30;
-  }
-
-  50% {
-    opacity: 0.26;
-  }
-
-  75% {
-    opacity: 0.32;
-  }
-
-  100% {
-    opacity: 0.24;
-  }
 }
 
-/* 🌈 COLOR BLEED */
+/* 🌫️ COLOR BLEED */
 
 body::before {
   content: "";
@@ -340,14 +318,14 @@ body::before {
 
   background:
     linear-gradient(
-      rgba(255,0,255,0.03),
-      rgba(0,255,255,0.03)
+      rgba(255,0,0,0.03),
+      rgba(255,255,255,0.01)
     );
 
   mix-blend-mode: screen;
 }
 
-/* 📼 RUIDO CRT */
+/* 📼 CRT NOISE */
 
 body::after {
   content: "";
@@ -360,7 +338,7 @@ body::after {
 
   z-index: 999997;
 
-  opacity: 0.04;
+  opacity: 0.05;
 
   background-image:
     url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
