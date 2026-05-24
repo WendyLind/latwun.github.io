@@ -30,16 +30,15 @@ body {
 }
 
 /* =========================
-   🔴 NEON ROJO
+   🔴 NEON
 ========================= */
 
 .neon {
   color: #ff3131;
 
   text-shadow:
-    0 0 5px #ff3131,
-    0 0 10px #ff3131,
-    0 0 20px #ff3131;
+    0 0 3px #ff3131,
+    0 0 8px #ff3131;
 }
 
 /* =========================
@@ -47,9 +46,19 @@ body {
 ========================= */
 
 .left {
-  text-align: center;
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
 
   padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+
+  margin-bottom: 25px;
 }
 
 /* ICONOS */
@@ -57,9 +66,11 @@ body {
 .icon-link {
   display: block;
 
-  margin: 30px 0;
+  margin: 25px 0;
 
   text-decoration: none;
+
+  text-align: center;
 
   transition: 0.3s;
 }
@@ -82,21 +93,29 @@ body {
 
   color: #ff3131;
 
-  font-weight: bold;
-
   text-shadow:
-    0 0 5px #ff3131,
-    0 0 10px #ff3131;
+    0 0 3px #ff3131;
 }
 
-/* PSP HOVER */
+/* HOVER */
 
 .icon-link:hover {
-  transform: scale(1.15);
+  transform: scale(1.12);
 
   filter:
-    drop-shadow(0 0 10px #ff3131)
-    drop-shadow(0 0 20px #ff3131);
+    drop-shadow(0 0 10px #ff3131);
+}
+
+/* SYSTEM */
+
+.system-box {
+  font-size: 8px;
+
+  line-height: 2;
+
+  text-align: center;
+
+  color: #bbbbbb;
 }
 
 /* =========================
@@ -106,45 +125,66 @@ body {
 .center {
   display: flex;
 
-  justify-content: center;
-  align-items: center;
-
   flex-direction: column;
 
-  text-align: center;
+  justify-content: space-between;
 
   padding: 40px;
 }
 
-/* ☕ LOGO */
+/* ARRIBA */
 
-.main-logo {
-  width: 170px;
-
-  margin-bottom: 25px;
-
-  filter:
-    drop-shadow(0 0 10px #ff313155);
+.center-top {
+  text-align: center;
 }
 
-/* TITULO */
+/* LOGO */
 
-.main-title {
-  font-size: 32px;
+.main-logo {
+  width: 220px;
 
   margin-bottom: 30px;
+
+  filter:
+    drop-shadow(0 0 20px #ff3131aa)
+    drop-shadow(0 0 40px #ff313155);
 }
 
 /* DESCRIPCIÓN */
 
 .description {
-  max-width: 600px;
+  max-width: 650px;
+
+  margin: auto;
 
   line-height: 2;
 
   font-size: 10px;
 
-  color: #cccccc;
+  color: #dddddd;
+}
+
+/* ABAJO */
+
+.center-bottom {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 40%;
+}
+
+/* PLACEHOLDER */
+
+.placeholder-box {
+  border: 1px solid #ff313144;
+
+  padding: 30px;
+
+  width: 70%;
+
+  text-align: center;
 }
 
 /* =========================
@@ -155,8 +195,6 @@ body {
   overflow-y: auto;
 
   scrollbar-width: none;
-
-  position: relative;
 }
 
 .right::-webkit-scrollbar {
@@ -170,13 +208,13 @@ body {
 
   top: 0;
 
-  z-index: 10;
-
   padding: 15px;
 
   background: rgba(5,5,5,0.95);
 
   text-align: center;
+
+  z-index: 10;
 }
 
 /* TRACK */
@@ -201,8 +239,7 @@ body {
   transform: scale(1.12);
 
   filter:
-    drop-shadow(0 0 10px #ff3131)
-    drop-shadow(0 0 20px #ff3131);
+    drop-shadow(0 0 10px #ff3131);
 }
 
 /* POSTERS */
@@ -212,8 +249,6 @@ body {
   height: 200px;
 
   object-fit: cover;
-
-  border-radius: 4px;
 }
 
 /* TITULOS */
@@ -224,7 +259,7 @@ body {
   font-size: 10px;
 
   text-shadow:
-    0 0 5px #ff3131;
+    0 0 3px #ff3131;
 }
 
 /* =========================
@@ -246,30 +281,23 @@ body {
   height: 10px !important;
 
   opacity: 0.25;
-
-  object-fit: contain;
 }
 
 .stars img.active {
   opacity: 1;
 
   filter:
-    drop-shadow(0 0 5px #ff3131)
-    drop-shadow(0 0 10px #ff3131);
+    drop-shadow(0 0 5px #ff3131);
 }
 
 /* =========================
-   📼 VHS CRT
+   📼 VHS
 ========================= */
 
 .vhs-overlay {
   position: fixed;
 
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   pointer-events: none;
 
@@ -280,15 +308,11 @@ body {
   background:
     repeating-linear-gradient(
       to bottom,
-
       rgba(255,255,255,0.10) 0px,
       rgba(255,255,255,0.10) 2px,
-
       transparent 2px,
       transparent 6px
     );
-
-  mix-blend-mode: screen;
 
   animation: flicker 0.05s infinite;
 }
@@ -303,29 +327,7 @@ body {
 
 }
 
-/* 🌫️ COLOR BLEED */
-
-body::before {
-  content: "";
-
-  position: fixed;
-
-  inset: 0;
-
-  pointer-events: none;
-
-  z-index: 999998;
-
-  background:
-    linear-gradient(
-      rgba(255,0,0,0.03),
-      rgba(255,255,255,0.01)
-    );
-
-  mix-blend-mode: screen;
-}
-
-/* 📼 CRT NOISE */
+/* CRT */
 
 body::after {
   content: "";
@@ -336,12 +338,8 @@ body::after {
 
   pointer-events: none;
 
-  z-index: 999997;
-
   opacity: 0.05;
 
   background-image:
     url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-
-  mix-blend-mode: screen;
 }
