@@ -52,3 +52,25 @@ track.scrollTop = 0;
 }, 16);
 
 });
+
+function showTab(tabId, event) {
+
+document.querySelectorAll(".tab-page")
+.forEach(page => {
+
+page.classList.remove("active");
+
+});
+
+document.querySelectorAll(".tab-btn")
+.forEach(btn => {
+
+btn.classList.remove("active");
+
+});
+
+document.getElementById(tabId)
+.classList.add("active");
+
+event.target.classList.add("active");
+}
