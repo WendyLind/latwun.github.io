@@ -1,457 +1,382 @@
-/* =========================
-   🌌 GLOBAL
-========================= */
-
 html,
 body {
 
-  margin: 0;
+margin: 0;
 
-  width: 100%;
-  height: 100%;
+width: 100%;
+height: 100%;
 
-  overflow: hidden;
+overflow: hidden;
 
-  background: #030303;
+background: #030303;
 
-  color: white;
+color: white;
 
-  font-family: 'Press Start 2P', cursive;
+font-family: 'Press Start 2P', cursive;
 }
-
-/* =========================
-   GRID
-========================= */
 
 .layout {
 
-  display: grid;
+display: grid;
 
-  grid-template-columns: 1fr 2fr 1fr;
+grid-template-columns: 1fr 2fr 1fr;
 
-  gap: 14px;
+gap: 14px;
 
-  padding: 14px;
+padding: 14px;
 
-  box-sizing: border-box;
+box-sizing: border-box;
 
-  height: 100vh;
+height: 100vh;
 }
-
-/* =========================
-   🔴 PANELS
-========================= */
 
 .panel {
 
-  background: rgba(15,15,15,0.84);
+background: rgba(15,15,15,0.84);
 
-  border: 1px solid rgba(255,49,49,0.18);
+border: 1px solid rgba(255,49,49,0.18);
 
-  box-shadow:
-    inset 0 0 20px rgba(255,49,49,0.04),
-    0 0 15px rgba(255,49,49,0.06);
+box-shadow:
+inset 0 0 20px rgba(255,49,49,0.04),
+0 0 15px rgba(255,49,49,0.06);
 
-  overflow: hidden;
+overflow: hidden;
 }
-
-/* =========================
-   COLUMNAS
-========================= */
 
 .left,
-.center,
-.right {
+.center {
 
-  display: flex;
+display: flex;
 
-  flex-direction: column;
+flex-direction: column;
 
-  gap: 14px;
+gap: 14px;
 
-  height: calc(100vh - 28px);
+height: calc(100vh - 28px);
 }
-
-/* MITAD EXACTA */
 
 .left > .panel,
-.center > .panel,
-.right > .panel {
+.center > .panel {
 
-  height: 50%;
+height: 50%;
 
-  min-height: 0;
+min-height: 0;
 }
 
-/* =========================
-   🔴 NEON
-========================= */
+.right {
+
+height: calc(100vh - 28px);
+}
 
 .neon {
 
-  color: #ff3131;
+color: #ff3131;
 
-  text-shadow:
-    0 0 3px #ff3131,
-    0 0 8px #ff3131,
-    0 0 16px #ff3131;
+text-shadow:
+0 0 3px #ff3131,
+0 0 8px #ff3131,
+0 0 16px #ff3131;
 }
-
-/* =========================
-   TITULOS
-========================= */
 
 .panel-title,
 .meta-header {
 
-  text-align: center;
+text-align: center;
 
-  padding: 18px 10px;
+padding: 18px 10px;
 
-  border-bottom: 1px solid rgba(255,49,49,0.15);
+border-bottom: 1px solid rgba(255,49,49,0.15);
 
-  background: rgba(255,49,49,0.03);
+background: rgba(255,49,49,0.03);
 
-  font-size: 12px;
+font-size: 12px;
 }
-
-/* =========================
-   REDES
-========================= */
 
 .social-panel {
 
-  display: flex;
+display: flex;
 
-  flex-direction: column;
+flex-direction: column;
 }
-
-/* ICON AREA */
 
 .social-icons {
 
-  flex: 1;
+flex: 1;
 
-  display: flex;
+display: grid;
 
-  flex-direction: column;
+grid-template-columns: 1fr 1fr;
 
-  justify-content: center;
+justify-items: center;
 
-  align-items: center;
+align-items: center;
 
-  gap: 28px;
+padding: 15px;
 }
-
-/* LINKS */
 
 .icon-link {
 
-  text-decoration: none;
+text-decoration: none;
 
-  text-align: center;
+text-align: center;
 
-  transition: 0.25s;
+transition: 0.25s;
 }
-
-/* ICONS */
 
 .icon-link img {
 
-  width: 44px;
-  height: 44px;
+width: 34px;
+height: 34px;
 
-  object-fit: contain;
+object-fit: contain;
 
-  display: block;
+display: block;
 
-  margin: auto;
+margin: auto;
 }
-
-/* TEXT */
 
 .icon-link span {
 
-  display: block;
+display: block;
 
-  margin-top: 10px;
+margin-top: 8px;
 
-  font-size: 9px;
+font-size: 7px;
 
-  color: #ff3131;
+color: #ff3131;
 
-  text-shadow:
-    0 0 5px #ff3131;
+text-shadow:
+0 0 5px #ff3131;
 }
-
-/* HOVER */
 
 .icon-link:hover {
 
-  transform: scale(1.12);
+transform: scale(1.12);
 
-  filter:
-    drop-shadow(0 0 10px #ff3131)
-    drop-shadow(0 0 20px #ff3131);
+filter:
+drop-shadow(0 0 10px #ff3131)
+drop-shadow(0 0 20px #ff3131);
 }
 
-/* =========================
-   SYSTEM
-========================= */
+.music-panel {
 
-.system-panel {
+display: flex;
 
-  display: flex;
-
-  flex-direction: column;
+flex-direction: column;
 }
 
-.system-box {
+.music-box {
 
-  flex: 1;
+flex: 1;
 
-  display: flex;
+display: flex;
 
-  justify-content: center;
-  align-items: center;
+justify-content: center;
+align-items: center;
 
-  flex-direction: column;
+flex-direction: column;
 
-  text-align: center;
+text-align: center;
 
-  font-size: 8px;
+font-size: 8px;
 
-  line-height: 2.2;
+line-height: 2.2;
 
-  color: #cccccc;
+color: #cccccc;
 }
-
-/* =========================
-   CENTRO
-========================= */
 
 .center-top {
 
-  display: flex;
+display: flex;
 
-  justify-content: center;
-  align-items: center;
+justify-content: center;
+align-items: center;
 
-  flex-direction: column;
+flex-direction: column;
 
-  text-align: center;
+text-align: center;
 
-  padding: 20px;
+padding: 20px;
 }
-
-/* LOGO */
 
 .main-logo {
 
-  width: 240px;
+width: 240px;
 
-  margin-bottom: 25px;
+margin-bottom: 25px;
 
-  filter:
-    drop-shadow(0 0 20px rgba(255,49,49,0.95))
-    drop-shadow(0 0 50px rgba(255,49,49,0.4));
+filter:
+drop-shadow(0 0 20px rgba(255,49,49,0.95))
+drop-shadow(0 0 50px rgba(255,49,49,0.4));
 }
-
-/* DESCRIPTION */
 
 .description {
 
-  max-width: 620px;
+max-width: 620px;
 
-  line-height: 2;
+line-height: 2;
 
-  font-size: 10px;
+font-size: 10px;
 
-  color: #dddddd;
+color: #dddddd;
 }
-
-/* BOTTOM */
 
 .center-bottom {
 
-  display: flex;
+display: flex;
 
-  justify-content: center;
-  align-items: center;
+justify-content: center;
+align-items: center;
 }
-
-/* PLACEHOLDER */
 
 .placeholder-box {
 
-  width: 70%;
+width: 70%;
 
-  padding: 30px;
+padding: 30px;
 
-  text-align: center;
+text-align: center;
 
-  border:
-    1px solid rgba(255,49,49,0.2);
+border:
+1px solid rgba(255,49,49,0.2);
 }
-
-/* =========================
-   METACRITIC
-========================= */
 
 .metacritic-panel {
 
-  display: flex;
+height: 100%;
 
-  flex-direction: column;
+display: flex;
 
-  overflow: hidden;
+flex-direction: column;
+
+overflow: hidden;
 }
-
-/* TRACK */
 
 .movie-track {
 
-  flex: 1;
+flex: 1;
 
-  overflow-y: auto;
+overflow-y: auto;
 
-  scrollbar-width: none;
+scrollbar-width: none;
 
-  padding-top: 10px;
+padding-top: 10px;
 }
 
 .movie-track::-webkit-scrollbar {
 
-  display: none;
+display: none;
 }
-
-/* MOVIES */
 
 .movie {
 
-  margin: 22px;
+margin: 22px;
 
-  text-align: center;
+text-align: center;
 
-  transition: 0.3s;
+transition: 0.3s;
 }
-
-/* HOVER */
 
 .movie:hover {
 
-  transform: scale(1.08);
+transform: scale(1.08);
 
-  filter:
-    drop-shadow(0 0 10px #ff3131);
+filter:
+drop-shadow(0 0 10px #ff3131);
 }
-
-/* POSTERS */
 
 .movie img {
 
-  width: 130px;
-  height: 190px;
+width: 130px;
+height: 190px;
 
-  object-fit: cover;
+object-fit: cover;
 
-  border-radius: 4px;
+border-radius: 4px;
 }
-
-/* TITLES */
 
 .movie-title {
 
-  margin-top: 10px;
+margin-top: 10px;
 
-  font-size: 9px;
+font-size: 9px;
 
-  text-shadow:
-    0 0 4px #ff3131;
+text-shadow:
+0 0 4px #ff3131;
 }
-
-/* =========================
-   ⭐ STARS
-========================= */
 
 .stars {
 
-  display: flex;
+display: flex;
 
-  justify-content: center;
+justify-content: center;
 
-  gap: 3px;
+gap: 3px;
 
-  margin-top: 6px;
+margin-top: 6px;
 }
 
 .stars img {
 
-  width: 10px !important;
-  height: 10px !important;
+width: 10px !important;
+height: 10px !important;
 
-  opacity: 0.25;
+opacity: 0.25;
 }
 
 .stars img.active {
 
-  opacity: 1;
+opacity: 1;
 
-  filter:
-    drop-shadow(0 0 5px #ff3131);
+filter:
+drop-shadow(0 0 5px #ff3131);
 }
-
-/* =========================
-   📼 VHS
-========================= */
 
 .vhs-overlay {
 
-  position: fixed;
+position: fixed;
 
-  inset: 0;
+inset: 0;
 
-  pointer-events: none;
+pointer-events: none;
 
-  z-index: 999999;
+z-index: 999999;
 
-  opacity: 0.28;
+opacity: 0.28;
 
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.10) 0px,
-      rgba(255,255,255,0.10) 2px,
-      transparent 2px,
-      transparent 6px
-    );
+background:
+repeating-linear-gradient(
+to bottom,
+rgba(255,255,255,0.10) 0px,
+rgba(255,255,255,0.10) 2px,
+transparent 2px,
+transparent 6px
+);
 
-  animation: flicker 0.05s infinite;
+animation: flicker 0.05s infinite;
 }
 
 @keyframes flicker {
 
-  0% { opacity: 0.22; }
-  25% { opacity: 0.30; }
-  50% { opacity: 0.26; }
-  75% { opacity: 0.32; }
-  100% { opacity: 0.24; }
+0% { opacity: 0.22; }
+25% { opacity: 0.30; }
+50% { opacity: 0.26; }
+75% { opacity: 0.32; }
+100% { opacity: 0.24; }
 }
-
-/* CRT */
 
 body::after {
 
-  content: "";
+content: "";
 
-  position: fixed;
+position: fixed;
 
-  inset: 0;
+inset: 0;
 
-  pointer-events: none;
+pointer-events: none;
 
-  opacity: 0.05;
+opacity: 0.05;
 
-  background-image:
-    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+background-image:
+url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
