@@ -197,6 +197,31 @@ flex-direction: column;
 text-align: center;
 
 padding: 20px;
+
+transition:
+transform 0.45s ease,
+opacity 0.45s ease,
+height 0.45s ease,
+padding 0.45s ease;
+
+transform: translateY(0);
+
+opacity: 1;
+
+height: 50%;
+}
+
+/* 🔻 OCULTO */
+
+.center-top.hidden {
+
+transform: translateY(-120%);
+
+opacity: 0;
+
+height: 0;
+
+padding: 0;
 }
 
 .main-logo {
