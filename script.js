@@ -74,3 +74,25 @@ document.getElementById(tabId)
 
 event.target.classList.add("active");
 }
+
+const topPanel = document.querySelector(".center-top");
+
+const tabPages = document.querySelectorAll(".tab-page");
+
+tabPages.forEach(page => {
+
+page.addEventListener("scroll", () => {
+
+if (page.scrollTop > 30) {
+
+topPanel.classList.add("hidden");
+
+} else {
+
+topPanel.classList.remove("hidden");
+
+}
+
+});
+
+});
