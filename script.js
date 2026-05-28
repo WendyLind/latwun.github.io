@@ -102,3 +102,20 @@ center.classList.remove("expanded");
 });
 
 });
+
+const toggleBtn = document.getElementById("vhsToggle");
+
+toggleBtn.addEventListener("click", () => {
+
+document.body.classList.toggle("crt-off");
+
+if (document.body.classList.contains("crt-off")) {
+
+toggleBtn.innerText = "CRT: OFF";
+
+} else {
+
+toggleBtn.innerText = "CRT: ON";
+}
+
+});
