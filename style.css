@@ -1,568 +1,273 @@
-html,
-body {
+<!DOCTYPE html>
+<html lang="es">
 
-margin: 0;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-width: 100%;
-height: 100%;
+  <title>Latwun</title>
 
-overflow: hidden;
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-background: #030303;
+  <link rel="stylesheet" href="style.css">
+</head>
 
-color: white;
+<body>
 
-font-family: 'Press Start 2P', cursive;
+  <div class="vhs-overlay"></div>
 
-filter:
-contrast(1.05)
-saturate(1.08);
-}
+  <button id="crt-toggle">
+    CRT: ON
+  </button>
 
-body.crt-off {
+  <div class="layout">
 
-filter: none;
-}
+    <div class="left-column">
 
-.layout {
+      <section class="panel social-panel">
 
-display: grid;
+        <div class="panel-header neon">
+          Redes
+        </div>
 
-grid-template-columns: 1fr 2fr 1fr;
+        <div class="social-grid">
 
-gap: 14px;
+          <a class="icon-link"
+             href="https://www.instagram.com/latwun_lel/"
+             target="_blank">
 
-padding: 14px;
+            <img src="img/ig.png">
+            <span>Instagram</span>
 
-box-sizing: border-box;
+          </a>
 
-height: 100vh;
+          <a class="icon-link"
+             href="https://www.youtube.com/@Latwun_2007"
+             target="_blank">
 
-animation: crtShift 7s infinite alternate;
-}
+            <img src="img/yt.png">
+            <span>YouTube</span>
 
-body.crt-off .layout {
+          </a>
 
-animation: none;
-}
+          <a class="icon-link"
+             href="https://latwun.itch.io"
+             target="_blank">
 
-.panel {
+            <img src="img/itch.png">
+            <span>Itch.io</span>
 
-background: rgba(15,15,15,0.84);
+          </a>
 
-border: 1px solid rgba(255,49,49,0.18);
+          <a class="icon-link"
+             href="#">
 
-box-shadow:
-inset 0 0 20px rgba(255,49,49,0.04),
-0 0 15px rgba(255,49,49,0.06);
+            <img src="img/tiktok.png">
+            <span>TikTok</span>
 
-overflow: hidden;
-}
+          </a>
 
-.left,
-.center {
+        </div>
 
-display: flex;
+      </section>
 
-flex-direction: column;
+      <section class="panel music-panel">
 
-gap: 14px;
+        <div class="panel-header neon">
+          Music
+        </div>
 
-height: calc(100vh - 28px);
-}
+        <div class="music-content">
 
-.left > .panel {
+          <p>RADIO SYSTEM</p>
+          <p>COMING SOON...</p>
 
-height: 50%;
-}
+        </div>
 
-.center-top {
+      </section>
 
-flex: 1;
+    </div>
 
-min-height: 220px;
+    <div class="center-column">
 
-display: flex;
+      <section class="center-top" id="centerTop">
 
-justify-content: center;
-align-items: center;
+        <div class="logo-container">
 
-flex-direction: column;
+          <img src="img/logo.png" class="logo">
 
-text-align: center;
+        </div>
 
-padding: 20px;
+        <p class="description">
+          Desarrollador indie de videojuegos, webs experimentales,
+          modelado 3D y diseño 2D inspirado en estética retro.
+        </p>
 
-transition:
-transform 0.45s ease,
-opacity 0.45s ease,
-height 0.45s ease,
-padding 0.45s ease;
-}
+      </section>
 
-.center-top.hidden {
+      <section class="center-bottom" id="bottomPanel">
 
-transform: translateY(-120%);
+        <div class="tabs">
 
-opacity: 0;
+          <button class="tab active">
+            Servicios
+          </button>
 
-height: 0;
+          <button class="tab">
+            Blog
+          </button>
 
-padding: 0;
-}
+          <button class="tab">
+            Projects
+          </button>
 
-.center-bottom {
+        </div>
 
-flex: 1;
+        <div class="tab-content">
 
-transform-origin: top;
+          <div class="service-card">
 
-transition:
-flex 0.45s ease,
-height 0.45s ease;
-}
+            <h3 class="neon">
+              Desarrollo Web
+            </h3>
 
-.center.expanded .center-bottom {
+            <p>
+              Páginas web modernas para negocios,
+              portfolios y proyectos creativos.
+            </p>
 
-flex: 999;
+            <a
+              class="contact-btn"
+              target="_blank"
+              href="https://instagram.com/direct/inbox/">
 
-margin-top: -14px;
+              Contactar
 
-height: 100%;
-}
+            </a>
 
-.right {
+          </div>
 
-height: calc(100vh - 28px);
-}
+          <div class="service-card">
 
-.neon {
+            <h3 class="neon">
+              Videojuegos
+            </h3>
 
-color: #ff3131;
+            <p>
+              Desarrollo de videojuegos indie
+              en Unity con estética única.
+            </p>
 
-text-shadow:
-0 0 3px #ff3131,
-0 0 8px #ff3131,
-0 0 16px #ff3131;
-}
+            <a
+              class="contact-btn"
+              target="_blank"
+              href="https://instagram.com/direct/inbox/">
 
-.panel-title,
-.meta-header {
+              Contactar
 
-text-align: center;
+            </a>
 
-padding: 18px 10px;
+          </div>
 
-border-bottom: 1px solid rgba(255,49,49,0.15);
+          <div class="service-card">
 
-background: rgba(255,49,49,0.03);
+            <h3 class="neon">
+              Arte 3D y 2D
+            </h3>
 
-font-size: 12px;
-}
+            <p>
+              Modelado 3D, pixel art,
+              logos y diseño visual retro.
+            </p>
 
-.social-icons {
+            <a
+              class="contact-btn"
+              target="_blank"
+              href="https://instagram.com/direct/inbox/">
 
-flex: 1;
+              Contactar
 
-display: grid;
+            </a>
 
-grid-template-columns: 1fr 1fr;
+          </div>
 
-justify-items: center;
+        </div>
 
-align-items: center;
+      </section>
 
-padding: 5px 10px;
+    </div>
 
-gap: 10px;
-}
+    <div class="right-column">
 
-.icon-link {
+      <div class="panel movies-panel">
 
-text-decoration: none;
+        <div class="panel-header neon">
+          Mis Películas Favoritas
+        </div>
 
-text-align: center;
+        <div class="movie-container" id="movieContainer">
 
-transition: 0.25s;
-}
+          <div class="movie-track" id="track">
 
-.icon-link img {
+            <div class="movie">
 
-width: 58px;
-height: 58px;
+              <img src="img/1.jpg">
 
-object-fit: contain;
+              <div class="movie-title">
+                Look Back
+              </div>
 
-display: block;
+              <div class="stars" data-rating="5"></div>
 
-margin: auto;
+            </div>
 
-filter:
-drop-shadow(0 0 8px rgba(255,49,49,0.45));
-}
+            <div class="movie">
 
-.icon-link:hover {
+              <img src="img/2.jpg">
 
-transform: scale(1.12);
-}
+              <div class="movie-title">
+                Chainsaw Man: Reze Arc
+              </div>
 
-.icon-link span {
+              <div class="stars" data-rating="5"></div>
 
-display: block;
+            </div>
 
-margin-top: 8px;
+            <div class="movie">
 
-font-size: 7px;
+              <img src="img/3.jpg">
 
-color: #ff3131;
+              <div class="movie-title">
+                Exit 8
+              </div>
 
-text-shadow:
-0 0 5px #ff3131;
-}
+              <div class="stars" data-rating="4"></div>
 
-.music-box {
+            </div>
 
-height: 100%;
+            <div class="movie">
 
-display: flex;
+              <img src="img/4.jpg">
 
-justify-content: center;
-align-items: center;
+              <div class="movie-title">
+                Caveat
+              </div>
 
-flex-direction: column;
+              <div class="stars" data-rating="4"></div>
 
-font-size: 8px;
+            </div>
 
-line-height: 2.2;
-}
+          </div>
 
-.main-logo {
+        </div>
 
-width: 240px;
+      </div>
 
-margin-bottom: 25px;
+    </div>
 
-filter:
-drop-shadow(0 0 20px rgba(255,49,49,0.95))
-drop-shadow(0 0 50px rgba(255,49,49,0.4));
-}
+  </div>
 
-.description {
+  <script src="script.js"></script>
 
-max-width: 620px;
-
-line-height: 2;
-
-font-size: 10px;
-
-color: #dddddd;
-}
-
-.tabs {
-
-display: flex;
-
-border-bottom:
-1px solid rgba(255,49,49,0.15);
-}
-
-.tab-btn {
-
-flex: 1;
-
-background: rgba(255,49,49,0.04);
-
-border: none;
-
-color: #ff3131;
-
-padding: 14px;
-
-font-family: 'Press Start 2P', cursive;
-
-font-size: 8px;
-
-cursor: pointer;
-}
-
-.tab-btn.active {
-
-background: rgba(255,49,49,0.12);
-
-box-shadow:
-inset 0 -2px 0 #ff3131;
-}
-
-.tab-content {
-
-height: calc(100% - 50px);
-
-position: relative;
-}
-
-.tab-page {
-
-position: absolute;
-
-inset: 0;
-
-padding: 18px;
-
-overflow-y: auto;
-
-display: none;
-
-scrollbar-width: none;
-}
-
-.tab-page.active {
-
-display: block;
-}
-
-.service-card {
-
-border:
-1px solid rgba(255,49,49,0.15);
-
-padding: 16px;
-
-margin-bottom: 16px;
-
-background:
-rgba(255,49,49,0.03);
-}
-
-.service-card h3 {
-
-font-size: 10px;
-
-margin-bottom: 14px;
-
-color: #ff3131;
-}
-
-.service-card p {
-
-font-size: 8px;
-
-line-height: 2;
-
-color: #cccccc;
-}
-
-.contact-btn {
-
-display: inline-block;
-
-margin-top: 14px;
-
-padding: 10px 14px;
-
-font-size: 7px;
-
-text-decoration: none;
-
-color: white;
-
-border:
-1px solid rgba(255,49,49,0.25);
-}
-
-.metacritic-panel {
-
-height: 100%;
-
-display: flex;
-
-flex-direction: column;
-}
-
-.movie-track {
-
-flex: 1;
-
-overflow-y: auto;
-
-scrollbar-width: none;
-
-padding-top: 10px;
-}
-
-.movie {
-
-margin: 22px;
-
-text-align: center;
-
-transition: 0.3s;
-}
-
-.movie:hover {
-
-transform: scale(1.08);
-
-filter:
-drop-shadow(0 0 10px #ff3131);
-}
-
-.movie img {
-
-width: 130px;
-height: 190px;
-
-object-fit: cover;
-
-border-radius: 4px;
-}
-
-.movie-title {
-
-margin-top: 10px;
-
-font-size: 9px;
-
-text-shadow:
-0 0 4px #ff3131;
-}
-
-.stars {
-
-display: flex;
-
-justify-content: center;
-
-gap: 3px;
-
-margin-top: 6px;
-}
-
-.stars img {
-
-width: 10px !important;
-height: 10px !important;
-
-opacity: 0.25;
-}
-
-.stars img.active {
-
-opacity: 1;
-
-filter:
-drop-shadow(0 0 5px #ff3131);
-}
-
-#vhsToggle {
-
-position: fixed;
-
-top: 12px;
-right: 12px;
-
-z-index: 9999999;
-
-background: rgba(0,0,0,0.7);
-
-border:
-1px solid rgba(255,49,49,0.3);
-
-color: #ff3131;
-
-padding: 8px 10px;
-
-font-size: 7px;
-
-font-family: 'Press Start 2P', cursive;
-
-cursor: pointer;
-}
-
-.vhs-overlay {
-
-position: fixed;
-
-inset: 0;
-
-pointer-events: none;
-
-z-index: 999999;
-
-opacity: 0.18;
-
-background:
-
-repeating-linear-gradient(
-to bottom,
-
-rgba(255,255,255,0.08) 0px,
-rgba(255,255,255,0.08) 2px,
-
-transparent 2px,
-transparent 5px
-);
-
-mix-blend-mode: screen;
-
-animation:
-flicker 0.08s infinite;
-}
-
-body.crt-off .vhs-overlay {
-
-display: none;
-}
-
-body::before {
-
-content: "";
-
-position: fixed;
-
-inset: 0;
-
-pointer-events: none;
-
-z-index: 999996;
-
-background:
-radial-gradient(
-circle,
-transparent 45%,
-rgba(0,0,0,0.45) 100%
-);
-
-mix-blend-mode: multiply;
-}
-
-@keyframes flicker {
-
-0% { opacity: 0.22; }
-25% { opacity: 0.30; }
-50% { opacity: 0.26; }
-75% { opacity: 0.32; }
-100% { opacity: 0.24; }
-}
-
-@keyframes crtShift {
-
-0% {
-transform: translateX(0px);
-}
-
-25% {
-transform: translateX(0.4px);
-}
-
-50% {
-transform: translateX(-0.4px);
-}
-
-75% {
-transform: translateY(0.3px);
-}
-
-100% {
-transform: translateY(-0.3px);
-}
-}
+</body>
+</html>
