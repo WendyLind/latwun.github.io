@@ -1,66 +1,51 @@
 document.querySelectorAll(".stars").forEach(container => {
 
-  const rating = parseInt(container.dataset.rating);
+  const rating =
+    parseInt(container.dataset.rating);
 
-  for (let i = 1; i <= 5; i++) {
+  for(let i = 1; i <= 5; i++){
 
-    const star = document.createElement("img");
+    const star =
+      document.createElement("img");
 
     star.src = "img/star.jpg";
 
-    if (i <= rating) {
-
+    if(i <= rating){
       star.classList.add("active");
     }
 
     container.appendChild(star);
   }
+
 });
 
-const track = document.getElementById("track");
+const track =
+  document.getElementById("track");
 
-const moviesContainer =
-  document.querySelector(".movies-container");
+const movieScroll =
+  document.getElementById("movieScroll");
 
 track.innerHTML += track.innerHTML;
 
 setInterval(() => {
 
-  if (!moviesContainer.matches(":hover")) {
+  if(!movieScroll.matches(":hover")){
 
-    moviesContainer.scrollTop += 0.4;
+    movieScroll.scrollTop += 0.4;
 
-    if (
-      moviesContainer.scrollTop >=
+    if(
+      movieScroll.scrollTop >=
       track.scrollHeight / 2
-    ) {
-
-      moviesContainer.scrollTop = 0;
+    ){
+      movieScroll.scrollTop = 0;
     }
+
   }
 
-}, 16);
+},16);
 
-const topSection =
-  document.querySelector(".top-section");
-
-const contentSection =
-  document.querySelector(".content-section");
-
-contentSection.addEventListener("scroll", () => {
-
-  if (contentSection.scrollTop > 40) {
-
-    topSection.classList.add("collapsed");
-
-  } else {
-
-    topSection.classList.remove("collapsed");
-  }
-
-});
-
-const tabs = document.querySelectorAll(".tab");
+const tabs =
+  document.querySelectorAll(".tab");
 
 const contents =
   document.querySelectorAll(".tab-content");
@@ -84,5 +69,25 @@ tabs.forEach(tab => {
       .classList.add("active");
 
   });
+
+});
+
+const topSection =
+  document.getElementById("topSection");
+
+const bottomSection =
+  document.getElementById("bottomSection");
+
+bottomSection.addEventListener("scroll", () => {
+
+  if(bottomSection.scrollTop > 30){
+
+    topSection.classList.add("collapsed");
+
+  }else{
+
+    topSection.classList.remove("collapsed");
+
+  }
 
 });
