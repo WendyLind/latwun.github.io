@@ -1,121 +1,79 @@
 document.querySelectorAll(".stars").forEach(container => {
 
-const rating = parseInt(container.dataset.rating);
+  const rating = parseInt(container.dataset.rating);
 
-for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 5; i++) {
 
-const star = document.createElement("img");
+    const star = document.createElement("img");
 
-star.src = "img/star.jpg";
+    star.src = "img/star.jpg";
 
-if (i <= rating) {
+    if (i <= rating) {
+      star.classList.add("active");
+    }
 
-star.classList.add("active");
-}
-
-container.appendChild(star);
-}
+    container.appendChild(star);
+  }
 });
 
 const track = document.getElementById("track");
+const container = document.getElementById("movieContainer");
 
 track.innerHTML += track.innerHTML;
 
-let auto = setInterval(() => {
+let autoScroll = setInterval(scrollMovies, 16);
 
-track.scrollTop += 0.5;
+function scrollMovies() {
 
-if (track.scrollTop >= track.scrollHeight / 2) {
+  container.scrollTop += 0.5;
 
-track.scrollTop = 0;
+  if (container.scrollTop >= track.scrollHeight / 2) {
+    container.scrollTop = 0;
+  }
 }
 
-}, 16);
-
-track.addEventListener("mouseenter", () => {
-
-clearInterval(auto);
-
+container.addEventListener("mouseenter", () => {
+  clearInterval(autoScroll);
 });
 
-track.addEventListener("mouseleave", () => {
+container.addEventListener("mouseleave", () => {
 
-auto = setInterval(() => {
-
-track.scrollTop += 0.5;
-
-if (track.scrollTop >= track.scrollHeight / 2) {
-
-track.scrollTop = 0;
-}
-
-}, 16);
-
+  autoScroll = setInterval(scrollMovies, 16);
 });
 
-function showTab(tabId, event) {
+const bottomPanel = document.getElementById("bottomPanel");
+const centerColumn = document.querySelector(".center-column");
 
-document.querySelectorAll(".tab-page")
-.forEach(page => {
+bottomPanel.addEventListener("scroll", () => {
 
-page.classList.remove("active");
-
+  if (bottomPanel.scrollTop > 40) {
+    centerColumn.classList.add("scrolled");
+  } else {
+    centerColumn.classList.remove("scrolled");
+  }
 });
 
-document.querySelectorAll(".tab-btn")
-.forEach(btn => {
+const crtButton = document.getElementById("crt-toggle");
+const overlay = document.querySelector(".vhs-overlay");
 
-btn.classList.remove("active");
+let crtEnabled = true;
 
-});
+crtButton.addEventListener("click", () => {
 
-document.getElementById(tabId)
-.classList.add("active");
+  crtEnabled = !crtEnabled;
 
-event.target.classList.add("active");
-}
+  if (crtEnabled) {
 
-const center = document.querySelector(".center");
+    overlay.style.display = "block";
 
-const topPanel = document.querySelector(".center-top");
+    document.body.style.setProperty("--crt-opacity", "1");
 
-const tabPages = document.querySelectorAll(".tab-page");
+    crtButton.innerText = "CRT: ON";
 
-tabPages.forEach(page => {
+  } else {
 
-page.addEventListener("scroll", () => {
+    overlay.style.display = "none";
 
-if (page.scrollTop > 30) {
-
-topPanel.classList.add("hidden");
-
-center.classList.add("expanded");
-
-} else {
-
-topPanel.classList.remove("hidden");
-
-center.classList.remove("expanded");
-
-}
-
-});
-
-});
-
-const toggleBtn = document.getElementById("vhsToggle");
-
-toggleBtn.addEventListener("click", () => {
-
-document.body.classList.toggle("crt-off");
-
-if (document.body.classList.contains("crt-off")) {
-
-toggleBtn.innerText = "CRT: OFF";
-
-} else {
-
-toggleBtn.innerText = "CRT: ON";
-}
-
+    crtButton.innerText = "CRT: OFF";
+  }
 });
