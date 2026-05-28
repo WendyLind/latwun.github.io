@@ -19,68 +19,70 @@ document.querySelectorAll(".stars").forEach(container => {
 
 const track = document.getElementById("track");
 
-const container = document.getElementById("movieContainer");
+const moviesContainer =
+  document.querySelector(".movies-container");
 
 track.innerHTML += track.innerHTML;
 
-function autoScrollMovies() {
+setInterval(() => {
 
-  container.scrollTop += 0.45;
+  if (!moviesContainer.matches(":hover")) {
 
-  if (container.scrollTop >= track.scrollHeight / 2) {
+    moviesContainer.scrollTop += 0.4;
 
-    container.scrollTop = 0;
+    if (
+      moviesContainer.scrollTop >=
+      track.scrollHeight / 2
+    ) {
+
+      moviesContainer.scrollTop = 0;
+    }
   }
-}
 
-let autoScroll = setInterval(autoScrollMovies, 16);
+}, 16);
 
-container.addEventListener("mouseenter", () => {
+const topSection =
+  document.querySelector(".top-section");
 
-  clearInterval(autoScroll);
-});
+const contentSection =
+  document.querySelector(".content-section");
 
-container.addEventListener("mouseleave", () => {
+contentSection.addEventListener("scroll", () => {
 
-  autoScroll = setInterval(autoScrollMovies, 16);
-});
+  if (contentSection.scrollTop > 40) {
 
-const bottomPanel = document.getElementById("bottomPanel");
-
-const centerColumn = document.querySelector(".center-column");
-
-bottomPanel.addEventListener("scroll", () => {
-
-  if (bottomPanel.scrollTop > 40) {
-
-    centerColumn.classList.add("scrolled");
+    topSection.classList.add("collapsed");
 
   } else {
 
-    centerColumn.classList.remove("scrolled");
+    topSection.classList.remove("collapsed");
   }
+
 });
 
-const crtButton = document.getElementById("crt-toggle");
+const tabs = document.querySelectorAll(".tab");
 
-const overlay = document.querySelector(".vhs-overlay");
+const contents =
+  document.querySelectorAll(".tab-content");
 
-let crtEnabled = true;
+tabs.forEach(tab => {
 
-crtButton.addEventListener("click", () => {
+  tab.addEventListener("click", () => {
 
-  crtEnabled = !crtEnabled;
+    tabs.forEach(t =>
+      t.classList.remove("active")
+    );
 
-  if (crtEnabled) {
+    contents.forEach(c =>
+      c.classList.remove("active")
+    );
 
-    overlay.style.display = "block";
+    tab.classList.add("active");
 
-    crtButton.innerText = "CRT: ON";
+    document
+      .getElementById(tab.dataset.tab)
+      .classList.add("active");
 
-  } else {
+  });
 
-    overlay.style.display = "none";
-
-    crtButton.innerText = "CRT: OFF";
-  }
 });
