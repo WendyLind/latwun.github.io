@@ -1,273 +1,531 @@
-<!DOCTYPE html>
-<html lang="es">
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  background: #050505;
+  color: white;
 
-  <title>Latwun</title>
+  font-family: 'Press Start 2P', cursive;
 
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  image-rendering: pixelated;
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  -webkit-font-smoothing: none;
+}
 
-<body>
+body {
+  position: relative;
+}
 
-  <div class="vhs-overlay"></div>
+.layout {
+  display: grid;
 
-  <button id="crt-toggle">
-    CRT: ON
-  </button>
+  grid-template-columns: 320px 1fr 320px;
 
-  <div class="layout">
+  height: 100vh;
 
-    <div class="left-column">
+  gap: 20px;
 
-      <section class="panel social-panel">
+  padding: 20px;
 
-        <div class="panel-header neon">
-          Redes
-        </div>
+  box-sizing: border-box;
 
-        <div class="social-grid">
+  transform:
+    perspective(1200px)
+    rotateX(0.6deg);
 
-          <a class="icon-link"
-             href="https://www.instagram.com/latwun_lel/"
-             target="_blank">
+  transform-origin: center top;
+}
 
-            <img src="img/ig.png">
-            <span>Instagram</span>
+.neon {
+  color: #ff2a2a;
 
-          </a>
+  text-shadow:
+    0 0 2px #ff2a2a,
+    0 0 6px rgba(255,0,0,0.7);
+}
 
-          <a class="icon-link"
-             href="https://www.youtube.com/@Latwun_2007"
-             target="_blank">
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-            <img src="img/yt.png">
-            <span>YouTube</span>
+.panel {
+  border: 1px solid rgba(255,0,0,0.25);
 
-          </a>
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(30,0,0,0.45),
+      rgba(0,0,0,0.7)
+    );
 
-          <a class="icon-link"
-             href="https://latwun.itch.io"
-             target="_blank">
+  overflow: hidden;
+}
 
-            <img src="img/itch.png">
-            <span>Itch.io</span>
+.social-panel,
+.music-panel {
+  flex: 1;
+}
 
-          </a>
+.panel-header {
+  padding: 18px;
 
-          <a class="icon-link"
-             href="#">
+  text-align: center;
 
-            <img src="img/tiktok.png">
-            <span>TikTok</span>
+  font-size: 18px;
 
-          </a>
+  border-bottom:
+    1px solid rgba(255,0,0,0.25);
 
-        </div>
+  background:
+    rgba(255,0,0,0.05);
+}
 
-      </section>
+.social-grid {
+  display: grid;
 
-      <section class="panel music-panel">
+  grid-template-columns: 1fr 1fr;
 
-        <div class="panel-header neon">
-          Music
-        </div>
+  gap: 40px;
 
-        <div class="music-content">
+  padding: 40px 20px;
+}
 
-          <p>RADIO SYSTEM</p>
-          <p>COMING SOON...</p>
+.icon-link {
+  text-decoration: none;
 
-        </div>
+  text-align: center;
 
-      </section>
+  transition: 0.3s;
+}
 
-    </div>
+.icon-link img {
+  width: 90px;
+  height: 90px;
 
-    <div class="center-column">
+  object-fit: contain;
 
-      <section class="center-top" id="centerTop">
+  filter:
+    drop-shadow(0 0 10px rgba(255,0,0,0.3));
+}
 
-        <div class="logo-container">
+.icon-link span {
+  display: block;
 
-          <img src="img/logo.png" class="logo">
+  margin-top: 15px;
 
-        </div>
+  color: #ff2a2a;
 
-        <p class="description">
-          Desarrollador indie de videojuegos, webs experimentales,
-          modelado 3D y diseño 2D inspirado en estética retro.
-        </p>
+  font-size: 10px;
 
-      </section>
+  text-shadow:
+    0 0 4px rgba(255,0,0,0.8);
+}
 
-      <section class="center-bottom" id="bottomPanel">
+.icon-link:hover {
+  transform: scale(1.08);
 
-        <div class="tabs">
+  filter:
+    drop-shadow(0 0 15px rgba(255,0,0,0.7));
+}
 
-          <button class="tab active">
-            Servicios
-          </button>
+.music-content {
+  height: calc(100% - 60px);
 
-          <button class="tab">
-            Blog
-          </button>
+  display: flex;
 
-          <button class="tab">
-            Projects
-          </button>
+  justify-content: center;
+  align-items: center;
 
-        </div>
+  flex-direction: column;
 
-        <div class="tab-content">
+  gap: 40px;
 
-          <div class="service-card">
+  text-align: center;
 
-            <h3 class="neon">
-              Desarrollo Web
-            </h3>
+  color: #ddd;
+}
 
-            <p>
-              Páginas web modernas para negocios,
-              portfolios y proyectos creativos.
-            </p>
+.center-column {
+  display: flex;
+  flex-direction: column;
 
-            <a
-              class="contact-btn"
-              target="_blank"
-              href="https://instagram.com/direct/inbox/">
+  gap: 20px;
 
-              Contactar
+  overflow: hidden;
+}
 
-            </a>
+.center-top {
+  flex: 1;
 
-          </div>
+  display: flex;
 
-          <div class="service-card">
+  justify-content: flex-start;
+  align-items: center;
 
-            <h3 class="neon">
-              Videojuegos
-            </h3>
+  flex-direction: column;
 
-            <p>
-              Desarrollo de videojuegos indie
-              en Unity con estética única.
-            </p>
+  text-align: center;
 
-            <a
-              class="contact-btn"
-              target="_blank"
-              href="https://instagram.com/direct/inbox/">
+  transition: 0.6s ease;
 
-              Contactar
+  overflow: hidden;
+}
 
-            </a>
+.center-column.scrolled .center-top {
+  flex: 0;
 
-          </div>
+  opacity: 0;
 
-          <div class="service-card">
+  transform: translateY(-250px);
+}
 
-            <h3 class="neon">
-              Arte 3D y 2D
-            </h3>
+.center-bottom {
+  flex: 1.3;
 
-            <p>
-              Modelado 3D, pixel art,
-              logos y diseño visual retro.
-            </p>
+  border: 1px solid rgba(255,0,0,0.25);
 
-            <a
-              class="contact-btn"
-              target="_blank"
-              href="https://instagram.com/direct/inbox/">
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(30,0,0,0.45),
+      rgba(0,0,0,0.7)
+    );
 
-              Contactar
+  transition: 0.6s ease;
 
-            </a>
+  overflow-y: auto;
+}
 
-          </div>
+.center-column.scrolled .center-bottom {
+  flex: 2;
+}
 
-        </div>
+.logo-container {
+  margin-top: 40px;
+}
 
-      </section>
+.logo {
+  width: 340px;
 
-    </div>
+  filter:
+    drop-shadow(0 0 10px rgba(255,0,0,0.8))
+    drop-shadow(0 0 25px rgba(255,0,0,0.5));
 
-    <div class="right-column">
+  animation: neonFlicker 10s infinite;
+}
 
-      <div class="panel movies-panel">
+.description {
+  max-width: 700px;
 
-        <div class="panel-header neon">
-          Mis Películas Favoritas
-        </div>
+  margin-top: 30px;
 
-        <div class="movie-container" id="movieContainer">
+  line-height: 2;
 
-          <div class="movie-track" id="track">
+  font-size: 13px;
 
-            <div class="movie">
+  color: #ddd;
+}
 
-              <img src="img/1.jpg">
+.tabs {
+  display: grid;
 
-              <div class="movie-title">
-                Look Back
-              </div>
+  grid-template-columns: repeat(3,1fr);
+}
 
-              <div class="stars" data-rating="5"></div>
+.tab {
+  background: rgba(255,0,0,0.08);
 
-            </div>
+  border: none;
 
-            <div class="movie">
+  border-bottom:
+    1px solid rgba(255,0,0,0.2);
 
-              <img src="img/2.jpg">
+  color: #ff2a2a;
 
-              <div class="movie-title">
-                Chainsaw Man: Reze Arc
-              </div>
+  padding: 20px;
 
-              <div class="stars" data-rating="5"></div>
+  font-family: inherit;
 
-            </div>
+  cursor: pointer;
+}
 
-            <div class="movie">
+.tab.active {
+  border-bottom:
+    3px solid #ff2a2a;
+}
 
-              <img src="img/3.jpg">
+.tab-content {
+  padding: 25px;
+}
 
-              <div class="movie-title">
-                Exit 8
-              </div>
+.service-card {
+  border: 1px solid rgba(255,0,0,0.18);
 
-              <div class="stars" data-rating="4"></div>
+  background:
+    rgba(30,0,0,0.15);
 
-            </div>
+  padding: 25px;
 
-            <div class="movie">
+  margin-bottom: 25px;
+}
 
-              <img src="img/4.jpg">
+.service-card h3 {
+  margin-bottom: 20px;
+}
 
-              <div class="movie-title">
-                Caveat
-              </div>
+.service-card p {
+  line-height: 1.8;
 
-              <div class="stars" data-rating="4"></div>
+  color: #ccc;
 
-            </div>
+  font-size: 11px;
+}
 
-          </div>
+.contact-btn {
+  display: inline-block;
 
-        </div>
+  margin-top: 20px;
 
-      </div>
+  padding: 14px 22px;
 
-    </div>
+  border: 1px solid rgba(255,0,0,0.4);
 
-  </div>
+  color: white;
 
-  <script src="script.js"></script>
+  text-decoration: none;
 
-</body>
-</html>
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: rgba(255,0,0,0.15);
+
+  box-shadow:
+    0 0 12px rgba(255,0,0,0.5);
+}
+
+.movies-panel {
+  height: 100%;
+}
+
+.movie-container {
+  height: calc(100vh - 90px);
+
+  overflow-y: auto;
+
+  scrollbar-width: none;
+}
+
+.movie-container::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie {
+  margin: 25px 0;
+
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.movie:hover {
+  transform: scale(1.08);
+
+  filter:
+    drop-shadow(0 0 12px rgba(255,0,0,0.6));
+}
+
+.movie img {
+  width: 170px;
+  height: 240px;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+}
+
+.movie-title {
+  margin-top: 14px;
+
+  font-size: 12px;
+
+  color: white;
+}
+
+.stars {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  margin-top: 8px;
+}
+
+.stars img {
+  width: 12px !important;
+  height: 12px !important;
+
+  opacity: 0.25;
+}
+
+.stars img.active {
+  opacity: 1;
+
+  filter:
+    drop-shadow(0 0 4px rgba(255,0,0,0.8));
+}
+
+#crt-toggle {
+  position: fixed;
+
+  top: 10px;
+  right: 10px;
+
+  z-index: 100000;
+
+  background: black;
+
+  border: 1px solid red;
+
+  color: red;
+
+  padding: 10px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+.vhs-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  opacity: 0.18;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+
+      transparent 1px,
+      transparent 4px
+    );
+
+  mix-blend-mode: screen;
+
+  animation: crtFlicker 8s infinite;
+}
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 9998;
+
+  background:
+    radial-gradient(
+      circle at center,
+
+      rgba(255,0,0,0.05),
+      transparent 70%
+    );
+
+  mix-blend-mode: screen;
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 9997;
+
+  opacity: 0.04;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      rgba(255,0,0,0.04),
+      transparent,
+      rgba(0,150,255,0.03)
+    );
+
+  mix-blend-mode: screen;
+}
+
+@keyframes crtFlicker {
+
+  0% {
+    opacity: 0.16;
+  }
+
+  50% {
+    opacity: 0.20;
+  }
+
+  100% {
+    opacity: 0.17;
+  }
+}
+
+@keyframes neonFlicker {
+
+  0%,
+  92%,
+  100% {
+    opacity: 1;
+
+    filter:
+      drop-shadow(0 0 10px rgba(255,0,0,0.8))
+      drop-shadow(0 0 25px rgba(255,0,0,0.5));
+  }
+
+  93% {
+    opacity: 0.4;
+  }
+
+  94% {
+    opacity: 0.1;
+  }
+
+  95% {
+    opacity: 0.8;
+  }
+
+  96% {
+    opacity: 0.2;
+  }
+
+  97% {
+    opacity: 1;
+  }
+}
