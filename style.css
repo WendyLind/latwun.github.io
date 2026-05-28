@@ -13,6 +13,15 @@ background: #030303;
 color: white;
 
 font-family: 'Press Start 2P', cursive;
+
+filter:
+contrast(1.05)
+saturate(1.08);
+}
+
+body.crt-off {
+
+filter: none;
 }
 
 .layout {
@@ -28,6 +37,13 @@ padding: 14px;
 box-sizing: border-box;
 
 height: 100vh;
+
+animation: crtShift 7s infinite alternate;
+}
+
+body.crt-off .layout {
+
+animation: none;
 }
 
 .panel {
@@ -58,8 +74,6 @@ height: calc(100vh - 28px);
 .left > .panel {
 
 height: 50%;
-
-min-height: 0;
 }
 
 .center-top {
@@ -84,10 +98,6 @@ transform 0.45s ease,
 opacity 0.45s ease,
 height 0.45s ease,
 padding 0.45s ease;
-
-transform: translateY(0);
-
-opacity: 1;
 }
 
 .center-top.hidden {
@@ -105,13 +115,7 @@ padding: 0;
 
 flex: 1;
 
-min-height: 0;
-
-display: flex;
-
-flex-direction: column;
-
-overflow: hidden;
+transform-origin: top;
 
 transition:
 flex 0.45s ease,
@@ -121,6 +125,10 @@ height 0.45s ease;
 .center.expanded .center-bottom {
 
 flex: 999;
+
+margin-top: -14px;
+
+height: 100%;
 }
 
 .right {
@@ -150,13 +158,6 @@ border-bottom: 1px solid rgba(255,49,49,0.15);
 background: rgba(255,49,49,0.03);
 
 font-size: 12px;
-}
-
-.social-panel {
-
-display: flex;
-
-flex-direction: column;
 }
 
 .social-icons {
@@ -200,6 +201,11 @@ filter:
 drop-shadow(0 0 8px rgba(255,49,49,0.45));
 }
 
+.icon-link:hover {
+
+transform: scale(1.12);
+}
+
 .icon-link span {
 
 display: block;
@@ -214,25 +220,9 @@ text-shadow:
 0 0 5px #ff3131;
 }
 
-.icon-link:hover {
-
-transform: scale(1.12);
-
-filter:
-drop-shadow(0 0 10px #ff3131)
-drop-shadow(0 0 20px #ff3131);
-}
-
-.music-panel {
-
-display: flex;
-
-flex-direction: column;
-}
-
 .music-box {
 
-flex: 1;
+height: 100%;
 
 display: flex;
 
@@ -241,13 +231,9 @@ align-items: center;
 
 flex-direction: column;
 
-text-align: center;
-
 font-size: 8px;
 
 line-height: 2.2;
-
-color: #cccccc;
 }
 
 .main-logo {
@@ -297,16 +283,6 @@ font-family: 'Press Start 2P', cursive;
 font-size: 8px;
 
 cursor: pointer;
-
-transition: 0.25s;
-}
-
-.tab-btn:hover {
-
-background: rgba(255,49,49,0.1);
-
-text-shadow:
-0 0 5px #ff3131;
 }
 
 .tab-btn.active {
@@ -319,11 +295,9 @@ inset 0 -2px 0 #ff3131;
 
 .tab-content {
 
-flex: 1;
+height: calc(100% - 50px);
 
 position: relative;
-
-overflow: hidden;
 }
 
 .tab-page {
@@ -339,11 +313,6 @@ overflow-y: auto;
 display: none;
 
 scrollbar-width: none;
-}
-
-.tab-page::-webkit-scrollbar {
-
-display: none;
 }
 
 .tab-page.active {
@@ -398,34 +367,6 @@ color: white;
 
 border:
 1px solid rgba(255,49,49,0.25);
-
-transition: 0.25s;
-}
-
-.contact-btn:hover {
-
-background: rgba(255,49,49,0.12);
-
-box-shadow:
-0 0 10px rgba(255,49,49,0.4);
-}
-
-.blog-box {
-
-display: flex;
-
-justify-content: center;
-align-items: center;
-
-flex-direction: column;
-
-height: 100%;
-
-gap: 18px;
-
-font-size: 9px;
-
-color: #cccccc;
 }
 
 .metacritic-panel {
@@ -435,8 +376,6 @@ height: 100%;
 display: flex;
 
 flex-direction: column;
-
-overflow: hidden;
 }
 
 .movie-track {
@@ -448,11 +387,6 @@ overflow-y: auto;
 scrollbar-width: none;
 
 padding-top: 10px;
-}
-
-.movie-track::-webkit-scrollbar {
-
-display: none;
 }
 
 .movie {
@@ -519,6 +453,31 @@ filter:
 drop-shadow(0 0 5px #ff3131);
 }
 
+#vhsToggle {
+
+position: fixed;
+
+top: 12px;
+right: 12px;
+
+z-index: 9999999;
+
+background: rgba(0,0,0,0.7);
+
+border:
+1px solid rgba(255,49,49,0.3);
+
+color: #ff3131;
+
+padding: 8px 10px;
+
+font-size: 7px;
+
+font-family: 'Press Start 2P', cursive;
+
+cursor: pointer;
+}
+
 .vhs-overlay {
 
 position: fixed;
@@ -529,18 +488,51 @@ pointer-events: none;
 
 z-index: 999999;
 
-opacity: 0.28;
+opacity: 0.18;
 
 background:
+
 repeating-linear-gradient(
 to bottom,
-rgba(255,255,255,0.10) 0px,
-rgba(255,255,255,0.10) 2px,
+
+rgba(255,255,255,0.08) 0px,
+rgba(255,255,255,0.08) 2px,
+
 transparent 2px,
-transparent 6px
+transparent 5px
 );
 
-animation: flicker 0.05s infinite;
+mix-blend-mode: screen;
+
+animation:
+flicker 0.08s infinite;
+}
+
+body.crt-off .vhs-overlay {
+
+display: none;
+}
+
+body::before {
+
+content: "";
+
+position: fixed;
+
+inset: 0;
+
+pointer-events: none;
+
+z-index: 999996;
+
+background:
+radial-gradient(
+circle,
+transparent 45%,
+rgba(0,0,0,0.45) 100%
+);
+
+mix-blend-mode: multiply;
 }
 
 @keyframes flicker {
@@ -552,18 +544,25 @@ animation: flicker 0.05s infinite;
 100% { opacity: 0.24; }
 }
 
-body::after {
+@keyframes crtShift {
 
-content: "";
+0% {
+transform: translateX(0px);
+}
 
-position: fixed;
+25% {
+transform: translateX(0.4px);
+}
 
-inset: 0;
+50% {
+transform: translateX(-0.4px);
+}
 
-pointer-events: none;
+75% {
+transform: translateY(0.3px);
+}
 
-opacity: 0.05;
-
-background-image:
-url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+100% {
+transform: translateY(-0.3px);
+}
 }
