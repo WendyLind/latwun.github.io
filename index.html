@@ -9,6 +9,10 @@
 
   <title>Latwun</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
@@ -21,14 +25,16 @@
 
   <div class="layout">
 
-    <!-- IZQUIERDA -->
-
-    <div class="left-column">
+    <aside class="left-column">
 
       <div class="panel social-panel">
 
-        <div class="panel-title">
-          Redes
+        <div class="panel-header">
+
+          <h2 class="panel-title">
+            Redes
+          </h2>
+
         </div>
 
         <div class="social-grid">
@@ -76,74 +82,101 @@
 
       </div>
 
-      <div class="panel music-panel">
+      <div class="panel system-panel">
 
-        <div class="panel-title">
-          Music
+        <div class="panel-header">
+
+          <h2 class="panel-title">
+            System
+          </h2>
+
         </div>
 
-        <div class="music-placeholder">
+        <div class="system-content">
 
-          <p>RADIO SYSTEM</p>
+          <div class="system-box">
 
-          <p>COMING SOON...</p>
+            <p class="system-text">
+              RADIO MODULE
+            </p>
+
+            <p class="system-sub">
+              COMING SOON
+            </p>
+
+          </div>
 
         </div>
 
       </div>
 
-    </div>
+    </aside>
 
-    <!-- CENTRO -->
+    <main class="center-column">
 
-    <div class="center-column">
+      <section class="top-section" id="topSection">
 
-      <div class="top-section">
+        <div class="logo-wrapper">
 
-        <img src="img/logo.png" class="logo">
+          <img src="img/logo.png"
+               class="main-logo">
+
+        </div>
 
         <p class="description">
-          Desarrollador indie de videojuegos, webs experimentales,
-          modelado 3D y diseño 2D inspirado en estética retro.
+          Desarrollador indie de videojuegos,
+          páginas web experimentales,
+          modelado 3D y diseño 2D
+          inspirado en estética retro.
         </p>
 
-      </div>
+      </section>
 
-      <div class="content-section">
+      <section class="bottom-section"
+               id="bottomSection">
 
         <div class="tabs">
 
-          <button class="tab active" data-tab="services">
+          <button class="tab active"
+                  data-tab="services">
+
             Servicios
+
           </button>
 
-          <button class="tab" data-tab="blog">
+          <button class="tab"
+                  data-tab="blog">
+
             Blog
+
           </button>
 
-          <button class="tab" data-tab="lab">
-            Lab
+          <button class="tab"
+                  data-tab="memory">
+
+            Memory Card
+
           </button>
 
         </div>
 
-        <!-- SERVICIOS -->
-
-        <div class="tab-content active" id="services">
+        <div class="tab-content active"
+             id="services">
 
           <div class="service-card">
 
-            <h3>Desarrollo Web</h3>
+            <h3>
+              Desarrollo Web
+            </h3>
 
             <p>
-              Páginas web modernas para negocios,
-              portfolios y proyectos creativos.
+              Diseño de páginas web modernas
+              para artistas, negocios y proyectos.
             </p>
 
-            <a
-              href="https://instagram.com/direct/t/17841400000000000"
-              target="_blank"
-              class="contact-btn">
+            <a href="https://instagram.com/direct/inbox/"
+               target="_blank"
+               class="contact-btn">
 
               Contactar
 
@@ -153,17 +186,18 @@
 
           <div class="service-card">
 
-            <h3>Videojuegos</h3>
+            <h3>
+              Desarrollo de Videojuegos
+            </h3>
 
             <p>
-              Desarrollo de videojuegos indie
-              en Unity con estética única.
+              Videojuegos indie con identidad
+              visual experimental y retro.
             </p>
 
-            <a
-              href="https://instagram.com/direct/t/17841400000000000"
-              target="_blank"
-              class="contact-btn">
+            <a href="https://instagram.com/direct/inbox/"
+               target="_blank"
+               class="contact-btn">
 
               Contactar
 
@@ -173,17 +207,18 @@
 
           <div class="service-card">
 
-            <h3>Arte 3D y 2D</h3>
+            <h3>
+              Arte 3D y Diseño
+            </h3>
 
             <p>
-              Modelado 3D, pixel art,
-              logos y diseño visual retro.
+              Modelado low poly,
+              pixel art y diseño visual.
             </p>
 
-            <a
-              href="https://instagram.com/direct/t/17841400000000000"
-              target="_blank"
-              class="contact-btn">
+            <a href="https://instagram.com/direct/inbox/"
+               target="_blank"
+               class="contact-btn">
 
               Contactar
 
@@ -193,57 +228,61 @@
 
         </div>
 
-        <!-- BLOG -->
+        <div class="tab-content"
+             id="blog">
 
-        <div class="tab-content" id="blog">
+          <div class="blog-post">
 
-          <div class="service-card">
-
-            <h3>Devlogs</h3>
+            <h4>
+              DEVLOG_001
+            </h4>
 
             <p>
-              Progreso de videojuegos,
-              arte conceptual y experimentos visuales.
+              Conceptos visuales,
+              diseño de gameplay
+              y experimentos digitales.
             </p>
 
           </div>
 
         </div>
 
-        <!-- LAB -->
+        <div class="tab-content"
+             id="memory">
 
-        <div class="tab-content" id="lab">
-
-          <div class="service-card">
-
-            <h3>Experimentos</h3>
+          <div class="memory-box">
 
             <p>
-              Prototipos, ideas raras,
-              interfaces retro y conceptos interactivos.
+              Archivo experimental
+              de ideas, prototipos,
+              renders y proyectos.
             </p>
 
           </div>
 
         </div>
 
-      </div>
+      </section>
 
-    </div>
+    </main>
 
-    <!-- DERECHA -->
-
-    <div class="right-column">
+    <aside class="right-column">
 
       <div class="panel movies-panel">
 
-        <div class="panel-title">
-          Mis Películas Favoritas
+        <div class="panel-header">
+
+          <h2 class="panel-title">
+            Mis Películas Favoritas
+          </h2>
+
         </div>
 
-        <div class="movies-container">
+        <div class="movie-scroll"
+             id="movieScroll">
 
-          <div class="movie-track" id="track">
+          <div class="movie-track"
+               id="track">
 
             <div class="movie">
 
@@ -253,7 +292,8 @@
                 Look Back
               </div>
 
-              <div class="stars" data-rating="5"></div>
+              <div class="stars"
+                   data-rating="5"></div>
 
             </div>
 
@@ -265,7 +305,8 @@
                 Chainsaw Man: Reze Arc
               </div>
 
-              <div class="stars" data-rating="5"></div>
+              <div class="stars"
+                   data-rating="5"></div>
 
             </div>
 
@@ -277,7 +318,8 @@
                 Exit 8
               </div>
 
-              <div class="stars" data-rating="4"></div>
+              <div class="stars"
+                   data-rating="4"></div>
 
             </div>
 
@@ -289,7 +331,21 @@
                 Caveat
               </div>
 
-              <div class="stars" data-rating="4"></div>
+              <div class="stars"
+                   data-rating="4"></div>
+
+            </div>
+
+            <div class="movie">
+
+              <img src="img/placeholder.png">
+
+              <div class="movie-title">
+                Próximamente
+              </div>
+
+              <div class="stars"
+                   data-rating="0"></div>
 
             </div>
 
@@ -299,7 +355,7 @@
 
       </div>
 
-    </div>
+    </aside>
 
   </div>
 
