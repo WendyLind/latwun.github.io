@@ -5,16 +5,13 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Latwun</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet"
-        href="style.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -22,17 +19,15 @@
 
   <div class="vhs-overlay"></div>
 
-  <button id="crt-toggle">
-    CRT: ON
-  </button>
-
   <div class="layout">
+
+    <!-- IZQUIERDA -->
 
     <div class="left-column">
 
-      <section class="panel social-panel">
+      <div class="panel social-panel">
 
-        <div class="panel-header neon">
+        <div class="panel-title">
           Redes
         </div>
 
@@ -79,15 +74,15 @@
 
         </div>
 
-      </section>
+      </div>
 
-      <section class="panel music-panel">
+      <div class="panel music-panel">
 
-        <div class="panel-header neon">
+        <div class="panel-title">
           Music
         </div>
 
-        <div class="music-content">
+        <div class="music-placeholder">
 
           <p>RADIO SYSTEM</p>
 
@@ -95,66 +90,60 @@
 
         </div>
 
-      </section>
+      </div>
 
     </div>
 
+    <!-- CENTRO -->
+
     <div class="center-column">
 
-      <section class="center-top">
+      <div class="top-section">
 
-        <div class="logo-container">
-
-          <img src="img/logo.png"
-               class="logo">
-
-        </div>
+        <img src="img/logo.png" class="logo">
 
         <p class="description">
-
-          Desarrollador indie de videojuegos,
-          webs experimentales, modelado 3D
-          y diseño 2D inspirado en estética retro.
-
+          Desarrollador indie de videojuegos, webs experimentales,
+          modelado 3D y diseño 2D inspirado en estética retro.
         </p>
 
-      </section>
+      </div>
 
-      <section class="center-bottom"
-               id="bottomPanel">
+      <div class="content-section">
 
         <div class="tabs">
 
-          <button class="tab active">
+          <button class="tab active" data-tab="services">
             Servicios
           </button>
 
-          <button class="tab">
+          <button class="tab" data-tab="blog">
             Blog
           </button>
 
-          <button class="tab">
-            Projects
+          <button class="tab" data-tab="lab">
+            Lab
           </button>
 
         </div>
 
-        <div class="tab-content">
+        <!-- SERVICIOS -->
+
+        <div class="tab-content active" id="services">
 
           <div class="service-card">
 
-            <h3 class="neon">
-              Desarrollo Web
-            </h3>
+            <h3>Desarrollo Web</h3>
 
             <p>
               Páginas web modernas para negocios,
               portfolios y proyectos creativos.
             </p>
 
-            <a class="contact-btn"
-               href="https://instagram.com/direct/inbox/"
-               target="_blank">
+            <a
+              href="https://instagram.com/direct/t/17841400000000000"
+              target="_blank"
+              class="contact-btn">
 
               Contactar
 
@@ -164,18 +153,17 @@
 
           <div class="service-card">
 
-            <h3 class="neon">
-              Videojuegos
-            </h3>
+            <h3>Videojuegos</h3>
 
             <p>
               Desarrollo de videojuegos indie
               en Unity con estética única.
             </p>
 
-            <a class="contact-btn"
-               href="https://instagram.com/direct/inbox/"
-               target="_blank">
+            <a
+              href="https://instagram.com/direct/t/17841400000000000"
+              target="_blank"
+              class="contact-btn">
 
               Contactar
 
@@ -185,18 +173,17 @@
 
           <div class="service-card">
 
-            <h3 class="neon">
-              Arte 3D y 2D
-            </h3>
+            <h3>Arte 3D y 2D</h3>
 
             <p>
               Modelado 3D, pixel art,
               logos y diseño visual retro.
             </p>
 
-            <a class="contact-btn"
-               href="https://instagram.com/direct/inbox/"
-               target="_blank">
+            <a
+              href="https://instagram.com/direct/t/17841400000000000"
+              target="_blank"
+              class="contact-btn">
 
               Contactar
 
@@ -206,23 +193,57 @@
 
         </div>
 
-      </section>
+        <!-- BLOG -->
+
+        <div class="tab-content" id="blog">
+
+          <div class="service-card">
+
+            <h3>Devlogs</h3>
+
+            <p>
+              Progreso de videojuegos,
+              arte conceptual y experimentos visuales.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- LAB -->
+
+        <div class="tab-content" id="lab">
+
+          <div class="service-card">
+
+            <h3>Experimentos</h3>
+
+            <p>
+              Prototipos, ideas raras,
+              interfaces retro y conceptos interactivos.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
+    <!-- DERECHA -->
+
     <div class="right-column">
 
-      <section class="panel movies-panel">
+      <div class="panel movies-panel">
 
-        <div class="panel-header neon">
+        <div class="panel-title">
           Mis Películas Favoritas
         </div>
 
-        <div class="movie-container"
-             id="movieContainer">
+        <div class="movies-container">
 
-          <div class="movie-track"
-               id="track">
+          <div class="movie-track" id="track">
 
             <div class="movie">
 
@@ -232,8 +253,7 @@
                 Look Back
               </div>
 
-              <div class="stars"
-                   data-rating="5"></div>
+              <div class="stars" data-rating="5"></div>
 
             </div>
 
@@ -245,8 +265,7 @@
                 Chainsaw Man: Reze Arc
               </div>
 
-              <div class="stars"
-                   data-rating="5"></div>
+              <div class="stars" data-rating="5"></div>
 
             </div>
 
@@ -258,8 +277,7 @@
                 Exit 8
               </div>
 
-              <div class="stars"
-                   data-rating="4"></div>
+              <div class="stars" data-rating="4"></div>
 
             </div>
 
@@ -271,8 +289,7 @@
                 Caveat
               </div>
 
-              <div class="stars"
-                   data-rating="4"></div>
+              <div class="stars" data-rating="4"></div>
 
             </div>
 
@@ -280,7 +297,7 @@
 
         </div>
 
-      </section>
+      </div>
 
     </div>
 
@@ -289,4 +306,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>
