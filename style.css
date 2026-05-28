@@ -44,6 +44,7 @@ overflow: hidden;
 }
 
 .left,
+
 .center {
 
 display: flex;
@@ -55,12 +56,33 @@ gap: 14px;
 height: calc(100vh - 28px);
 }
 
-.left > .panel,
-.center > .panel {
+/* PANEL SUPERIOR */
 
-height: 50%;
+.center-top {
+
+flex: 1;
+
+min-height: 220px;
+}
+
+/* PANEL INFERIOR */
+
+.center-bottom {
+
+flex: 1;
 
 min-height: 0;
+
+transition:
+flex 0.45s ease,
+height 0.45s ease;
+}
+
+/* CUANDO EL TOP SE OCULTA */
+
+.center.expanded .center-bottom {
+
+flex: 999;
 }
 
 .right {
