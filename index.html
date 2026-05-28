@@ -2,307 +2,272 @@
 <html lang="es">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>Latwun</title>
 
-<title>Latwun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="vhs-overlay"></div>
+  <div class="vhs-overlay"></div>
 
-<button id="vhsToggle">
-CRT: ON
-</button>
+  <button id="crt-toggle">
+    CRT: ON
+  </button>
 
-<div class="layout">
+  <div class="layout">
 
-<div class="left">
+    <div class="left-column">
 
-<div class="panel social-panel">
+      <section class="panel social-panel">
 
-<div class="panel-title neon">
-Redes
-</div>
+        <div class="panel-header neon">
+          Redes
+        </div>
 
-<div class="social-icons">
+        <div class="social-grid">
 
-<a class="icon-link"
-href="https://www.instagram.com/latwun_lel/"
-target="_blank">
+          <a class="icon-link"
+             href="https://www.instagram.com/latwun_lel/"
+             target="_blank">
 
-<img src="img/ig.png">
+            <img src="img/ig.png">
+            <span>Instagram</span>
 
-<span>Instagram</span>
+          </a>
 
-</a>
+          <a class="icon-link"
+             href="https://www.youtube.com/@Latwun_2007"
+             target="_blank">
 
-<a class="icon-link"
-href="https://www.youtube.com/@Latwun_2007"
-target="_blank">
+            <img src="img/yt.png">
+            <span>YouTube</span>
 
-<img src="img/yt.png">
+          </a>
 
-<span>YouTube</span>
+          <a class="icon-link"
+             href="https://latwun.itch.io"
+             target="_blank">
 
-</a>
+            <img src="img/itch.png">
+            <span>Itch.io</span>
 
-<a class="icon-link"
-href="https://latwun.itch.io"
-target="_blank">
+          </a>
 
-<img src="img/itch.png">
+          <a class="icon-link"
+             href="#">
 
-<span>Itch.io</span>
+            <img src="img/tiktok.png">
+            <span>TikTok</span>
 
-</a>
+          </a>
 
-<a class="icon-link"
-href="#"
-target="_blank">
+        </div>
 
-<img src="img/tiktok.png">
+      </section>
 
-<span>TikTok</span>
+      <section class="panel music-panel">
 
-</a>
+        <div class="panel-header neon">
+          Music
+        </div>
 
-</div>
+        <div class="music-content">
 
-</div>
+          <p>RADIO SYSTEM</p>
+          <p>COMING SOON...</p>
 
-<div class="panel music-panel">
+        </div>
 
-<div class="panel-title neon">
-Music
-</div>
+      </section>
 
-<div class="music-box">
+    </div>
 
-<p>RADIO SYSTEM</p>
+    <div class="center-column">
 
-<p>COMING SOON...</p>
+      <section class="center-top" id="centerTop">
 
-</div>
+        <div class="logo-container">
 
-</div>
+          <img src="img/logo.png" class="logo">
 
-</div>
+        </div>
 
-<div class="center">
+        <p class="description">
+          Desarrollador indie de videojuegos, webs experimentales,
+          modelado 3D y diseño 2D inspirado en estética retro.
+        </p>
 
-<div class="panel center-top">
+      </section>
 
-<img src="img/logo.png"
-class="main-logo">
+      <section class="center-bottom" id="bottomPanel">
 
-<p class="description">
+        <div class="tabs">
 
-Desarrollador indie de videojuegos,
-webs experimentales, modelado 3D
-y diseño 2D inspirado en estética retro.
+          <button class="tab active">
+            Servicios
+          </button>
 
-</p>
+          <button class="tab">
+            Blog
+          </button>
 
-</div>
+          <button class="tab">
+            Projects
+          </button>
 
-<div class="panel center-bottom">
+        </div>
 
-<div class="tabs">
+        <div class="tab-content">
 
-<button class="tab-btn active"
-onclick="showTab('services', event)">
-Servicios
-</button>
+          <div class="service-card">
 
-<button class="tab-btn"
-onclick="showTab('blog', event)">
-Blog
-</button>
+            <h3 class="neon">
+              Desarrollo Web
+            </h3>
 
-<button class="tab-btn"
-onclick="showTab('projects', event)">
-Projects
-</button>
+            <p>
+              Páginas web modernas para negocios,
+              portfolios y proyectos creativos.
+            </p>
 
-</div>
+            <a
+              class="contact-btn"
+              target="_blank"
+              href="https://instagram.com/direct/inbox/">
 
-<div class="tab-content">
+              Contactar
 
-<div class="tab-page active"
-id="services">
+            </a>
 
-<div class="service-card">
+          </div>
 
-<h3>Desarrollo Web</h3>
+          <div class="service-card">
 
-<p>
-Páginas web modernas para negocios,
-portfolios y proyectos creativos.
-</p>
+            <h3 class="neon">
+              Videojuegos
+            </h3>
 
-<a class="contact-btn"
-href="https://ig.me/m/latwun_lel"
-target="_blank">
+            <p>
+              Desarrollo de videojuegos indie
+              en Unity con estética única.
+            </p>
 
-Contactar
+            <a
+              class="contact-btn"
+              target="_blank"
+              href="https://instagram.com/direct/inbox/">
 
-</a>
+              Contactar
 
-</div>
+            </a>
 
-<div class="service-card">
+          </div>
 
-<h3>Videojuegos</h3>
+          <div class="service-card">
 
-<p>
-Desarrollo de videojuegos indie
-en Unity con estética única.
-</p>
+            <h3 class="neon">
+              Arte 3D y 2D
+            </h3>
 
-<a class="contact-btn"
-href="https://ig.me/m/latwun_lel"
-target="_blank">
+            <p>
+              Modelado 3D, pixel art,
+              logos y diseño visual retro.
+            </p>
 
-Contactar
+            <a
+              class="contact-btn"
+              target="_blank"
+              href="https://instagram.com/direct/inbox/">
 
-</a>
+              Contactar
 
-</div>
+            </a>
 
-<div class="service-card">
+          </div>
 
-<h3>Arte 3D y 2D</h3>
+        </div>
 
-<p>
-Modelado 3D, pixel art,
-logos y diseño visual retro.
-</p>
+      </section>
 
-<a class="contact-btn"
-href="https://ig.me/m/latwun_lel"
-target="_blank">
+    </div>
 
-Contactar
+    <div class="right-column">
 
-</a>
+      <div class="panel movies-panel">
 
-</div>
+        <div class="panel-header neon">
+          Mis Películas Favoritas
+        </div>
 
-</div>
+        <div class="movie-container" id="movieContainer">
 
-<div class="tab-page"
-id="blog">
+          <div class="movie-track" id="track">
 
-<div class="blog-box">
+            <div class="movie">
 
-<p>DEVLOGS</p>
-<p>CINE</p>
-<p>ARTE</p>
-<p>RETRO TECH</p>
+              <img src="img/1.jpg">
 
-</div>
+              <div class="movie-title">
+                Look Back
+              </div>
 
-</div>
+              <div class="stars" data-rating="5"></div>
 
-<div class="tab-page"
-id="projects">
+            </div>
 
-<div class="blog-box">
+            <div class="movie">
 
-<p>KRUSTRAN</p>
-<p>LATWUN WEB</p>
-<p>FUTURE GAMES...</p>
+              <img src="img/2.jpg">
 
-</div>
+              <div class="movie-title">
+                Chainsaw Man: Reze Arc
+              </div>
 
-</div>
+              <div class="stars" data-rating="5"></div>
 
-</div>
+            </div>
 
-</div>
+            <div class="movie">
 
-</div>
+              <img src="img/3.jpg">
 
-<div class="right">
+              <div class="movie-title">
+                Exit 8
+              </div>
 
-<div class="panel metacritic-panel">
+              <div class="stars" data-rating="4"></div>
 
-<div class="meta-header neon">
-Mis Películas Favoritas
-</div>
+            </div>
 
-<div class="movie-track"
-id="track">
+            <div class="movie">
 
-<div class="movie">
+              <img src="img/4.jpg">
 
-<img src="img/1.jpg">
+              <div class="movie-title">
+                Caveat
+              </div>
 
-<div class="movie-title">
-Look Back
-</div>
+              <div class="stars" data-rating="4"></div>
 
-<div class="stars"
-data-rating="5"></div>
+            </div>
 
-</div>
+          </div>
 
-<div class="movie">
+        </div>
 
-<img src="img/2.jpg">
+      </div>
 
-<div class="movie-title">
-Chainsaw Man: Reze Arc
-</div>
+    </div>
 
-<div class="stars"
-data-rating="5"></div>
+  </div>
 
-</div>
-
-<div class="movie">
-
-<img src="img/3.jpg">
-
-<div class="movie-title">
-Exit 8
-</div>
-
-<div class="stars"
-data-rating="4"></div>
-
-</div>
-
-<div class="movie">
-
-<img src="img/4.jpg">
-
-<div class="movie-title">
-Caveat
-</div>
-
-<div class="stars"
-data-rating="4"></div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
-
 </html>
