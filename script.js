@@ -102,5 +102,3 @@ center.classList.remove("expanded");
 });
 
 });
-
-});
