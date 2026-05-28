@@ -9,6 +9,7 @@ document.querySelectorAll(".stars").forEach(container => {
     star.src = "img/star.jpg";
 
     if (i <= rating) {
+
       star.classList.add("active");
     }
 
@@ -17,43 +18,51 @@ document.querySelectorAll(".stars").forEach(container => {
 });
 
 const track = document.getElementById("track");
+
 const container = document.getElementById("movieContainer");
 
 track.innerHTML += track.innerHTML;
 
-let autoScroll = setInterval(scrollMovies, 16);
+function autoScrollMovies() {
 
-function scrollMovies() {
-
-  container.scrollTop += 0.5;
+  container.scrollTop += 0.45;
 
   if (container.scrollTop >= track.scrollHeight / 2) {
+
     container.scrollTop = 0;
   }
 }
 
+let autoScroll = setInterval(autoScrollMovies, 16);
+
 container.addEventListener("mouseenter", () => {
+
   clearInterval(autoScroll);
 });
 
 container.addEventListener("mouseleave", () => {
 
-  autoScroll = setInterval(scrollMovies, 16);
+  autoScroll = setInterval(autoScrollMovies, 16);
 });
 
 const bottomPanel = document.getElementById("bottomPanel");
+
 const centerColumn = document.querySelector(".center-column");
 
 bottomPanel.addEventListener("scroll", () => {
 
   if (bottomPanel.scrollTop > 40) {
+
     centerColumn.classList.add("scrolled");
+
   } else {
+
     centerColumn.classList.remove("scrolled");
   }
 });
 
 const crtButton = document.getElementById("crt-toggle");
+
 const overlay = document.querySelector(".vhs-overlay");
 
 let crtEnabled = true;
@@ -65,8 +74,6 @@ crtButton.addEventListener("click", () => {
   if (crtEnabled) {
 
     overlay.style.display = "block";
-
-    document.body.style.setProperty("--crt-opacity", "1");
 
     crtButton.innerText = "CRT: ON";
 
