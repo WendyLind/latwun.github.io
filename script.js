@@ -75,6 +75,8 @@ document.getElementById(tabId)
 event.target.classList.add("active");
 }
 
+const center = document.querySelector(".center");
+
 const topPanel = document.querySelector(".center-top");
 
 const tabPages = document.querySelectorAll(".tab-page");
@@ -87,11 +89,17 @@ if (page.scrollTop > 30) {
 
 topPanel.classList.add("hidden");
 
+center.classList.add("expanded");
+
 } else {
 
 topPanel.classList.remove("hidden");
 
+center.classList.remove("expanded");
+
 }
+
+});
 
 });
 
