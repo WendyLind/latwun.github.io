@@ -1,368 +1,298 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <title>Latwun</title>
+<title>Latwun</title>
 
-  <link rel="icon"
-        type="image/png"
-        href="img/favicon.png">
+<link rel="icon"
+      type="image/png"
+      href="img/favicon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet">
 
-  <link rel="stylesheet"
-        href="style.css">
+<link rel="stylesheet"
+      href="style.css">
 
 </head>
 
 <body>
 
-  <div class="vhs-overlay"></div>
+<div class="layout">
 
-  <div class="layout">
+  <aside class="left-column">
 
-    <aside class="left-column">
+    <div class="panel social-panel">
 
-      <div class="panel social-panel">
+      <div class="panel-header">
 
-        <div class="panel-header">
+        <h2 class="panel-title">
+          Redes
+        </h2>
 
-          <h2 class="panel-title">
-            Redes
-          </h2>
+      </div>
 
-        </div>
+      <div class="social-grid">
 
-        <div class="social-grid">
+        <a class="icon-link"
+           href="https://www.instagram.com/latwun_lel/"
+           target="_blank">
 
-          <a class="icon-link"
-             href="https://www.instagram.com/latwun_lel/"
-             target="_blank">
+          <img src="img/ig.png">
 
-            <img src="img/ig.png">
+          <span>Instagram</span>
 
-            <span>Instagram</span>
+        </a>
 
-          </a>
+        <a class="icon-link"
+           href="https://www.youtube.com/@Latwun_2007"
+           target="_blank">
 
-          <a class="icon-link"
-             href="https://www.youtube.com/@Latwun_2007"
-             target="_blank">
+          <img src="img/yt.png">
 
-            <img src="img/yt.png">
+          <span>YouTube</span>
 
-            <span>YouTube</span>
+        </a>
 
-          </a>
+        <a class="icon-link"
+           href="https://latwun.itch.io"
+           target="_blank">
 
-          <a class="icon-link"
-             href="https://latwun.itch.io"
-             target="_blank">
+          <img src="img/itch.png">
 
-            <img src="img/itch.png">
+          <span>Itch.io</span>
 
-            <span>Itch.io</span>
+        </a>
 
-          </a>
+        <a class="icon-link"
+           href="#">
 
-          <a class="icon-link"
-             href="#">
+          <img src="img/tiktok.png">
 
-            <img src="img/tiktok.png">
+          <span>TikTok</span>
 
-            <span>TikTok</span>
+        </a>
 
-          </a>
+      </div>
+
+    </div>
+
+    <div class="panel system-panel">
+
+      <div class="panel-header">
+
+        <h2 class="panel-title">
+          System
+        </h2>
+
+      </div>
+
+      <div class="system-content">
+
+        <div class="system-box">
+
+          <p class="system-text">
+            RADIO MODULE
+          </p>
+
+          <p class="system-sub">
+            COMING SOON
+          </p>
 
         </div>
 
       </div>
 
-      <div class="panel system-panel">
+    </div>
 
-        <div class="panel-header">
+  </aside>
 
-          <h2 class="panel-title">
-            System
-          </h2>
+  <main class="center-column">
 
-        </div>
+    <div class="tabs">
 
-        <div class="system-content">
+      <button class="tab active"
+              data-tab="home">
 
-          <div class="system-box">
+        <img src="img/home.png">
+        <span>Home</span>
 
-            <p class="system-text">
-              RADIO MODULE
-            </p>
+      </button>
 
-            <p class="system-sub">
-              COMING SOON
-            </p>
+      <button class="tab"
+              data-tab="services">
 
-          </div>
+        <img src="img/services.png">
+        <span>Servicios</span>
 
-        </div>
+      </button>
+
+      <button class="tab"
+              data-tab="blog">
+
+        <img src="img/blog.png">
+        <span>Blog</span>
+
+      </button>
+
+      <button class="tab"
+              data-tab="games">
+
+        <img src="img/games.png">
+        <span>Juegos</span>
+
+      </button>
+
+    </div>
+
+    <section
+      class="tab-content active"
+      id="home">
+
+      <img src="img/logo.png"
+           class="main-logo">
+
+      <p class="description">
+
+        Desarrollador indie de videojuegos,
+        páginas web experimentales,
+        modelado 3D y diseño 2D
+        inspirado en estética retro.
+
+      </p>
+
+      <div class="news-box">
+
+        <h3>Novedades</h3>
+
+        <ul>
+
+          <li>Actualizando Latwun 2.0</li>
+
+          <li>Trabajando en La Tragedia de la Casa Tristam</li>
+
+          <li>Nuevos proyectos próximamente</li>
+
+        </ul>
 
       </div>
 
-    </aside>
+    </section>
 
-    <main class="center-column">
+    <section
+      class="tab-content"
+      id="services">
 
-      <section class="top-section" id="topSection">
+      <div class="service-card">
 
-        <div class="logo-wrapper">
+        <h3>Desarrollo Web</h3>
 
-          <img src="img/logo.png"
-               class="main-logo">
-
-        </div>
-
-        <p class="description">
-          Desarrollador indie de videojuegos,
-          páginas web experimentales,
-          modelado 3D y diseño 2D
-          inspirado en estética retro.
+        <p>
+          Páginas web modernas para
+          artistas, negocios y proyectos.
         </p>
 
-      </section>
+        <a class="contact-btn"
+           href="https://instagram.com/direct/inbox/"
+           target="_blank">
 
-      <section class="bottom-section"
-               id="bottomSection">
+          Contactar
 
-        <div class="tabs">
-
-          <button class="tab active"
-                  data-tab="services">
-
-            Servicios
-
-          </button>
-
-          <button class="tab"
-                  data-tab="blog">
-
-            Blog
-
-          </button>
-
-          <button class="tab"
-                  data-tab="memory">
-
-            Memory Card
-
-          </button>
-
-        </div>
-
-        <div class="tab-content active"
-             id="services">
-
-          <div class="service-card">
-
-            <h3>
-              Desarrollo Web
-            </h3>
-
-            <p>
-              Diseño de páginas web modernas
-              para artistas, negocios y proyectos.
-            </p>
-
-            <a href="https://instagram.com/direct/inbox/"
-               target="_blank"
-               class="contact-btn">
-
-              Contactar
-
-            </a>
-
-          </div>
-
-          <div class="service-card">
-
-            <h3>
-              Desarrollo de Videojuegos
-            </h3>
-
-            <p>
-              Videojuegos indie con identidad
-              visual experimental y retro.
-            </p>
-
-            <a href="https://instagram.com/direct/inbox/"
-               target="_blank"
-               class="contact-btn">
-
-              Contactar
-
-            </a>
-
-          </div>
-
-          <div class="service-card">
-
-            <h3>
-              Arte 3D y Diseño
-            </h3>
-
-            <p>
-              Modelado low poly,
-              pixel art y diseño visual.
-            </p>
-
-            <a href="https://instagram.com/direct/inbox/"
-               target="_blank"
-               class="contact-btn">
-
-              Contactar
-
-            </a>
-
-          </div>
-
-        </div>
-
-        <div class="tab-content"
-             id="blog">
-
-          <div class="blog-post">
-
-            <h4>
-              DEVLOG_001
-            </h4>
-
-            <p>
-              Conceptos visuales,
-              diseño de gameplay
-              y experimentos digitales.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="tab-content"
-             id="memory">
-
-          <div class="memory-box">
-
-            <p>
-              Archivo experimental
-              de ideas, prototipos,
-              renders y proyectos.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </main>
-
-    <aside class="right-column">
-
-      <div class="panel movies-panel">
-
-        <div class="panel-header">
-
-          <h2 class="panel-title">
-            Mis Películas Favoritas
-          </h2>
-
-        </div>
-
-        <div class="movie-scroll"
-             id="movieScroll">
-
-          <div class="movie-track"
-               id="track">
-
-            <div class="movie">
-
-              <img src="img/1.jpg">
-
-              <div class="movie-title">
-                Look Back
-              </div>
-
-              <div class="stars"
-                   data-rating="5"></div>
-
-            </div>
-
-            <div class="movie">
-
-              <img src="img/2.jpg">
-
-              <div class="movie-title">
-                Chainsaw Man: Reze Arc
-              </div>
-
-              <div class="stars"
-                   data-rating="5"></div>
-
-            </div>
-
-            <div class="movie">
-
-              <img src="img/3.jpg">
-
-              <div class="movie-title">
-                Exit 8
-              </div>
-
-              <div class="stars"
-                   data-rating="4"></div>
-
-            </div>
-
-            <div class="movie">
-
-              <img src="img/4.jpg">
-
-              <div class="movie-title">
-                Caveat
-              </div>
-
-              <div class="stars"
-                   data-rating="4"></div>
-
-            </div>
-
-            <div class="movie">
-
-              <img src="img/placeholder.png">
-
-              <div class="movie-title">
-                Próximamente
-              </div>
-
-              <div class="stars"
-                   data-rating="0"></div>
-
-            </div>
-
-          </div>
-
-        </div>
+        </a>
 
       </div>
 
-    </aside>
+      <div class="service-card">
 
-  </div>
+        <h3>Desarrollo de Videojuegos</h3>
 
-  <script src="script.js"></script>
+        <p>
+          Juegos indie con identidad visual.
+        </p>
+
+        <a class="contact-btn"
+           href="https://instagram.com/direct/inbox/"
+           target="_blank">
+
+          Contactar
+
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <h3>Modelado 3D</h3>
+
+        <p>
+          Assets low poly y props para videojuegos.
+        </p>
+
+        <a class="contact-btn"
+           href="https://instagram.com/direct/inbox/"
+           target="_blank">
+
+          Contactar
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <section
+      class="tab-content"
+      id="blog">
+
+      <div class="blog-post">
+
+        <h4>DEVLOG_001</h4>
+
+        <p>
+          Actualización de Latwun 2.0.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section
+      class="tab-content"
+      id="games">
+
+      <div class="memory-box">
+
+        <h4>La Tragedia de la Casa Tristam</h4>
+
+        <p>
+          Estado: Desarrollo
+        </p>
+
+      </div>
+
+      <div class="memory-box">
+
+        <h4>Proyecto PSP</h4>
+
+        <p>
+          Estado: Concepto
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
