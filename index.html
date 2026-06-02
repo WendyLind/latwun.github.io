@@ -4,9 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Latwun</title>
 
@@ -14,7 +12,7 @@
       type="image/png"
       href="img/favicon.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500&display=swap"
       rel="stylesheet">
 
 <link rel="stylesheet"
@@ -24,275 +22,87 @@
 
 <body>
 
-<div class="layout">
+<div class="background-glow"></div>
 
-  <aside class="left-column">
+<main class="lobby">
 
-    <div class="panel social-panel">
+    <div class="logo-container">
 
-      <div class="panel-header">
-
-        <h2 class="panel-title">
-          Redes
-        </h2>
-
-      </div>
-
-      <div class="social-grid">
-
-        <a class="icon-link"
-           href="https://www.instagram.com/latwun_lel/"
-           target="_blank">
-
-          <img src="img/ig.png">
-
-          <span>Instagram</span>
-
-        </a>
-
-        <a class="icon-link"
-           href="https://www.youtube.com/@Latwun_2007"
-           target="_blank">
-
-          <img src="img/yt.png">
-
-          <span>YouTube</span>
-
-        </a>
-
-        <a class="icon-link"
-           href="https://latwun.itch.io"
-           target="_blank">
-
-          <img src="img/itch.png">
-
-          <span>Itch.io</span>
-
-        </a>
-
-        <a class="icon-link"
-           href="#">
-
-          <img src="img/tiktok.png">
-
-          <span>TikTok</span>
-
-        </a>
-
-      </div>
+        <img src="img/logo.png"
+             class="main-logo"
+             alt="Latwun">
 
     </div>
 
-    <div class="panel system-panel">
-
-      <div class="panel-header">
-
-        <h2 class="panel-title">
-          System
-        </h2>
-
-      </div>
-
-      <div class="system-content">
-
-        <div class="system-box">
-
-          <p class="system-text">
-            RADIO MODULE
-          </p>
-
-          <p class="system-sub">
-            COMING SOON
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </aside>
-
-  <main class="center-column">
-
-    <div class="tabs">
-
-      <button class="tab active"
-              data-tab="home">
-
-        <img src="img/home.png">
-        <span>Home</span>
-
-      </button>
-
-      <button class="tab"
-              data-tab="services">
-
-        <img src="img/services.png">
-        <span>Servicios</span>
-
-      </button>
-
-      <button class="tab"
-              data-tab="blog">
-
-        <img src="img/blog.png">
-        <span>Blog</span>
-
-      </button>
-
-      <button class="tab"
-              data-tab="games">
-
-        <img src="img/games.png">
-        <span>Juegos</span>
-
-      </button>
-
-    </div>
-
-    <section
-      class="tab-content active"
-      id="home">
-
-      <img src="img/logo.png"
-           class="main-logo">
-
-      <p class="description">
+    <p class="description">
 
         Desarrollador indie de videojuegos,
         páginas web experimentales,
         modelado 3D y diseño 2D
         inspirado en estética retro.
 
-      </p>
+    </p>
 
-      <div class="news-box">
+    <section class="news-box">
 
-        <h3>Novedades</h3>
+        <h2>NOVEDADES</h2>
 
         <ul>
 
-          <li>Actualizando Latwun 2.0</li>
+            <li>Latwun 2.0 en desarrollo.</li>
 
-          <li>Trabajando en La Tragedia de la Casa Tristam</li>
+            <li>Trabajando en La Tragedia de la Casa Tristam.</li>
 
-          <li>Nuevos proyectos próximamente</li>
+            <li>Nuevos proyectos próximamente.</li>
 
         </ul>
 
-      </div>
-
     </section>
 
-    <section
-      class="tab-content"
-      id="services">
+    <nav class="main-menu">
 
-      <div class="service-card">
+        <a href="services.html"
+           class="menu-card">
 
-        <h3>Desarrollo Web</h3>
+            <img src="img/home_services.png">
 
-        <p>
-          Páginas web modernas para
-          artistas, negocios y proyectos.
-        </p>
-
-        <a class="contact-btn"
-           href="https://instagram.com/direct/inbox/"
-           target="_blank">
-
-          Contactar
+            <span>SERVICIOS</span>
 
         </a>
 
-      </div>
+        <a href="blog.html"
+           class="menu-card">
 
-      <div class="service-card">
+            <img src="img/home_blog.png">
 
-        <h3>Desarrollo de Videojuegos</h3>
-
-        <p>
-          Juegos indie con identidad visual.
-        </p>
-
-        <a class="contact-btn"
-           href="https://instagram.com/direct/inbox/"
-           target="_blank">
-
-          Contactar
+            <span>BLOG</span>
 
         </a>
 
-      </div>
+        <a href="games.html"
+           class="menu-card">
 
-      <div class="service-card">
+            <img src="img/home_games.png">
 
-        <h3>Modelado 3D</h3>
-
-        <p>
-          Assets low poly y props para videojuegos.
-        </p>
-
-        <a class="contact-btn"
-           href="https://instagram.com/direct/inbox/"
-           target="_blank">
-
-          Contactar
+            <span>JUEGOS</span>
 
         </a>
 
-      </div>
+        <a href="socials.html"
+           class="menu-card">
 
-    </section>
+            <img src="img/home_socials.png">
 
-    <section
-      class="tab-content"
-      id="blog">
+            <span>REDES</span>
 
-      <div class="blog-post">
+        </a>
 
-        <h4>DEVLOG_001</h4>
+    </nav>
 
-        <p>
-          Actualización de Latwun 2.0.
-        </p>
-
-      </div>
-
-    </section>
-
-    <section
-      class="tab-content"
-      id="games">
-
-      <div class="memory-box">
-
-        <h4>La Tragedia de la Casa Tristam</h4>
-
-        <p>
-          Estado: Desarrollo
-        </p>
-
-      </div>
-
-      <div class="memory-box">
-
-        <h4>Proyecto PSP</h4>
-
-        <p>
-          Estado: Concepto
-        </p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-</div>
+</main>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
