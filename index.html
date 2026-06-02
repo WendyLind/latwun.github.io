@@ -5,17 +5,23 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Latwun</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="style.css">
 
 </head>
 
@@ -24,6 +30,10 @@
   <div class="vhs-overlay"></div>
 
   <div class="layout">
+
+    <!-- ========================= -->
+    <!-- LEFT COLUMN -->
+    <!-- ========================= -->
 
     <aside class="left-column">
 
@@ -43,7 +53,8 @@
              href="https://www.instagram.com/latwun_lel/"
              target="_blank">
 
-            <img src="img/ig.png">
+            <img src="img/ig.png"
+                 alt="Instagram">
 
             <span>Instagram</span>
 
@@ -53,7 +64,8 @@
              href="https://www.youtube.com/@Latwun_2007"
              target="_blank">
 
-            <img src="img/yt.png">
+            <img src="img/yt.png"
+                 alt="YouTube">
 
             <span>YouTube</span>
 
@@ -63,7 +75,8 @@
              href="https://latwun.itch.io"
              target="_blank">
 
-            <img src="img/itch.png">
+            <img src="img/itch.png"
+                 alt="Itch">
 
             <span>Itch.io</span>
 
@@ -72,7 +85,8 @@
           <a class="icon-link"
              href="#">
 
-            <img src="img/tiktok.png">
+            <img src="img/tiktok.png"
+                 alt="TikTok">
 
             <span>TikTok</span>
 
@@ -111,7 +125,8 @@
 
             </button>
 
-            <audio id="bgMusic" loop>
+            <audio id="bgMusic"
+                   loop>
 
               <source src="Music/Rola1.mp3"
                       type="audio/mpeg">
@@ -126,15 +141,19 @@
 
     </aside>
 
+    <!-- ========================= -->
+    <!-- CENTER COLUMN -->
+    <!-- ========================= -->
+
     <main class="center-column">
 
-      <section class="top-section"
-               id="topSection">
+      <section class="top-section">
 
         <div class="logo-wrapper">
 
           <img src="img/logo.png"
-               class="main-logo">
+               class="main-logo"
+               alt="Latwun">
 
         </div>
 
@@ -149,144 +168,30 @@
 
       </section>
 
-      <section class="bottom-section"
-               id="bottomSection">
+      <section class="bottom-section">
 
-        <div class="tabs">
+        <div class="menu-grid">
 
-          <button class="tab active"
-                  data-tab="services">
+          <a href="services.html"
+             class="menu-button">
 
-            Services
+            SERVICES
 
-          </button>
+          </a>
 
-          <button class="tab"
-                  data-tab="blog">
+          <a href="blog.html"
+             class="menu-button">
 
-            Blog
+            BLOG
 
-          </button>
+          </a>
 
-          <button class="tab"
-                  data-tab="games">
+          <a href="games.html"
+             class="menu-button">
 
-            Games
+            GAMES
 
-          </button>
-
-        </div>
-
-        <div class="tab-content active"
-             id="services">
-
-          <div class="service-card">
-
-            <h3>
-              Desarrollo Web
-            </h3>
-
-            <p>
-              Diseño de páginas web modernas
-              para artistas, negocios y proyectos.
-            </p>
-
-          </div>
-
-          <div class="service-card">
-
-            <h3>
-              Desarrollo de Videojuegos
-            </h3>
-
-            <p>
-              Videojuegos indie con identidad
-              visual experimental y retro.
-            </p>
-
-          </div>
-
-          <div class="service-card">
-
-            <h3>
-              Arte 3D y Diseño
-            </h3>
-
-            <p>
-              Modelado low poly,
-              pixel art y diseño visual.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="tab-content"
-             id="blog">
-
-          <div class="blog-post">
-
-            <h4>
-              DEVLOG_001
-            </h4>
-
-            <p>
-              Próximamente compartiré avances,
-              procesos creativos y desarrollo
-              de proyectos de Latwun.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="tab-content"
-             id="games">
-
-          <div class="game-card">
-
-            <h3>
-              Casa Tristam
-            </h3>
-
-            <a href="games/casatristam.html"
-               class="contact-btn">
-
-              ENTER
-
-            </a>
-
-          </div>
-
-          <div class="game-card">
-
-            <h3>
-              Prototype 01
-            </h3>
-
-            <a href="games/prototype01.html"
-               class="contact-btn">
-
-              ENTER
-
-            </a>
-
-          </div>
-
-          <div class="game-card">
-
-            <h3>
-              Prototype 02
-            </h3>
-
-            <a href="games/prototype02.html"
-               class="contact-btn">
-
-              ENTER
-
-            </a>
-
-          </div>
+          </a>
 
         </div>
 
@@ -294,9 +199,13 @@
 
     </main>
 
+    <!-- ========================= -->
+    <!-- RIGHT COLUMN -->
+    <!-- ========================= -->
+
     <aside class="right-column">
 
-      <div class="panel movies-panel">
+      <div class="panel projects-panel">
 
         <div class="panel-header">
 
@@ -306,48 +215,63 @@
 
         </div>
 
-        <div class="movie-scroll"
-             id="movieScroll">
+        <div class="project-scroll"
+             id="projectScroll">
 
-          <div class="movie-track"
+          <div class="project-track"
                id="track">
 
-            <div class="movie">
+            <div class="project">
 
-              <img src="img/project1.jpg">
+              <img src="img/project1.jpg"
+                   alt="Casa Tristam">
 
-              <div class="movie-title">
+              <div class="project-title">
                 Casa Tristam
               </div>
 
             </div>
 
-            <div class="movie">
+            <div class="project">
 
-              <img src="img/project2.jpg">
+              <img src="img/project2.jpg"
+                   alt="Latwun Website">
 
-              <div class="movie-title">
+              <div class="project-title">
                 Latwun Website
               </div>
 
             </div>
 
-            <div class="movie">
+            <div class="project">
 
-              <img src="img/project3.jpg">
+              <img src="img/project3.jpg"
+                   alt="3D Portfolio">
 
-              <div class="movie-title">
+              <div class="project-title">
                 3D Portfolio
               </div>
 
             </div>
 
-            <div class="movie">
+            <div class="project">
 
-              <img src="img/project4.jpg">
+              <img src="img/project4.jpg"
+                   alt="Prototype">
 
-              <div class="movie-title">
+              <div class="project-title">
                 Prototype
+              </div>
+
+            </div>
+
+            <div class="project">
+
+              <img src="img/project5.jpg"
+                   alt="Future Project">
+
+              <div class="project-title">
+                Coming Soon
               </div>
 
             </div>
