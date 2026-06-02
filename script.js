@@ -1,93 +1,82 @@
-document.querySelectorAll(".stars").forEach(container => {
-
-  const rating =
-    parseInt(container.dataset.rating);
-
-  for(let i = 1; i <= 5; i++){
-
-    const star =
-      document.createElement("img");
-
-    star.src = "img/star.jpg";
-
-    if(i <= rating){
-      star.classList.add("active");
-    }
-
-    container.appendChild(star);
-  }
-
-});
+/* ========================= */
+/* PROJECT SCROLL */
+/* ========================= */
 
 const track =
   document.getElementById("track");
 
-const movieScroll =
-  document.getElementById("movieScroll");
+const projectScroll =
+  document.getElementById("projectScroll");
 
-track.innerHTML += track.innerHTML;
+if(track && projectScroll){
 
-setInterval(() => {
+  track.innerHTML += track.innerHTML;
 
-  if(!movieScroll.matches(":hover")){
+  setInterval(() => {
 
-    movieScroll.scrollTop += 0.4;
+    if(!projectScroll.matches(":hover")){
 
-    if(
-      movieScroll.scrollTop >=
-      track.scrollHeight / 2
-    ){
-      movieScroll.scrollTop = 0;
+      projectScroll.scrollTop += 0.4;
+
+      if(
+        projectScroll.scrollTop >=
+        track.scrollHeight / 2
+      ){
+
+        projectScroll.scrollTop = 0;
+
+      }
+
     }
 
-  }
+  },16);
 
-},16);
+}
 
-const tabs =
-  document.querySelectorAll(".tab");
+/* ========================= */
+/* MUSIC PLAYER */
+/* ========================= */
 
-const contents =
-  document.querySelectorAll(".tab-content");
+const bgMusic =
+  document.getElementById("bgMusic");
 
-tabs.forEach(tab => {
+const musicBtn =
+  document.getElementById("musicBtn");
 
-  tab.addEventListener("click", () => {
+if(bgMusic){
 
-    tabs.forEach(t =>
-      t.classList.remove("active")
+  bgMusic.volume = 0.35;
+
+  bgMusic.play().catch(() => {
+
+    console.log(
+      "Autoplay bloqueado por el navegador."
     );
-
-    contents.forEach(c =>
-      c.classList.remove("active")
-    );
-
-    tab.classList.add("active");
-
-    document
-      .getElementById(tab.dataset.tab)
-      .classList.add("active");
 
   });
 
-});
+}
 
-const topSection =
-  document.getElementById("topSection");
+if(musicBtn && bgMusic){
 
-const bottomSection =
-  document.getElementById("bottomSection");
+  musicBtn.addEventListener("click", () => {
 
-bottomSection.addEventListener("scroll", () => {
+    if(bgMusic.paused){
 
-  if(bottomSection.scrollTop > 30){
+      bgMusic.play();
 
-    topSection.classList.add("collapsed");
+      musicBtn.textContent =
+        "⏸ PAUSE";
 
-  }else{
+    }else{
 
-    topSection.classList.remove("collapsed");
+      bgMusic.pause();
 
-  }
+      musicBtn.textContent =
+        "▶ PLAY";
 
-});
+    }
+
+  });
+
+}
