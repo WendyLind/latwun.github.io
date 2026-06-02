@@ -1,4 +1,3 @@
-```javascript
 document.querySelectorAll(".stars").forEach(container => {
 
     const rating =
@@ -12,7 +11,9 @@ document.querySelectorAll(".stars").forEach(container => {
         star.src = "img/star.jpg";
 
         if(i <= rating){
+
             star.classList.add("active");
+
         }
 
         container.appendChild(star);
@@ -38,10 +39,11 @@ setInterval(() => {
             movieScroll.scrollTop >=
             track.scrollHeight / 2
         ){
+
             movieScroll.scrollTop = 0;
+
         }
 
     }
 
 },16);
-```
