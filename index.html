@@ -1,293 +1,480 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <link rel="icon" type="image/png" href="img/favicon.png">
-
 <head>
-  <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-  <title>Latwun</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+    <title>Latwun</title>
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+    <link rel="icon"
+          type="image/png"
+          href="img/favicon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-        rel="stylesheet">
+    <!-- Fuentes -->
 
-  <link rel="stylesheet"
-        href="style.css">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
+
 <body>
 
-  <div class="vhs-overlay"></div>
 
-  <div class="layout">
+    <!-- =========================================
+         BARRA SUPERIOR
+    ========================================== -->
 
-    <!-- ========================= -->
-    <!-- LEFT COLUMN -->
-    <!-- ========================= -->
+    <header class="header">
 
-    <aside class="left-column">
+        <a href="#inicio"
+           class="header-logo">
 
-      <div class="panel social-panel">
+            LATWUN
 
-        <div class="panel-header">
+        </a>
 
-          <h2 class="panel-title">
-            Redes
-          </h2>
 
-        </div>
+        <nav class="social-nav">
 
-        <div class="social-grid">
 
-          <a class="icon-link"
-             href="https://www.instagram.com/latwun_lel/"
-             target="_blank">
+            <!-- INSTAGRAM -->
 
-            <img src="img/ig.png"
-                 alt="Instagram">
+            <a href="https://www.instagram.com/latwun_lel/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram">
 
-            <span>Instagram</span>
+                <img src="img/ig.png"
+                     alt="Instagram">
 
-          </a>
+            </a>
 
-          <a class="icon-link"
-             href="https://www.youtube.com/@Latwun_2007"
-             target="_blank">
 
-            <img src="img/yt.png"
-                 alt="YouTube">
+            <!-- YOUTUBE -->
 
-            <span>YouTube</span>
+            <a href="https://www.youtube.com/@Latwun_2007"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="YouTube">
 
-          </a>
+                <img src="img/yt.png"
+                     alt="YouTube">
 
-          <a class="icon-link"
-             href="https://latwun.itch.io"
-             target="_blank">
+            </a>
 
-            <img src="img/itch.png"
-                 alt="Itch">
 
-            <span>Itch.io</span>
+            <!-- ITCH.IO -->
 
-          </a>
+            <a href="https://latwun.itch.io"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Itch.io">
 
-          <a class="icon-link"
-             href="#">
+                <img src="img/itch.png"
+                     alt="Itch.io">
 
-            <img src="img/tiktok.png"
-                 alt="TikTok">
+            </a>
 
-            <span>TikTok</span>
 
-          </a>
+            <!-- TIKTOK -->
 
-        </div>
+            <a href="#"
+               aria-label="TikTok">
 
-      </div>
+                <img src="img/tiktok.png"
+                     alt="TikTok">
 
-      <div class="panel system-panel">
+            </a>
 
-        <div class="panel-header">
 
-          <h2 class="panel-title">
-            Now Playing
-          </h2>
+        </nav>
 
-        </div>
+    </header>
 
-        <div class="system-content">
 
-          <div class="music-player">
 
-            <p class="music-title">
-              LATWUN FM
-            </p>
+    <main>
 
-            <p class="music-track">
-              Rola1.mp3
-            </p>
 
-            <button id="musicBtn"
-                    class="music-btn">
+        <!-- =========================================
+             HERO
+        ========================================== -->
 
-              ⏸ PAUSE
+        <section id="inicio"
+                 class="hero">
 
-            </button>
 
-            <audio id="bgMusic"
-                   loop>
+            <div class="hero-content">
 
-              <source src="Music/Rola1.mp3"
-                      type="audio/mpeg">
 
-            </audio>
+                <img src="img/logo.png"
+                     class="main-logo"
+                     alt="Latwun">
 
-          </div>
 
-        </div>
+                <p class="hero-label">
+                    CREADOR DIGITAL
+                </p>
 
-      </div>
 
-    </aside>
+                <p class="hero-description">
 
-    <!-- ========================= -->
-    <!-- CENTER COLUMN -->
-    <!-- ========================= -->
+                    Creo videojuegos, mundos digitales
+                    y experiencias visuales inspiradas
+                    en el horror, lo retro y lo experimental.
 
-    <main class="center-column">
+                </p>
 
-      <section class="top-section">
 
-        <div class="logo-wrapper">
+                <div class="hero-menu">
 
-          <img src="img/logo.png"
-               class="main-logo"
-               alt="Latwun">
 
-        </div>
+                    <a href="services.html"
+                       class="hero-link">
 
-        <p class="description">
+                        SERVICIOS
 
-          Creo videojuegos, mundos digitales
-          y experiencias web con inspiración
-          retro, horror psicológico
-          y estética experimental.
+                    </a>
 
-        </p>
 
-      </section>
+                    <a href="games.html"
+                       class="hero-link">
 
-      <section class="bottom-section">
+                        JUEGOS
 
-        <div class="menu-grid">
+                    </a>
 
-          <a href="services.html"
-             class="menu-button">
 
-            SERVICES
+                    <a href="blog.html"
+                       class="hero-link">
 
-          </a>
+                        BLOG
 
-          <a href="blog.html"
-             class="menu-button">
+                    </a>
 
-            BLOG
 
-          </a>
+                </div>
 
-          <a href="games.html"
-             class="menu-button">
 
-            GAMES
+            </div>
 
-          </a>
 
-        </div>
+        </section>
 
-      </section>
+
+
+        <!-- =========================================
+             PROYECTOS DESTACADOS
+        ========================================== -->
+
+        <section class="projects-section">
+
+
+            <div class="section-title">
+
+                <span>01</span>
+
+                <h2>
+                    PROYECTOS DESTACADOS
+                </h2>
+
+            </div>
+
+
+            <div class="projects-wrapper">
+
+
+                <button class="project-arrow project-prev"
+                        id="projectPrev"
+                        aria-label="Proyecto anterior">
+
+                    ←
+
+                </button>
+
+
+                <div class="projects-window">
+
+                    <div class="projects-track"
+                         id="projectTrack">
+
+
+                        <!-- PROYECTO 1 -->
+
+                        <article class="project-card">
+
+                            <div class="project-image">
+
+                                <img src="img/project1.jpg"
+                                     alt="Casa Tristam">
+
+                            </div>
+
+                            <div class="project-info">
+
+                                <span>
+                                    VIDEOJUEGO
+                                </span>
+
+                                <h3>
+                                    Casa Tristam
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- PROYECTO 2 -->
+
+                        <article class="project-card">
+
+                            <div class="project-image">
+
+                                <img src="img/project2.jpg"
+                                     alt="Latwun Website">
+
+                            </div>
+
+                            <div class="project-info">
+
+                                <span>
+                                    DISEÑO WEB
+                                </span>
+
+                                <h3>
+                                    Latwun Website
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- PROYECTO 3 -->
+
+                        <article class="project-card">
+
+                            <div class="project-image">
+
+                                <img src="img/project3.jpg"
+                                     alt="3D Portfolio">
+
+                            </div>
+
+                            <div class="project-info">
+
+                                <span>
+                                    MODELADO 3D
+                                </span>
+
+                                <h3>
+                                    3D Portfolio
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- PROYECTO 4 -->
+
+                        <article class="project-card">
+
+                            <div class="project-image">
+
+                                <img src="img/project4.jpg"
+                                     alt="Prototype">
+
+                            </div>
+
+                            <div class="project-info">
+
+                                <span>
+                                    PROTOTIPO
+                                </span>
+
+                                <h3>
+                                    Prototype
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+
+                <button class="project-arrow project-next"
+                        id="projectNext"
+                        aria-label="Siguiente proyecto">
+
+                    →
+
+                </button>
+
+
+            </div>
+
+
+            <div class="project-indicators"
+                 id="projectIndicators">
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             SERVICIOS
+        ========================================== -->
+
+        <section class="services-section">
+
+
+            <div class="section-title">
+
+                <span>02</span>
+
+                <h2>
+                    MIS SERVICIOS
+                </h2>
+
+            </div>
+
+
+            <div class="services-grid">
+
+
+                <!-- VIDEOJUEGOS -->
+
+                <article class="service-card">
+
+                    <span class="service-number">
+                        01
+                    </span>
+
+                    <h3>
+                        VIDEOJUEGOS
+                    </h3>
+
+                    <p>
+
+                        Creación de videojuegos
+                        retro, especialmente
+                        experiencias de terror y
+                        horror psicológico.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- MODELADO -->
+
+                <article class="service-card">
+
+                    <span class="service-number">
+                        02
+                    </span>
+
+                    <h3>
+                        MODELADO 3D
+                    </h3>
+
+                    <p>
+
+                        Modelado 3D retro y
+                        low poly para personajes,
+                        escenarios y proyectos
+                        audiovisuales.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- ILUSTRACIÓN -->
+
+                <article class="service-card service-pending">
+
+                    <span class="service-number">
+                        03
+                    </span>
+
+                    <h3>
+                        ILUSTRACIÓN
+                    </h3>
+
+                    <p>
+
+                        Ilustración digital,
+                        conceptos y creación
+                        visual.
+
+                    </p>
+
+                    <small>
+                        EN DESARROLLO
+                    </small>
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
 
     </main>
 
-    <!-- ========================= -->
-    <!-- RIGHT COLUMN -->
-    <!-- ========================= -->
 
-    <aside class="right-column">
 
-      <div class="panel projects-panel">
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
-        <div class="panel-header">
+    <footer class="footer">
 
-          <h2 class="panel-title">
-            Projects
-          </h2>
+        <img src="img/logo.png"
+             alt="Latwun"
+             class="footer-logo">
 
-        </div>
 
-        <div class="project-scroll"
-             id="projectScroll">
+        <p>
+            © 2026 LATWUN
+        </p>
 
-          <div class="project-track"
-               id="track">
+    </footer>
 
-            <div class="project">
 
-              <img src="img/project1.jpg"
-                   alt="Casa Tristam">
-
-              <div class="project-title">
-                Casa Tristam
-              </div>
-
-            </div>
-
-            <div class="project">
-
-              <img src="img/project2.jpg"
-                   alt="Latwun Website">
-
-              <div class="project-title">
-                Latwun Website
-              </div>
-
-            </div>
-
-            <div class="project">
-
-              <img src="img/project3.jpg"
-                   alt="3D Portfolio">
-
-              <div class="project-title">
-                3D Portfolio
-              </div>
-
-            </div>
-
-            <div class="project">
-
-              <img src="img/project4.jpg"
-                   alt="Prototype">
-
-              <div class="project-title">
-                Prototype
-              </div>
-
-            </div>
-
-            <div class="project">
-
-              <img src="img/project5.jpg"
-                   alt="Future Project">
-
-              <div class="project-title">
-                Coming Soon
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </aside>
-
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
