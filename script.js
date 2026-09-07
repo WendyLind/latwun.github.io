@@ -1,82 +1,119 @@
-/* ========================= */
-/* PROJECT SCROLL */
-/* ========================= */
+const track = document.getElementById("projectTrack");
 
-const track =
-  document.getElementById("track");
+const prevButton = document.getElementById("projectPrev");
 
-const projectScroll =
-  document.getElementById("projectScroll");
+const nextButton = document.getElementById("projectNext");
 
-if(track && projectScroll){
+const indicators = document.getElementById("projectIndicators");
 
-  track.innerHTML += track.innerHTML;
+const projects = document.querySelectorAll(".project-card");
 
-  setInterval(() => {
+let currentPosition = 0;
 
-    if(!projectScroll.matches(":hover")){
+const totalPositions = Math.ceil(projects.length / 2);
 
-      projectScroll.scrollTop += 0.4;
 
-      if(
-        projectScroll.scrollTop >=
-        track.scrollHeight / 2
-      ){
 
-        projectScroll.scrollTop = 0;
+function updateProjects() {
 
-      }
+    const isMobile = window.innerWidth <= 800;
 
-    }
+    if (isMobile) {
 
-  },16);
+        track.style.transform =
+            `translateX(-${currentPosition * 100}%)`;
 
-}
+    } else {
 
-/* ========================= */
-/* MUSIC PLAYER */
-/* ========================= */
-
-const bgMusic =
-  document.getElementById("bgMusic");
-
-const musicBtn =
-  document.getElementById("musicBtn");
-
-if(bgMusic){
-
-  bgMusic.volume = 0.35;
-
-  bgMusic.play().catch(() => {
-
-    console.log(
-      "Autoplay bloqueado por el navegador."
-    );
-
-  });
-
-}
-
-if(musicBtn && bgMusic){
-
-  musicBtn.addEventListener("click", () => {
-
-    if(bgMusic.paused){
-
-      bgMusic.play();
-
-      musicBtn.textContent =
-        "⏸ PAUSE";
-
-    }else{
-
-      bgMusic.pause();
-
-      musicBtn.textContent =
-        "▶ PLAY";
+        track.style.transform =
+            `translateX(-${currentPosition * 100}%)`;
 
     }
 
-  });
+
+    document
+        .querySelectorAll(".project-dot")
+        .forEach((dot, index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === currentPosition
+            );
+
+        });
 
 }
+
+
+
+function createIndicators() {
+
+    indicators.innerHTML = "";
+
+
+    for (let i = 0; i < totalPositions; i++) {
+
+        const dot = document.createElement("span");
+
+        dot.classList.add("project-dot");
+
+
+        if (i === 0) {
+
+            dot.classList.add("active");
+
+        }
+
+
+        dot.addEventListener("click", () => {
+
+            currentPosition = i;
+
+            updateProjects();
+
+        });
+
+
+        indicators.appendChild(dot);
+
+    }
+
+}
+
+
+
+nextButton.addEventListener("click", () => {
+
+    currentPosition++;
+
+    if (currentPosition >= totalPositions) {
+
+        currentPosition = 0;
+
+    }
+
+    updateProjects();
+
+});
+
+
+
+prevButton.addEventListener("click", () => {
+
+    currentPosition--;
+
+    if (currentPosition < 0) {
+
+        currentPosition = totalPositions - 1;
+
+    }
+
+    updateProjects();
+
+});
+
+
+
+createIndicators();
+
+updateProjects();
