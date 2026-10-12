@@ -5,67 +5,102 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="LATWUN — Creador digital, desarrollador de videojuegos, modelador 3D e ilustrador."
-    >
+    <title>Latwun</title>
 
-    <meta name="theme-color" content="#080808">
+    <link rel="icon"
+          type="image/png"
+          href="img/favicon.png">
 
-    <link
-        rel="icon"
-        type="image/png"
-        href="img/logo.png"
-    >
+    <!-- Fuentes -->
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <title>LATWUN — Creative Studio</title>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
+
 
 <body>
 
 
     <!-- =========================================
-         HEADER
+         BARRA SUPERIOR
     ========================================== -->
 
     <header class="header">
 
-        <a
-            href="#inicio"
-            class="header-logo"
-            aria-label="LATWUN - Inicio"
-        >
+        <a href="#inicio"
+           class="header-logo">
 
-            <img
-                src="img/logo.png"
-                alt="Logo de LATWUN"
-            >
+            LATWUN
 
         </a>
 
 
-        <nav class="nav" aria-label="Navegación principal">
+        <nav class="social-nav" id="redes">
 
-            <a href="#inicio">INICIO</a>
 
-            <a href="#destacados">DESTACADOS</a>
+            <!-- INSTAGRAM -->
 
-            <a href="#servicios">SERVICIOS</a>
+            <a href="https://www.instagram.com/latwun_lel/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram">
 
-            <a href="#sobre-mi">SOBRE MÍ</a>
+                <img src="img/ig.png"
+                     alt="Instagram">
 
-            <a href="#redes">REDES</a>
+            </a>
+
+
+            <!-- YOUTUBE -->
+
+            <a href="https://www.youtube.com/@Latwun_2007"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="YouTube">
+
+                <img src="img/yt.png"
+                     alt="YouTube">
+
+            </a>
+
+
+            <!-- ITCH.IO -->
+
+            <a href="https://latwun.itch.io"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Itch.io">
+
+                <img src="img/itch.png"
+                     alt="Itch.io">
+
+            </a>
+
+
+            <!-- TIKTOK -->
+
+            <a href="#"
+               aria-label="TikTok">
+
+                <img src="img/tiktok.png"
+                     alt="TikTok">
+
+            </a>
+
 
         </nav>
 
@@ -73,223 +108,286 @@
 
 
 
-    <!-- =========================================
-         INICIO / HERO
-    ========================================== -->
-
     <main>
 
-        <section
-            class="hero"
-            id="inicio"
-        >
 
-            <div class="hero-decoration hero-line"></div>
+        <!-- =========================================
+             HERO
+        ========================================== -->
 
-            <div class="hero-decoration hero-line-right"></div>
+        <section id="inicio"
+                 class="hero">
 
 
             <div class="hero-content">
 
-                <p class="hero-small">
-                    DIGITAL CREATOR / GAME DEV / 3D
+
+                <img src="img/logo.png"
+                     class="main-logo"
+                     alt="Latwun">
+
+
+                <p class="hero-label">
+                    CREADOR DIGITAL
                 </p>
-
-
-                <img
-                    src="img/logo.png"
-                    alt="Logo de LATWUN"
-                    class="hero-logo"
-                >
-
-
-                <h1>LATWUN</h1>
 
 
                 <p class="hero-description">
-                    Creando mundos extraños, juegos incómodos
-                    <br>
-                    y cosas bonitas.
+
+                    Creo videojuegos, mundos digitales
+                    y experiencias visuales inspiradas
+                    en el horror, lo retro y lo experimental.
+
                 </p>
 
 
-                <a
-                    href="#destacados"
-                    class="hero-button"
-                >
-                    EXPLORAR
-                </a>
+                <div class="hero-menu">
+
+
+                    <a href="services.html"
+                       class="hero-link">
+
+                        SERVICIOS
+
+                    </a>
+
+
+                    <a href="games.html"
+                       class="hero-link">
+
+                        JUEGOS
+
+                    </a>
+
+
+                    <a href="modelaje3d.html"
+                       class="hero-link">
+
+                        MODELAJE 3D
+
+                    </a>
+
+
+                    <a href="blog.html"
+                       class="hero-link">
+
+                        BLOGS
+
+                    </a>
+
+
+                </div>
+
 
             </div>
 
-
-            <span class="hero-number">
-                PORTFOLIO — 001
-            </span>
 
         </section>
 
 
 
         <!-- =========================================
-             DESTACADOS
-             5 ENTRADAS PRINCIPALES
+             PROYECTOS DESTACADOS
         ========================================== -->
 
-        <section
-            class="section featured"
-            id="destacados"
-        >
+        <section class="projects-section">
 
-            <div class="section-header">
 
-                <span class="section-number">01</span>
+            <div class="section-title">
 
-                <h2>DESTACADOS</h2>
+                <span>01</span>
 
-                <div class="section-line"></div>
+                <h2>
+                    PROYECTOS DESTACADOS
+                </h2>
 
             </div>
 
 
-            <div class="services-grid">
+            <div class="projects-wrapper">
 
 
-                <!-- DESTACADO 01: SERVICIOS -->
+                <button class="project-arrow project-prev"
+                        id="projectPrev"
+                        aria-label="Proyecto anterior">
 
-                <a
-                    href="Servicios/index.html"
-                    class="service-card"
-                    style="display: block; color: inherit; text-decoration: none;"
-                >
+                    ←
 
-                    <span class="service-number">01</span>
-
-                    <div class="service-icon">✦</div>
-
-                    <h3>SERVICIOS</h3>
-
-                    <p>
-                        Explora los servicios creativos de LATWUN:
-                        diseño, desarrollo y creación digital.
-                    </p>
-
-                    <span class="service-tag">
-                        WHAT I DO
-                    </span>
-
-                </a>
+                </button>
 
 
+                <div class="projects-window">
 
-                <!-- DESTACADO 02: JUEGOS -->
+                    <div class="projects-track"
+                         id="projectTrack">
 
-                <a
-                    href="Juegos/index.html"
-                    class="service-card"
-                    style="display: block; color: inherit; text-decoration: none;"
-                >
 
-                    <span class="service-number">02</span>
+                        <!-- DESTACADO 1: SERVICIOS -->
 
-                    <div class="service-icon">🎮</div>
+                        <a href="services.html"
+                           class="project-card"
+                           style="text-decoration: none; color: inherit;">
 
-                    <h3>JUEGOS</h3>
+                            <div class="project-image">
 
-                    <p>
-                        Videojuegos, mundos interactivos,
-                        experimentos y proyectos jugables.
-                    </p>
+                                <img src="img/project1.jpg"
+                                     alt="Servicios de Latwun">
 
-                    <span class="service-tag">
-                        GAME DEVELOPMENT
-                    </span>
+                            </div>
 
-                </a>
+                            <div class="project-info">
+
+                                <span>
+                                    SERVICIOS
+                                </span>
+
+                                <h3>
+                                    Mis servicios
+                                </h3>
+
+                            </div>
+
+                        </a>
 
 
 
-                <!-- DESTACADO 03: MODELAJE 3D -->
+                        <!-- DESTACADO 2: JUEGOS -->
 
-                <a
-                    href="Modelaje3D/index.html"
-                    class="service-card"
-                    style="display: block; color: inherit; text-decoration: none;"
-                >
+                        <a href="games.html"
+                           class="project-card"
+                           style="text-decoration: none; color: inherit;">
 
-                    <span class="service-number">03</span>
+                            <div class="project-image">
 
-                    <div class="service-icon">◇</div>
+                                <img src="img/project2.jpg"
+                                     alt="Juegos de Latwun">
 
-                    <h3>MODELAJE 3D</h3>
+                            </div>
 
-                    <p>
-                        Personajes, escenarios, objetos,
-                        modelos low poly y experimentos 3D.
-                    </p>
+                            <div class="project-info">
 
-                    <span class="service-tag">
-                        3D ART & DESIGN
-                    </span>
+                                <span>
+                                    JUEGOS
+                                </span>
 
-                </a>
+                                <h3>
+                                    Videojuegos
+                                </h3>
 
+                            </div>
 
-
-                <!-- DESTACADO 04: BLOGS -->
-
-                <a
-                    href="Blogs/index.html"
-                    class="service-card"
-                    style="display: block; color: inherit; text-decoration: none;"
-                >
-
-                    <span class="service-number">04</span>
-
-                    <div class="service-icon">▤</div>
-
-                    <h3>BLOGS</h3>
-
-                    <p>
-                        Procesos creativos, avances,
-                        ideas, tutoriales y detrás de cámaras.
-                    </p>
-
-                    <span class="service-tag">
-                        NOTES & STORIES
-                    </span>
-
-                </a>
+                        </a>
 
 
 
-                <!-- DESTACADO 05: REDES -->
+                        <!-- DESTACADO 3: MODELAJE 3D -->
 
-                <a
-                    href="#redes"
-                    class="service-card"
-                    style="display: block; color: inherit; text-decoration: none;"
-                >
+                        <a href="modelaje3d.html"
+                           class="project-card"
+                           style="text-decoration: none; color: inherit;">
 
-                    <span class="service-number">05</span>
+                            <div class="project-image">
 
-                    <div class="service-icon">↗</div>
+                                <img src="img/project3.jpg"
+                                     alt="Modelaje 3D de Latwun">
 
-                    <h3>REDES</h3>
+                            </div>
 
-                    <p>
-                        Encuentra a LATWUN en redes sociales
-                        y sigue los nuevos proyectos y publicaciones.
-                    </p>
+                            <div class="project-info">
 
-                    <span class="service-tag">
-                        FIND ME ONLINE
-                    </span>
+                                <span>
+                                    MODELAJE 3D
+                                </span>
 
-                </a>
+                                <h3>
+                                    Modelos y renders
+                                </h3>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- DESTACADO 4: BLOGS -->
+
+                        <a href="blog.html"
+                           class="project-card"
+                           style="text-decoration: none; color: inherit;">
+
+                            <div class="project-image">
+
+                                <img src="img/project4.jpg"
+                                     alt="Blogs y procesos creativos de Latwun">
+
+                            </div>
+
+                            <div class="project-info">
+
+                                <span>
+                                    BLOGS
+                                </span>
+
+                                <h3>
+                                    Ideas y procesos
+                                </h3>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- DESTACADO 5: REDES -->
+
+                        <a href="#redes"
+                           class="project-card"
+                           style="text-decoration: none; color: inherit;">
+
+                            <div class="project-image">
+
+                                <img src="img/ig.png"
+                                     alt="Redes sociales de Latwun">
+
+                            </div>
+
+                            <div class="project-info">
+
+                                <span>
+                                    CONECTA CONMIGO
+                                </span>
+
+                                <h3>
+                                    Redes
+                                </h3>
+
+                            </div>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+                <button class="project-arrow project-next"
+                        id="projectNext"
+                        aria-label="Siguiente proyecto">
+
+                    →
+
+                </button>
 
 
             </div>
+
+
+            <div class="project-indicators"
+                 id="projectIndicators">
+
+            </div>
+
 
         </section>
 
@@ -297,21 +395,18 @@
 
         <!-- =========================================
              SERVICIOS
-             SE CONSERVAN LAS 3 TARJETAS ORIGINALES
         ========================================== -->
 
-        <section
-            class="section"
-            id="servicios"
-        >
+        <section class="services-section">
 
-            <div class="section-header">
 
-                <span class="section-number">02</span>
+            <div class="section-title">
 
-                <h2>SERVICIOS</h2>
+                <span>02</span>
 
-                <div class="section-line"></div>
+                <h2>
+                    MIS SERVICIOS
+                </h2>
 
             </div>
 
@@ -319,236 +414,88 @@
             <div class="services-grid">
 
 
-                <!-- SERVICIO 01 -->
+                <!-- VIDEOJUEGOS -->
 
                 <article class="service-card">
 
-                    <span class="service-number">01</span>
+                    <span class="service-number">
+                        01
+                    </span>
 
-                    <div class="service-icon">▣</div>
-
-                    <h3>VIDEOJUEGOS</h3>
+                    <h3>
+                        VIDEOJUEGOS
+                    </h3>
 
                     <p>
-                        Desarrollo de videojuegos y experiencias
-                        interactivas con ideas, estilos y mundos
-                        propios.
-                    </p>
 
-                    <span class="service-tag">
-                        GAME DEVELOPMENT
-                    </span>
+                        Creación de videojuegos
+                        retro, especialmente
+                        experiencias de terror y
+                        horror psicológico.
+
+                    </p>
 
                 </article>
 
 
 
-                <!-- SERVICIO 02 -->
+                <!-- MODELADO -->
 
                 <article class="service-card">
 
-                    <span class="service-number">02</span>
+                    <span class="service-number">
+                        02
+                    </span>
 
-                    <div class="service-icon">◇</div>
-
-                    <h3>MODELADO 3D</h3>
+                    <h3>
+                        MODELADO 3D
+                    </h3>
 
                     <p>
-                        Creación de personajes, objetos y escenarios
-                        digitales, con especial interés en el estilo
-                        low poly y la estética retro.
-                    </p>
 
-                    <span class="service-tag">
-                        3D ART
-                    </span>
+                        Modelado 3D retro y
+                        low poly para personajes,
+                        escenarios y proyectos
+                        audiovisuales.
+
+                    </p>
 
                 </article>
 
 
 
-                <!-- SERVICIO 03 -->
+                <!-- ILUSTRACIÓN -->
 
-                <article class="service-card">
+                <article class="service-card service-pending">
 
-                    <span class="service-number">03</span>
+                    <span class="service-number">
+                        03
+                    </span>
 
-                    <div class="service-icon">✳</div>
-
-                    <h3>ILUSTRACIÓN</h3>
+                    <h3>
+                        ILUSTRACIÓN
+                    </h3>
 
                     <p>
-                        Arte digital, exploración visual y creación
-                        de conceptos con personalidad propia.
+
+                        Ilustración digital,
+                        conceptos y creación
+                        visual.
+
                     </p>
 
-                    <span class="service-tag">
-                        DIGITAL ART
-                    </span>
+                    <small>
+                        EN DESARROLLO
+                    </small>
 
                 </article>
 
 
             </div>
 
-        </section>
-
-
-
-        <!-- =========================================
-             SOBRE MÍ
-        ========================================== -->
-
-        <section
-            class="section about"
-            id="sobre-mi"
-        >
-
-            <div class="section-header">
-
-                <span class="section-number">03</span>
-
-                <h2>SOBRE MÍ</h2>
-
-                <div class="section-line"></div>
-
-            </div>
-
-
-            <div class="about-content">
-
-
-                <h2 class="about-title">
-
-                    <span>HELLO,</span>
-
-                    I'M
-
-                    <strong>LATWUN.</strong>
-
-                </h2>
-
-
-                <div class="about-text">
-
-                    <p>
-                        Soy un creador digital interesado en los
-                        videojuegos, el modelado 3D y la ilustración.
-                        Me gusta experimentar con estilos visuales,
-                        crear mundos y dar vida a ideas propias.
-                    </p>
-
-
-                    <p>
-                        LATWUN es mi espacio para desarrollar
-                        proyectos, aprender cosas nuevas y compartir
-                        todo lo que voy creando.
-                    </p>
-
-
-                    <p class="about-highlight">
-
-                        CREAR COSAS RARAS ES PARTE DEL PROCESO<span>.</span>
-
-                    </p>
-
-                </div>
-
-
-            </div>
 
         </section>
 
-
-
-        <!-- =========================================
-             REDES SOCIALES
-        ========================================== -->
-
-        <section
-            class="section social"
-            id="redes"
-        >
-
-            <div class="section-header">
-
-                <span class="section-number">04</span>
-
-                <h2>REDES</h2>
-
-                <div class="section-line"></div>
-
-            </div>
-
-
-            <div class="social-grid">
-
-
-                <!-- INSTAGRAM -->
-
-                <a
-                    href="https://www.instagram.com/latwun_lel/"
-                    class="social-card"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <span class="social-symbol">◎</span>
-
-                    <span class="social-name">
-                        INSTAGRAM
-                    </span>
-
-                    <span class="social-arrow">↗</span>
-
-                </a>
-
-
-
-                <!-- ITCH.IO -->
-
-                <a
-                    href="https://latwun.itch.io/"
-                    class="social-card"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <span class="social-symbol">▣</span>
-
-                    <span class="social-name">
-                        ITCH.IO
-                    </span>
-
-                    <span class="social-arrow">↗</span>
-
-                </a>
-
-
-
-                <!-- YOUTUBE -->
-
-                <a
-                    href="https://www.youtube.com/@Latwun_2007"
-                    class="social-card"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <span class="social-symbol">▷</span>
-
-                    <span class="social-name">
-                        YOUTUBE
-                    </span>
-
-                    <span class="social-arrow">↗</span>
-
-                </a>
-
-
-            </div>
-
-        </section>
 
     </main>
 
@@ -560,22 +507,19 @@
 
     <footer class="footer">
 
-        <div class="footer-logo">
-            LATWUN<span>.</span>
-        </div>
+        <img src="img/logo.png"
+             alt="Latwun"
+             class="footer-logo">
 
 
         <p>
-            MADE WITH TOO MUCH COFFEE & CURIOSITY.
-        </p>
-
-
-        <p class="footer-copy">
-            © 2026 LATWUN — ALL RIGHTS RESERVED.
+            © 2026 LATWUN
         </p>
 
     </footer>
 
+
+    <script src="script.js"></script>
 
 </body>
 
