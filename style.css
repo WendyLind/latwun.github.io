@@ -49,7 +49,7 @@ body {
     background: rgba(8, 8, 8, 0.94);
     border-bottom: 1px solid var(--borde);
     z-index: 1000;
-    backdrop-filter: blur(8px); /* Agrega un efecto premium transparente al hacer scroll */
+    backdrop-filter: blur(8px); /* Efecto translúcido de fondo */
 }
 
 .header-logo {
@@ -59,12 +59,53 @@ body {
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 8px;
-    white-space: nowrap; /* Evita que el nombre se parta en dos renglones */
+    white-space: nowrap; /* Impide que el nombre se divida en dos líneas */
 }
 
 .header-logo::after {
     content: ".";
     color: var(--rojo);
+}
+
+/* =========================================
+   NAVEGACIÓN INTERNA DEL HEADER (Nuevo)
+========================================= */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px; /* Separación limpia entre los enlaces de texto */
+}
+
+.header-nav a {
+    position: relative;
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+/* Animación de línea inferior decorativa */
+.header-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--rojo);
+    transition: 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: var(--rojo);
+}
+
+.header-nav a:hover::after {
+    width: 100%;
 }
 
 /* =========================================
@@ -144,7 +185,7 @@ body {
     display: flex;
     gap: 45px;
     margin-top: 55px;
-    flex-wrap: wrap; /* Evita desbordamiento de menú en pantallas móviles */
+    flex-wrap: wrap; /* Previene desbordamientos en resoluciones pequeñas */
     justify-content: center;
 }
 
@@ -408,40 +449,55 @@ body {
 }
 
 /* =========================================
-   RESPONSIVE (Completado y Reparado)
+   RESPONSIVE (Reestructurado y Completo)
 ========================================= */
 @media (max-width: 800px) {
-    /* CORRECCIÓN DEL HEADER EN CELULARES */
+    /* CORRECCIÓN ESTRUCTURAL DE LA BARRA SUPERIOR */
     .header {
         flex-direction: column;
         height: auto;
         padding: 15px 6%;
-        gap: 12px;
+        gap: 14px;
     }
 
     .header-logo {
-        font-size: 18px;
-        letter-spacing: 5px;
+        font-size: 19px;
+        letter-spacing: 6px;
     }
 
-    .social-nav {
-        gap: 16px;
+    .header-nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-nav a {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    /* ADAPTACIÓN DEL HERO */
+    .hero {
+        padding-top: 160px;
     }
 
     .main-logo {
         width: min(350px, 80vw);
     }
 
+    /* CONFIGURACIÓN DEL CARRUSEL A 1 TARJETA COMPLETA */
     .project-card {
         flex: 0 0 100%;
     }
 
+    /* CUADRÍCULA DE SERVICIOS EN VERTICAL */
     .services-grid {
         grid-template-columns: 1fr;
     }
 
     .service-card {
         min-height: 250px;
+        padding: 30px;
     }
 
     .service-number {
@@ -454,12 +510,16 @@ body {
         padding: 12px 4%;
     }
     
+    .header-nav {
+        gap: 14px;
+    }
+
     .hero-menu {
         gap: 25px;
     }
     
     .section-title h2 {
-        font-size: 22px;
+        font-size: 20px;
         letter-spacing: 3px;
     }
 }
