@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const indicators = document.getElementById("projectIndicators");
     const projects = document.querySelectorAll(".project-card");
 
-    // Si los elementos no existen en el HTML actual, detenemos el script para evitar errores de consola
+    // Si los elementos esenciales no existen en la página, detenemos el script de forma segura
     if (!track || !prevButton || !nextButton || !indicators || projects.length === 0) return;
 
     let currentPosition = 0;
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const isMobile = window.innerWidth <= 800;
         
         if (isMobile) {
-            totalPositions = projects.length; // 1 tarjeta por vista
+            totalPositions = projects.length; // En celular vas de 1 en 1 tarjeta
         } else {
-            totalPositions = Math.ceil(projects.length / 2); // 2 tarjetas por vista
+            totalPositions = Math.ceil(projects.length / 2); // En PC vas de 2 en 2 tarjetas
         }
         
         if (currentPosition >= totalPositions) {
@@ -34,14 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateProjects() {
-        const isMobile = window.innerWidth <= 800;
-        
-        // Calculamos el desplazamiento porcentual exacto
-        // En móvil avanza de 100% en 100%. En PC avanza de 100% (que equivale a mover 2 tarjetas de golpe)
+        // Multiplicamos por 100 para desplazar bloques de contenido completos
         const percentageToMove = currentPosition * 100;
         track.style.transform = `translateX(-${percentageToMove}%)`;
 
-        // Actualizar puntitos
+        // Sincronizar el estado visual de los puntos (.project-dot)
         const dots = document.querySelectorAll(".project-dot");
         dots.forEach((dot, index) => {
             dot.classList.toggle("active", index === currentPosition);
@@ -58,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 dot.classList.add("active");
             }
 
-            dot.addEventListener("click", () => {
+            dot.addEventListener("click", (e) => {
+                e.stopPropagation(); // Evita interferencias con las tarjetas contenedoras
                 currentPosition = i;
                 updateProjects();
             });
@@ -67,25 +65,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    nextButton.addEventListener("click", () => {
+    // Eventos de los botones de control con soporte de detención
+    nextButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         currentPosition++;
         if (currentPosition >= totalPositions) {
-            currentPosition = 0; // Bucle al inicio
+            currentPosition = 0; // Regresar al primer bloque
         }
         updateProjects();
     });
 
-    prevButton.addEventListener("click", () => {
+    prevButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         currentPosition--;
         if (currentPosition < 0) {
-            currentPosition = totalPositions - 1; // Bucle al final
+            currentPosition = totalPositions - 1; // Ir al último bloque
         }
         updateProjects();
     });
 
-    // Recalcular posiciones si el usuario rota o escala la ventana
+    // Escuchar el cambio de tamaño para recalcular en vivo sin congelarse
     window.addEventListener("resize", calculatePositions);
     
-    // Inicialización del carrusel
+    // Encendido inicial
     calculatePositions();
 });
