@@ -10,9 +10,9 @@
     <link rel="icon" type="image/png" href="../img/favicon.png">
     
     <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Dependencia Oficial de Google para Visor 3D Estilo Sketchfab -->
     <script type="module" src="https://googleapis.com"></script>
@@ -52,9 +52,9 @@
         </section>
 
         <!-- =========================================
-             GALERÍA DINÁMICA
+             GALERÍA DINÁMICA (CORREGIDA CON CLASES BASE)
         ========================================== -->
-        <section class="projects-section" aria-label="Galería de modelos 3D">
+        <section class="projects-section modelos-galeria-section" aria-label="Galería de modelos 3D">
             <div class="modelos-galeria" id="modelosGaleria">
                 <!-- modelos.js insertará aquí las tarjetas de forma automatizada -->
             </div>
@@ -100,5 +100,7 @@
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
+    <script src="modelos.js"></script>
 </body>
 </html>
