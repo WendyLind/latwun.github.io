@@ -441,11 +441,12 @@ body {
     object-fit: cover;
     display: block;
 }
+
 /* =========================================
    FOOTER (Diseño Horizontal Compacto)
 ========================================= */
 .footer {
-    padding: 35px 6%; /* Mucho más chico y delgado */
+    padding: 35px 6%; /* Grosor ultradelgado e industrial */
     border-top: 1px solid var(--borde);
     background: var(--negro);
 }
@@ -456,10 +457,10 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alineación vertical perfecta */
+    align-items: center; /* Alineación perfecta en el eje vertical */
 }
 
-/* Lado izquierdo: Logo y copyright unidos */
+/* Bloque Izquierdo: Branding unificado */
 .footer-left-brand {
     display: flex;
     align-items: center;
@@ -467,7 +468,7 @@ body {
 }
 
 .footer-brand-logo {
-    width: 48px; /* Más pequeño y discreto */
+    width: 48px; /* Dimensiones discretas */
     height: auto;
     object-fit: contain;
 }
@@ -479,12 +480,12 @@ body {
     font-family: "Josefin Sans", sans-serif;
 }
 
-/* Lado derecho: Lista en fila horizontal */
+/* Bloque Derecho: Redes en fila horizontal */
 .footer-social-horizontal {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 32px; /* Espaciado horizontal entre redes */
+    gap: 32px; /* Margen horizontal entre items */
 }
 
 .footer-social-horizontal a {
@@ -494,14 +495,14 @@ body {
     color: var(--gris);
     text-decoration: none;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 11px; /* Tipografía más chica y limpia */
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
     transition: color 0.25s ease;
 }
 
 .footer-social-horizontal a img {
-    width: 14px; /* Iconos ultra sutiles */
+    width: 14px; /* Iconografía ultra-limpia */
     height: 14px;
     object-fit: contain;
     opacity: 0.5;
@@ -514,33 +515,91 @@ body {
 
 .footer-social-horizontal a:hover img {
     opacity: 1;
-    transform: translateY(-1px);
+    transform: translateY(-1px); /* Efecto sutil flotante */
 }
 
-/* Adaptación móvil (Se apila al centro solo si la pantalla es muy pequeña) */
+/* =========================================
+   RESPONSIVE
+Usa el código con precaución.
+========================================= */
+@media (max-width: 800px) {
+.hero {
+padding-top: 130px;
+padding-bottom: 20px;
+min-height: auto;
+}
+.projects-section,
+.services-tabs-section {
+padding: 50px 6%;
+}
+.header {
+flex-direction: column;
+height: auto;
+padding: 15px 6%;
+gap: 14px;
+}
+.header-logo {
+font-size: 19px;
+letter-spacing: 6px;
+}
+.header-nav {
+gap: 20px;
+flex-wrap: wrap;
+justify-content: center;
+}
+.header-nav a {
+font-size: 12px;
+letter-spacing: 2px;
+}
+.project-card {
+flex: 0 0 100%;
+}
+/* Pestañas Verticales en Celulares */
+.tabs-nav-container {
+flex-direction: column;
+}
+.tab-btn {
+border-right: none;
+border-bottom: 1px solid var(--borde);
+padding: 16px;
+}
+.tab-btn.active {
+border-bottom: none;
+border-left: 3px solid var(--rojo);
+}
+.tab-panel {
+padding: 30px 20px;
+}
+.panel-layout {
+flex-direction: column-reverse;
+gap: 25px;
+}
+.panel-text, .panel-image {
+flex: 0 0 100%;
+width: 100%;
+}
+.panel-text h3 {
+font-size: 20px;
+}
+}
 @media (max-width: 768px) {
-    .footer {
-        padding: 40px 6%;
-    }
-    
-    .footer-horizontal-container {
-        flex-direction: column;
-        gap: 25px;
-        text-align: center;
-    }
-    
-    .footer-left-brand {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .footer-social-horizontal {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
+/* El footer colapsa verticalmente solo en pantallas muy compactas */
+.footer {
+padding: 40px 6%;
 }
-
-
-
+.footer-horizontal-container {
+flex-direction: column;
+gap: 25px;
+text-align: center;
+}
+.footer-left-brand {
+flex-direction: column;
+gap: 10px;
+}
+.footer-social-horizontal {
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+}
+}
