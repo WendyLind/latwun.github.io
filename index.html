@@ -34,9 +34,9 @@
     <main>
 
         <!-- =========================================
-             HERO
+             HERO (CON IMAGEN DE FONDO b01)
         ========================================== -->
-        <section id="inicio" class="hero">
+        <section id="inicio" class="hero dynamic-banner-bg">
             <div class="hero-content">
                 <img src="img/logo.png" class="main-logo" alt="Latwun">
                 <p class="hero-label">CREADOR DIGITAL</p>
@@ -53,7 +53,7 @@
         </section>
 
         <!-- =========================================
-             PROYECTOS DESTACADOS
+             PROYECTOS DESTACADOS (SIN DUPLICADOS)
         ========================================== -->
         <section class="projects-section">
             <div class="section-title">
@@ -67,18 +67,7 @@
                 <div class="projects-window">
                     <div class="projects-track" id="projectTrack">
 
-                        <!-- DESTACADO 1: SERVICIOS -->
-                        <a href="#servicios" class="project-card">
-                            <div class="project-image">
-                                <img src="img/project1.jpg" alt="Servicios de Latwun">
-                            </div>
-                            <div class="project-info">
-                                <span>SERVICIOS</span>
-                                <h3>Mis servicios</h3>
-                            </div>
-                        </a>
-
-                        <!-- DESTACADO 2: JUEGOS -->
+                        <!-- DESTACADO 1: JUEGOS -->
                         <a href="juegos/index_juegos.html" class="project-card">
                             <div class="project-image">
                                 <img src="img/project2.jpg" alt="Juegos de Latwun">
@@ -89,7 +78,7 @@
                             </div>
                         </a>
 
-                        <!-- DESTACADO 3: MODELAJE 3D -->
+                        <!-- DESTACADO 2: MODELAJE 3D -->
                         <a href="modelos/index_modelos.html" class="project-card">
                             <div class="project-image">
                                 <img src="img/project3.jpg" alt="Modelaje 3D de Latwun">
@@ -100,7 +89,7 @@
                             </div>
                         </a>
 
-                        <!-- DESTACADO 4: BLOGS -->
+                        <!-- DESTACADO 3: BLOGS -->
                         <a href="blogs/blogs.html" class="project-card">
                             <div class="project-image">
                                 <img src="img/project4.jpg" alt="Blogs y procesos creativos de Latwun">
@@ -111,7 +100,7 @@
                             </div>
                         </a>
 
-                        <!-- DESTACADO 5: REDES -->
+                        <!-- DESTACADO 4: REDES -->
                         <a href="#redes" class="project-card">
                             <div class="project-image">
                                 <img src="img/ig.png" alt="Redes sociales de Latwun">
@@ -132,7 +121,7 @@
         </section>
 
         <!-- =========================================
-             MIS SERVICIOS (Nueva Sección de Pestañas Desplegables)
+             MIS SERVICIOS
         ========================================== -->
         <section id="servicios" class="services-tabs-section">
             <div class="section-title">
@@ -140,22 +129,19 @@
                 <h2>MIS SERVICIOS</h2>
             </div>
 
-            <!-- Botones tipo pestaña pegados -->
             <div class="tabs-nav-container">
                 <button class="tab-btn active" data-tab="tab-juegos">DESARROLLO INDIE</button>
                 <button class="tab-btn" data-tab="tab-assets">MODELADO & ASSETS</button>
                 <button class="tab-btn" data-tab="tab-concept">ARTE & CONCEPT</button>
             </div>
 
-            <!-- Caja contenedora que libera los datos del servicio -->
             <div class="tabs-content-display">
                 
-                <!-- Contenido 1 -->
                 <div class="tab-panel active" id="tab-juegos">
                     <div class="panel-layout">
                         <div class="panel-text">
                             <h3>Desarrollo de Videojuegos Experimentales</h3>
-                            <p>Programación, prototipado y diseño de mecánicas interactivas enfocadas en estéticas de horror retro, low-poly y narrativas surrealistas para PC o plataformas web.</p>
+                            <p>Programación, prototipado y diseño de mecánicas interactives enfocadas en estéticas de horror retro, low-poly y narrativas surrealistas para PC o plataformas web.</p>
                         </div>
                         <div class="panel-image">
                             <img src="img/services-dev.jpg" alt="Proceso de Desarrollo">
@@ -163,7 +149,6 @@
                     </div>
                 </div>
 
-                <!-- Contenido 2 -->
                 <div class="tab-panel" id="tab-assets">
                     <div class="panel-layout">
                         <div class="panel-text">
@@ -176,7 +161,6 @@
                     </div>
                 </div>
 
-                <!-- Contenido 3 -->
                 <div class="tab-panel" id="tab-concept">
                     <div class="panel-layout">
                         <div class="panel-text">
@@ -195,26 +179,42 @@
     </main>
 
     <!-- =========================================
-         FOOTER (Con Redes Horizontales Integradas)
+         FOOTER (REDISEÑADO ASIMÉTRICO)
     ========================================== -->
     <footer class="footer" id="redes">
-        <div class="footer-content">
-            <img src="img/logo.png" class="footer-logo" alt="Logo LATWUN">
+        <div class="footer-split-container">
             
-            <!-- Redes en horizontal pequeñas -->
-            <div class="footer-social-row">
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                    <img src="img/icon-instagram.png" alt="Instagram">
-                </a>
-                <a href="https://twitter.com" target="_blank" aria-label="X / Twitter">
-                    <img src="img/icon-x.png" alt="Twitter">
-                </a>
-                <a href="https://youtube.com" target="_blank" aria-label="YouTube">
-                    <img src="img/icon-youtube.png" alt="YouTube">
-                </a>
+            <!-- LADO IZQUIERDO: LOGO Y DERECHOS -->
+            <div class="footer-left-block">
+                <img src="img/logo.png" class="footer-brand-logo" alt="Logo LATWUN">
+                <p>© 2026 LATWUN</p>
+            </div>
+            
+            <!-- LADO DERECHO: LISTA DE REDES CON TEXTO E ICONOS -->
+            <div class="footer-right-block">
+                <span class="footer-list-title">REDES</span>
+                <ul class="footer-social-list">
+                    <li>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="img/icon-instagram.png" alt="" onerror="this.style.display='none'"> 
+                            INSTAGRAM
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="img/icon-x.png" alt="" onerror="this.style.display='none'"> 
+                            TWITTER
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtube.com" target="_blank">
+                            <img src="img/icon-youtube.png" alt="" onerror="this.style.display='none'"> 
+                            YOUTUBE
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <p>© 2026 LATWUN</p>
         </div>
     </footer>
 
