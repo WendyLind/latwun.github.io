@@ -19,22 +19,16 @@
 <body>
 
     <!-- =========================================
-         BARRA SUPERIOR (CORREGIDA)
+         BARRA SUPERIOR
     ========================================== -->
     <header class="header">
-
-        <a href="#inicio" class="header-logo">
-            LATWUN
-        </a>
-
-        <!-- Se eliminó la clase social-nav para solucionar el amontonamiento de texto -->
+        <a href="#inicio" class="header-logo">LATWUN</a>
         <nav class="header-nav" aria-label="Navegación principal">
-            <a href="services.html">SERVICIOS</a>
+            <a href="#servicios">SERVICIOS</a>
             <a href="juegos/index_juegos.html">JUEGOS</a>
             <a href="modelos/index_modelos.html">MODELOS</a>
             <a href="#redes">REDES</a>
         </nav>
-
     </header>
 
     <main>
@@ -43,51 +37,38 @@
              HERO
         ========================================== -->
         <section id="inicio" class="hero">
-
             <div class="hero-content">
-
                 <img src="img/logo.png" class="main-logo" alt="Latwun">
-
-                <p class="hero-label">
-                    CREADOR DIGITAL
-                </p>
-
+                <p class="hero-label">CREADOR DIGITAL</p>
                 <p class="hero-description">
                     Creo videojuegos, mundos digitales y experiencias visuales inspiradas en el horror, lo retro y lo experimental.
                 </p>
-
                 <div class="hero-menu">
-                    <a href="services.html" class="hero-link">SERVICIOS</a>
+                    <a href="#servicios" class="hero-link">SERVICIOS</a>
                     <a href="juegos/index_juegos.html" class="hero-link">JUEGOS</a>
                     <a href="modelos/index_modelos.html" class="hero-link">MODELAJE 3D</a>
                     <a href="blogs/blogs.html" class="hero-link">BLOGS</a>
                 </div>
-
             </div>
-
         </section>
 
         <!-- =========================================
              PROYECTOS DESTACADOS
         ========================================== -->
         <section class="projects-section">
-
             <div class="section-title">
                 <span>01</span>
                 <h2>PROYECTOS DESTACADOS</h2>
             </div>
 
             <div class="projects-wrapper">
-
-                <button class="project-arrow project-prev" id="projectPrev" aria-label="Proyecto anterior">
-                    &larr;
-                </button>
+                <button class="project-arrow project-prev" id="projectPrev" aria-label="Proyecto anterior">←</button>
 
                 <div class="projects-window">
                     <div class="projects-track" id="projectTrack">
 
                         <!-- DESTACADO 1: SERVICIOS -->
-                        <a href="services.html" class="project-card" style="text-decoration: none; color: inherit;">
+                        <a href="#servicios" class="project-card">
                             <div class="project-image">
                                 <img src="img/project1.jpg" alt="Servicios de Latwun">
                             </div>
@@ -98,7 +79,7 @@
                         </a>
 
                         <!-- DESTACADO 2: JUEGOS -->
-                        <a href="juegos/index_juegos.html" class="project-card" style="text-decoration: none; color: inherit;">
+                        <a href="juegos/index_juegos.html" class="project-card">
                             <div class="project-image">
                                 <img src="img/project2.jpg" alt="Juegos de Latwun">
                             </div>
@@ -109,7 +90,7 @@
                         </a>
 
                         <!-- DESTACADO 3: MODELAJE 3D -->
-                        <a href="modelos/index_modelos.html" class="project-card" style="text-decoration: none; color: inherit;">
+                        <a href="modelos/index_modelos.html" class="project-card">
                             <div class="project-image">
                                 <img src="img/project3.jpg" alt="Modelaje 3D de Latwun">
                             </div>
@@ -120,7 +101,7 @@
                         </a>
 
                         <!-- DESTACADO 4: BLOGS -->
-                        <a href="blogs/blogs.html" class="project-card" style="text-decoration: none; color: inherit;">
+                        <a href="blogs/blogs.html" class="project-card">
                             <div class="project-image">
                                 <img src="img/project4.jpg" alt="Blogs y procesos creativos de Latwun">
                             </div>
@@ -131,7 +112,7 @@
                         </a>
 
                         <!-- DESTACADO 5: REDES -->
-                        <a href="#redes" class="project-card" style="text-decoration: none; color: inherit;">
+                        <a href="#redes" class="project-card">
                             <div class="project-image">
                                 <img src="img/ig.png" alt="Redes sociales de Latwun">
                             </div>
@@ -144,18 +125,100 @@
                     </div>
                 </div>
 
-                <button class="project-arrow project-next" id="projectNext" aria-label="Siguiente proyecto">
-                    &rarr;
-                </button>
-
+                <button class="project-arrow project-next" id="projectNext" aria-label="Siguiente proyecto">→</button>
             </div>
 
-            <div class="project-indicators" id="projectIndicators">
-                <!-- Indicadores dinámicos gestionados por JS -->
-            </div>
-
+            <div class="project-indicators" id="projectIndicators"></div>
         </section>
 
         <!-- =========================================
-             SERVICIOS
+             MIS SERVICIOS (Nueva Sección de Pestañas Desplegables)
         ========================================== -->
+        <section id="servicios" class="services-tabs-section">
+            <div class="section-title">
+                <span>02</span>
+                <h2>MIS SERVICIOS</h2>
+            </div>
+
+            <!-- Botones tipo pestaña pegados -->
+            <div class="tabs-nav-container">
+                <button class="tab-btn active" data-tab="tab-juegos">DESARROLLO INDIE</button>
+                <button class="tab-btn" data-tab="tab-assets">MODELADO & ASSETS</button>
+                <button class="tab-btn" data-tab="tab-concept">ARTE & CONCEPT</button>
+            </div>
+
+            <!-- Caja contenedora que libera los datos del servicio -->
+            <div class="tabs-content-display">
+                
+                <!-- Contenido 1 -->
+                <div class="tab-panel active" id="tab-juegos">
+                    <div class="panel-layout">
+                        <div class="panel-text">
+                            <h3>Desarrollo de Videojuegos Experimentales</h3>
+                            <p>Programación, prototipado y diseño de mecánicas interactivas enfocadas en estéticas de horror retro, low-poly y narrativas surrealistas para PC o plataformas web.</p>
+                        </div>
+                        <div class="panel-image">
+                            <img src="img/services-dev.jpg" alt="Proceso de Desarrollo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido 2 -->
+                <div class="tab-panel" id="tab-assets">
+                    <div class="panel-layout">
+                        <div class="panel-text">
+                            <h3>Modelado 3D & Optimización Low-Poly</h3>
+                            <p>Creación de assets listos para motores gráficos (Unity, Unreal Engine). Modelos tridimensionales con mapeo de texturas estilizado, optimización de polígonos y rigs básicos para animación.</p>
+                        </div>
+                        <div class="panel-image">
+                            <img src="img/services-3d.jpg" alt="Modelado Tridimensional">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido 3 -->
+                <div class="tab-panel" id="tab-concept">
+                    <div class="panel-layout">
+                        <div class="panel-text">
+                            <h3>Dirección de Arte & Diseño Retro</h3>
+                            <p>Conceptualización de entornos, interfaces de usuario minimalistas e identidad estética oscura para proyectos de software interactivo o portadas digitales.</p>
+                        </div>
+                        <div class="panel-image">
+                            <img src="img/services-art.jpg" alt="Dirección Artística">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         FOOTER (Con Redes Horizontales Integradas)
+    ========================================== -->
+    <footer class="footer" id="redes">
+        <div class="footer-content">
+            <img src="img/logo.png" class="footer-logo" alt="Logo LATWUN">
+            
+            <!-- Redes en horizontal pequeñas -->
+            <div class="footer-social-row">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="img/icon-instagram.png" alt="Instagram">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="X / Twitter">
+                    <img src="img/icon-x.png" alt="Twitter">
+                </a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                    <img src="img/icon-youtube.png" alt="YouTube">
+                </a>
+            </div>
+
+            <p>© 2026 LATWUN</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>
