@@ -104,7 +104,7 @@ body {
 }
 
 /* =========================================
-   HERO
+   HERO & BANNERS DE FONDO
 ========================================= */
 .hero {
     min-height: 100vh;
@@ -112,7 +112,16 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 6% 80px; /* Reducido espacio inferior de la base del hero */
+    padding: 120px 6% 80px;
+}
+
+.dynamic-banner-bg {
+    position: relative;
+    background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("img/banners/b01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax suave */
 }
 
 .hero-content {
@@ -334,14 +343,14 @@ body {
 }
 
 /* =========================================
-   SISTEMA DE PESTAÑAS (SERVICIOS NUEVOS)
+   SISTEMA DE PESTAÑAS (SERVICIOS)
 ========================================= */
 .tabs-nav-container {
     display: flex;
     width: 100%;
     background: var(--negro-suave);
     border: 1px solid var(--borde);
-    margin-bottom: -1px; /* Hace que se ensamble con el cuadro inferior */
+    margin-bottom: -1px;
 }
 
 .tab-btn {
@@ -372,10 +381,9 @@ body {
     color: var(--blanco);
     background: var(--negro);
     position: relative;
-    border-bottom: 2px solid var(--rojo); /* Indicador activo inferior */
+    border-bottom: 2px solid var(--rojo);
 }
 
-/* Contenedor principal de los datos de servicios */
 .tabs-content-display {
     width: 100%;
     background: var(--negro);
@@ -384,14 +392,14 @@ body {
 }
 
 .tab-panel {
-    display: none; /* Oculto por defecto */
+    display: none;
     width: 100%;
     height: 100%;
     padding: 50px;
 }
 
 .tab-panel.active {
-    display: block; /* Revela el panel activo */
+    display: block;
 }
 
 .panel-layout {
@@ -435,102 +443,126 @@ body {
 }
 
 /* =========================================
-   FOOTER (Redes Horizontales)
+   FOOTER (Distribución de Extremos Asimétrica)
 ========================================= */
 .footer {
-    padding: 60px 6%;
+    padding: 80px 6%;
     border-top: 1px solid var(--borde);
-    text-align: center;
     background: var(--negro);
 }
 
-.footer-content {
+.footer-split-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
 }
 
-.footer-logo {
-    width: 64px;
+/* Bloque Izquierdo: Logotipo corporativo */
+.footer-left-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.footer-brand-logo {
+    width: 70px;
     height: auto;
     object-fit: contain;
 }
 
-.footer-social-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px; /* Separación horizontal */
-    margin: 5px 0;
+.footer-left-block p {
+    color: var(--gris-oscuro);
+    font-size: 10px;
+    letter-spacing: 2px;
 }
 
-.footer-social-row a {
-    width: 20px; /* Tamaño pequeño y discreto */
-    height: 20px;
+/* Bloque Derecho: Menú en lista vertical alineado a la derecha */
+.footer-right-block {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s ease;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
 }
 
-.footer-social-row img {
-    width: 100%;
-    height: 100%;
+.footer-list-title {
+    color: var(--rojo);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.footer-social-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-social-list a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    color: var(--gris);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: color 0.25s ease;
+}
+
+.footer-social-list a img {
+    width: 16px; /* Iconos pequeños y estéticos */
+    height: 16px;
     object-fit: contain;
     opacity: 0.6;
-    transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.footer-social-row a:hover {
-    transform: translateY(-2px);
+.footer-social-list a:hover {
+    color: var(--blanco);
 }
 
-.footer-social-row a:hover img {
-    opacity: 1;
+.footer-social-list a:hover img {
+opacity: 1;
+transform: scale(1.1);
 }
-
-.footer p {
-    color: var(--gris-oscuro);
-    font-size: 9px;
-    letter-spacing: 3px;
-    margin-top: 5px;
-}
-
 /* =========================================
-   RESPONSIVE
+RESPONSIVE
 ========================================= */
 @media (max-width: 800px) {
-    /* REDUCCIÓN DE ESPACIOS EN MÓVILES */
-    .hero {
-        padding-top: 130px;
-        padding-bottom: 20px; /* Ajuste crítico: reduce el gran vacío en celulares */
-        min-height: auto;
-    }
-
-    .projects-section, 
-    .services-tabs-section {
-        padding: 50px 6%; /* Menos colchón vertical */
-    }
-
-    .header {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 6%;
-        gap: 14px;
-    }
-
-    .header-logo {
-        font-size: 19px;
-        letter-spacing: 6px;
-    }
-
-    .header-nav {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
+.hero {
+padding-top: 130px;
+padding-bottom: 20px;
+min-height: auto;
+}
+.projects-section,
+.services-tabs-section {
+padding: 50px 6%;
+}
+.header {
+flex-direction: column;
+height: auto;
+padding: 15px 6%;
+gap: 14px;
+}
+.header-logo {
+font-size: 19px;
+letter-spacing: 6px;
+}
+.header-nav {
+gap: 20px;
+flex-wrap: wrap;
+justify-content: center;
+}
 .header-nav a {
 font-size: 12px;
 letter-spacing: 2px;
@@ -538,9 +570,9 @@ letter-spacing: 2px;
 .project-card {
 flex: 0 0 100%;
 }
-
+/* Pestañas Verticales en Móvil */
 .tabs-nav-container {
-flex-direction: column; / Se apilan en móvil */
+flex-direction: column;
 }
 .tab-btn {
 border-right: none;
@@ -549,13 +581,13 @@ padding: 16px;
 }
 .tab-btn.active {
 border-bottom: none;
-border-left: 3px solid var(--rojo); /* Pestaña activa lateral en móviles */
+border-left: 3px solid var(--rojo);
 }
 .tab-panel {
 padding: 30px 20px;
 }
 .panel-layout {
-flex-direction: column-reverse; /* Imagen arriba, texto abajo */
+flex-direction: column-reverse;
 gap: 25px;
 }
 .panel-text, .panel-image {
@@ -564,5 +596,24 @@ width: 100%;
 }
 .panel-text h3 {
 font-size: 20px;
+}
+}
+@media (max-width: 700px) {
+/* El footer pasa de horizontal a vertical centrado en celulares */
+.footer-split-container {
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 45px;
+}
+.footer-left-block {
+align-items: center;
+}
+.footer-right-block {
+align-items: center;
+text-align: center;
+}
+.footer-social-list a {
+justify-content: center;
 }
 }
