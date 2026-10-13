@@ -350,3 +350,32 @@ body {
         transition: none;
     }
 }
+
+/* Corregir el tamaño del logo inferior */
+.modelos-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.modelos-footer a {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.modelos-footer img.footer-logo {
+    display: block;
+    width: 54px !important;
+    height: auto !important;
+    max-width: 54px !important;
+    max-height: 54px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
