@@ -2,17 +2,20 @@
 <html lang="es">
 
 <head>
-    <script type="module" src="https://googleapis.com"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Galería de modelos 3D low poly y assets para videojuegos de LATWUN.">
     <title>Modelaje 3D | LATWUN</title>
 
     <link rel="icon" type="image/png" href="../img/favicon.png">
+    
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+
+    <!-- Dependencia Oficial de Google para Visor 3D Estilo Sketchfab -->
+    <script type="module" src="https://googleapis.com"></script>
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="modelos.css">
@@ -20,12 +23,12 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header modelos-header">
-        <a href="../index.html#inicio" class="header-logo">
-            LATWUN
-        </a>
-        <nav class="modelos-nav" aria-label="Navegación principal">
+    <!-- =========================================
+         HEADER (Estilo Base Global)
+    ========================================== -->
+    <header class="header">
+        <a href="../index.html#inicio" class="header-logo">LATWUN</a>
+        <nav class="header-nav" aria-label="Navegación principal">
             <a href="../index.html#inicio">INICIO</a>
             <a href="../juegos/index_juegos.html">JUEGOS</a>
             <a href="../blogs/blogs.html">BLOG</a>
@@ -33,36 +36,69 @@
         </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="modelos-main">
-        <!-- INTRODUCCIÓN -->
-        <section class="modelos-intro">
-            <span class="modelos-etiqueta">GALERÍA 3D</span>
-            <h1>MODELAJE 3D</h1>
-            <p>Me especializo en modelos low poly y assets de videojuegos.</p>
+    <main>
+
+        <!-- =========================================
+             HERO / INTRODUCCIÓN (CON BANNER DE FONDO b02)
+        ========================================== -->
+        <section id="inicio" class="hero dynamic-models-banner">
+            <div class="hero-content">
+                <span class="modelos-etiqueta">02 / GALERÍA 3D</span>
+                <h1 class="modelos-titulo-principal">MODELAJE 3D</h1>
+                <p class="hero-description">
+                    Me especializo firmemente en modelos low poly, texturizados estilizados y assets optimizados para videojuegos independientes.
+                </p>
+            </div>
         </section>
 
-        <!-- GALERÍA -->
-        <section class="modelos-galeria-section" aria-label="Galería de modelos 3D">
+        <!-- =========================================
+             GALERÍA DINÁMICA
+        ========================================== -->
+        <section class="projects-section" aria-label="Galería de modelos 3D">
             <div class="modelos-galeria" id="modelosGaleria">
-                <!-- modelos.js insertará aquí las tarjetas -->
+                <!-- modelos.js insertará aquí las tarjetas de forma automatizada -->
             </div>
+            
             <p class="modelos-vacio" id="modelosVacio" hidden>
-                Próximamente habrá modelos disponibles.
+                Próximamente habrá modelos interactivos disponibles.
             </p>
         </section>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer modelos-footer">
-        <a href="../index.html#inicio" class="footer-logo-link">
-            <!-- SE AGREGÓ LA CLASE "footer-logo" AQUÍ -->
-            <img src="../img/logo.png" alt="Logo LATWUN" class="footer-logo">
-        </a>
-        <p>© 2026 LATWUN</p>
+    <!-- =========================================
+         FOOTER (Unificado Horizontal Compacto)
+    ========================================== -->
+    <footer class="footer" id="redes">
+        <div class="footer-horizontal-container">
+            
+            <!-- LADO IZQUIERDO: BRANDING -->
+            <div class="footer-left-brand">
+                <img src="../img/logo.png" class="footer-brand-logo" alt="Logo LATWUN">
+                <p>© 2026 LATWUN</p>
+            </div>
+            
+            <!-- LADO DERECHO: REDES HORIZONTALES -->
+            <ul class="footer-social-horizontal">
+                <li>
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="../img/ig.png" alt="Instagram"> INSTAGRAM
+                    </a>
+                </li>
+                <li>
+                    <a href="https://itch.io" target="_blank">
+                        <img src="../img/itch.png" alt="Itch.io"> ITCH.IO
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" target="_blank">
+                        <img src="../img/yt.png" alt="YouTube"> YOUTUBE
+                    </a>
+                </li>
+            </ul>
+
+        </div>
     </footer>
 
-    <!-- SCRIPTS -->
-    <script src="modelos.js"></script>
 </body>
 </html>
