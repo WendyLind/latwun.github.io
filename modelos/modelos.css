@@ -1,0 +1,352 @@
+/* =========================================
+   LATWUN — GALERÍA DE MODELAJE 3D
+   Archivo: modelos/modelos.css
+========================================= */
+
+:root {
+    --modelos-bg: #0b0b0d;
+    --modelos-panel: #141417;
+    --modelos-panel-hover: #1d1d22;
+    --modelos-text: #f2f2f2;
+    --modelos-muted: #a1a1aa;
+    --modelos-line: rgba(255, 255, 255, 0.12);
+    --modelos-accent: #c7ff3d;
+}
+
+/* Mantiene el lenguaje visual oscuro de LATWUN sin modificar style.css */
+
+body {
+    min-height: 100vh;
+}
+
+.modelos-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px clamp(20px, 5vw, 76px);
+    border-bottom: 1px solid var(--modelos-line);
+}
+
+.modelos-header .header-logo {
+    flex-shrink: 0;
+    color: var(--modelos-text);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+}
+
+.modelos-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: clamp(14px, 2.5vw, 34px);
+}
+
+.modelos-nav a {
+    position: relative;
+    padding: 7px 0;
+    color: var(--modelos-muted);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.modelos-nav a::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--modelos-accent);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+}
+
+.modelos-nav a:hover,
+.modelos-nav a:focus-visible {
+    color: var(--modelos-text);
+}
+
+.modelos-nav a:hover::after,
+.modelos-nav a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.modelos-main {
+    width: min(1240px, calc(100% - 48px));
+    min-height: 65vh;
+    margin: 0 auto;
+    padding: clamp(56px, 8vw, 104px) 0 96px;
+}
+
+.modelos-intro {
+    max-width: 720px;
+    margin-bottom: clamp(38px, 6vw, 68px);
+}
+
+.modelos-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--modelos-accent);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.modelos-etiqueta::before {
+    width: 26px;
+    height: 2px;
+    background: currentColor;
+    content: "";
+}
+
+.modelos-intro h1 {
+    margin: 0;
+    color: var(--modelos-text);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(2.5rem, 7vw, 5.3rem);
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    line-height: 0.98;
+}
+
+.modelos-intro p {
+    max-width: 570px;
+    margin: 22px 0 0;
+    color: var(--modelos-muted);
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    line-height: 1.8;
+}
+
+/* Cuadrícula dinámica: el JS crea las tarjetas desde la lista */
+
+.modelos-galeria {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.modelo-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--modelos-line);
+    border-radius: 4px;
+    background: var(--modelos-panel);
+    color: var(--modelos-text);
+    text-decoration: none;
+    isolation: isolate;
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease;
+}
+
+.modelo-card:hover,
+.modelo-card:focus-visible {
+    z-index: 1;
+    transform: translateY(-5px);
+    border-color: rgba(199, 255, 61, 0.65);
+    background: var(--modelos-panel-hover);
+    outline: none;
+}
+
+.modelo-card-imagen {
+    position: relative;
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    place-items: center;
+    background:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+        #101013;
+    background-size: 22px 22px;
+}
+
+.modelo-card-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 350ms ease, opacity 200ms ease;
+}
+
+.modelo-card:hover .modelo-card-imagen img {
+    transform: scale(1.045);
+}
+
+.modelo-imagen-fallback {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    color: #85858e;
+    text-align: center;
+}
+
+.modelo-imagen-fallback strong {
+    color: var(--modelos-accent);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    letter-spacing: 0.06em;
+}
+
+.modelo-imagen-fallback span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.modelo-card-info {
+    display: flex;
+    min-height: 88px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+}
+
+.modelo-card-texto {
+    min-width: 0;
+}
+
+.modelo-card-numero {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--modelos-accent);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.modelo-card-titulo {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: var(--modelos-text);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.modelo-card-flecha {
+    flex-shrink: 0;
+    padding-top: 17px;
+    color: var(--modelos-muted);
+    font-size: 1.1rem;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.modelo-card:hover .modelo-card-flecha {
+    color: var(--modelos-accent);
+    transform: translate(3px, -3px);
+}
+
+.modelos-vacio {
+    margin: 28px 0 0;
+    padding: 28px;
+    border: 1px dashed var(--modelos-line);
+    color: var(--modelos-muted);
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.modelos-vacio[hidden] {
+    display: none;
+}
+
+.modelos-footer {
+    margin-top: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 980px) {
+    .modelos-galeria {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 700px) {
+    .modelos-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 22px 24px;
+    }
+
+    .modelos-nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 18px;
+    }
+
+    .modelos-nav a {
+        font-size: 0.65rem;
+    }
+
+    .modelos-main {
+        width: min(100% - 32px, 560px);
+        padding-top: 58px;
+        padding-bottom: 68px;
+    }
+
+    .modelos-galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .modelo-card-info {
+        min-height: 78px;
+        padding: 12px;
+    }
+
+    .modelo-card-titulo {
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .modelos-galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .modelo-card-imagen {
+        aspect-ratio: 5 / 4;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modelo-card,
+    .modelo-card-imagen img,
+    .modelo-card-flecha,
+    .modelos-nav a,
+    .modelos-nav a::after {
+        transition: none;
+    }
+}
