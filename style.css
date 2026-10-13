@@ -1,7 +1,6 @@
 /* =========================================
    VARIABLES
 ========================================= */
-
 :root {
     --negro: #080808;
     --negro-suave: #101010;
@@ -34,7 +33,7 @@ body {
 }
 
 /* =========================================
-   HEADER (Corregido y Adaptable)
+   HEADER
 ========================================= */
 .header {
     position: fixed;
@@ -49,7 +48,7 @@ body {
     background: rgba(8, 8, 8, 0.94);
     border-bottom: 1px solid var(--borde);
     z-index: 1000;
-    backdrop-filter: blur(8px); /* Efecto translúcido de fondo */
+    backdrop-filter: blur(8px);
 }
 
 .header-logo {
@@ -59,7 +58,7 @@ body {
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 8px;
-    white-space: nowrap; /* Impide que el nombre se divida en dos líneas */
+    white-space: nowrap;
 }
 
 .header-logo::after {
@@ -67,13 +66,10 @@ body {
     color: var(--rojo);
 }
 
-/* =========================================
-   NAVEGACIÓN INTERNA DEL HEADER (Nuevo)
-========================================= */
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 35px; /* Separación limpia entre los enlaces de texto */
+    gap: 35px;
 }
 
 .header-nav a {
@@ -88,7 +84,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Animación de línea inferior decorativa */
 .header-nav a::after {
     content: "";
     position: absolute;
@@ -109,36 +104,6 @@ body {
 }
 
 /* =========================================
-   REDES
-========================================= */
-.social-nav {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-}
-
-.social-nav a {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-nav img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0.75;
-    transition: 0.25s;
-}
-
-.social-nav a:hover img {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-
-/* =========================================
    HERO
 ========================================= */
 .hero {
@@ -147,7 +112,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 6% 100px;
+    padding: 120px 6% 80px; /* Reducido espacio inferior de la base del hero */
 }
 
 .hero-content {
@@ -185,7 +150,7 @@ body {
     display: flex;
     gap: 45px;
     margin-top: 55px;
-    flex-wrap: wrap; /* Previene desbordamientos en resoluciones pequeñas */
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -220,17 +185,17 @@ body {
 }
 
 /* =========================================
-   SECCIONES
+   SECCIONES GENERALES
 ========================================= */
 .projects-section,
-.services-section {
+.services-tabs-section {
     width: 100%;
     max-width: 1250px;
     margin: auto;
     padding: 100px 6%;
 }
 
-.services-section {
+.services-tabs-section {
     border-top: 1px solid var(--borde);
 }
 
@@ -263,7 +228,7 @@ body {
 }
 
 /* =========================================
-   PROYECTOS
+   PROYECTOS (CARRUSEL)
 ========================================= */
 .projects-wrapper {
     display: flex;
@@ -278,12 +243,17 @@ body {
 
 .projects-track {
     display: flex;
-    transition: transform 0.6s ease;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
 }
 
 .project-card {
     flex: 0 0 50%;
     padding: 0 10px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .project-image {
@@ -325,9 +295,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* =========================================
-   FLECHAS
-========================================= */
 .project-arrow {
     flex-shrink: 0;
     width: 45px;
@@ -345,9 +312,6 @@ body {
     color: var(--rojo);
 }
 
-/* =========================================
-   INDICADORES
-========================================= */
 .project-indicators {
     display: flex;
     justify-content: center;
@@ -361,6 +325,7 @@ body {
     border-radius: 50%;
     background: var(--gris-oscuro);
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .project-dot.active {
@@ -369,90 +334,185 @@ body {
 }
 
 /* =========================================
-   SERVICIOS
+   SISTEMA DE PESTAÑAS (SERVICIOS NUEVOS)
 ========================================= */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--borde);
-    border: 1px solid var(--borde);
-}
-
-.service-card {
-    position: relative;
-    min-height: 300px;
-    padding: 40px;
-    background: var(--negro);
-    transition: 0.3s;
-}
-
-.service-card:hover {
+.tabs-nav-container {
+    display: flex;
+    width: 100%;
     background: var(--negro-suave);
+    border: 1px solid var(--borde);
+    margin-bottom: -1px; /* Hace que se ensamble con el cuadro inferior */
 }
 
-.service-number {
-    display: block;
-    color: var(--rojo);
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-right: 1px solid var(--borde);
+    color: var(--gris);
+    padding: 22px 15px;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 70px;
-}
-
-.service-card h3 {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 23px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+.tab-btn:hover {
+    color: var(--blanco);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.tab-btn.active {
+    color: var(--blanco);
+    background: var(--negro);
+    position: relative;
+    border-bottom: 2px solid var(--rojo); /* Indicador activo inferior */
+}
+
+/* Contenedor principal de los datos de servicios */
+.tabs-content-display {
+    width: 100%;
+    background: var(--negro);
+    border: 1px solid var(--borde);
+    min-height: 380px;
+}
+
+.tab-panel {
+    display: none; /* Oculto por defecto */
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+}
+
+.tab-panel.active {
+    display: block; /* Revela el panel activo */
+}
+
+.panel-layout {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    height: 100%;
+}
+
+.panel-text {
+    flex: 0 0 55%;
+}
+
+.panel-text h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
-.service-card p {
+.panel-text p {
     color: var(--gris);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.9;
 }
 
-.service-pending {
-    opacity: 0.65;
+.panel-image {
+    flex: 0 0 45%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    background: var(--negro-suave);
 }
 
-.service-pending small {
+.panel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    margin-top: 25px;
-    color: var(--rojo);
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 9px;
-    letter-spacing: 2px;
 }
 
 /* =========================================
-   FOOTER
+   FOOTER (Redes Horizontales)
 ========================================= */
 .footer {
-    padding: 70px 6%;
+    padding: 60px 6%;
     border-top: 1px solid var(--borde);
     text-align: center;
+    background: var(--negro);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .footer-logo {
-    width: 80px;
+    width: 64px;
     height: auto;
-    margin-bottom: 25px;
+    object-fit: contain;
+}
+
+.footer-social-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px; /* Separación horizontal */
+    margin: 5px 0;
+}
+
+.footer-social-row a {
+    width: 20px; /* Tamaño pequeño y discreto */
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+}
+
+.footer-social-row img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: opacity 0.25s ease;
+}
+
+.footer-social-row a:hover {
+    transform: translateY(-2px);
+}
+
+.footer-social-row a:hover img {
+    opacity: 1;
 }
 
 .footer p {
     color: var(--gris-oscuro);
     font-size: 9px;
     letter-spacing: 3px;
+    margin-top: 5px;
 }
 
 /* =========================================
-   RESPONSIVE (Reestructurado y Completo)
+   RESPONSIVE
 ========================================= */
 @media (max-width: 800px) {
-    /* CORRECCIÓN ESTRUCTURAL DE LA BARRA SUPERIOR */
+    /* REDUCCIÓN DE ESPACIOS EN MÓVILES */
+    .hero {
+        padding-top: 130px;
+        padding-bottom: 20px; /* Ajuste crítico: reduce el gran vacío en celulares */
+        min-height: auto;
+    }
+
+    .projects-section, 
+    .services-tabs-section {
+        padding: 50px 6%; /* Menos colchón vertical */
+    }
+
     .header {
         flex-direction: column;
         height: auto;
@@ -471,55 +531,38 @@ body {
         justify-content: center;
     }
 
-    .header-nav a {
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-
-    /* ADAPTACIÓN DEL HERO */
-    .hero {
-        padding-top: 160px;
-    }
-
-    .main-logo {
-        width: min(350px, 80vw);
-    }
-
-    /* CONFIGURACIÓN DEL CARRUSEL A 1 TARJETA COMPLETA */
-    .project-card {
-        flex: 0 0 100%;
-    }
-
-    /* CUADRÍCULA DE SERVICIOS EN VERTICAL */
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card {
-        min-height: 250px;
-        padding: 30px;
-    }
-
-    .service-number {
-        margin-bottom: 40px;
-    }
+.header-nav a {
+font-size: 12px;
+letter-spacing: 2px;
+}
+.project-card {
+flex: 0 0 100%;
 }
 
-@media (max-width: 480px) {
-    .header {
-        padding: 12px 4%;
-    }
-    
-    .header-nav {
-        gap: 14px;
-    }
-
-    .hero-menu {
-        gap: 25px;
-    }
-    
-    .section-title h2 {
-        font-size: 20px;
-        letter-spacing: 3px;
-    }
+.tabs-nav-container {
+flex-direction: column; / Se apilan en móvil */
+}
+.tab-btn {
+border-right: none;
+border-bottom: 1px solid var(--borde);
+padding: 16px;
+}
+.tab-btn.active {
+border-bottom: none;
+border-left: 3px solid var(--rojo); /* Pestaña activa lateral en móviles */
+}
+.tab-panel {
+padding: 30px 20px;
+}
+.panel-layout {
+flex-direction: column-reverse; /* Imagen arriba, texto abajo */
+gap: 25px;
+}
+.panel-text, .panel-image {
+flex: 0 0 100%;
+width: 100%;
+}
+.panel-text h3 {
+font-size: 20px;
+}
 }
