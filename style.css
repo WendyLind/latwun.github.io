@@ -441,179 +441,106 @@ body {
     object-fit: cover;
     display: block;
 }
-
 /* =========================================
-   FOOTER (Distribución de Extremos Asimétrica)
+   FOOTER (Diseño Horizontal Compacto)
 ========================================= */
 .footer {
-    padding: 80px 6%;
+    padding: 35px 6%; /* Mucho más chico y delgado */
     border-top: 1px solid var(--borde);
     background: var(--negro);
 }
 
-.footer-split-container {
+.footer-horizontal-container {
     width: 100%;
     max-width: 1250px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
+    align-items: center; /* Alineación vertical perfecta */
 }
 
-/* Bloque Izquierdo: Logotipo corporativo */
-.footer-left-block {
+/* Lado izquierdo: Logo y copyright unidos */
+.footer-left-brand {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    align-items: center;
+    gap: 18px;
 }
 
 .footer-brand-logo {
-    width: 70px;
+    width: 48px; /* Más pequeño y discreto */
     height: auto;
     object-fit: contain;
 }
 
-.footer-left-block p {
+.footer-left-brand p {
     color: var(--gris-oscuro);
     font-size: 10px;
     letter-spacing: 2px;
-}
-
-/* Bloque Derecho: Menú en lista vertical alineado a la derecha */
-.footer-right-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-}
-
-.footer-list-title {
-    color: var(--rojo);
     font-family: "Josefin Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
 }
 
-.footer-social-list {
+/* Lado derecho: Lista en fila horizontal */
+.footer-social-horizontal {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 14px;
+    align-items: center;
+    gap: 32px; /* Espaciado horizontal entre redes */
 }
 
-.footer-social-list a {
+.footer-social-horizontal a {
     display: inline-flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
+    gap: 8px;
     color: var(--gris);
     text-decoration: none;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 11px; /* Tipografía más chica y limpia */
+    font-weight: 600;
     letter-spacing: 2px;
     transition: color 0.25s ease;
 }
 
-.footer-social-list a img {
-    width: 16px; /* Iconos pequeños y estéticos */
-    height: 16px;
+.footer-social-horizontal a img {
+    width: 14px; /* Iconos ultra sutiles */
+    height: 14px;
     object-fit: contain;
-    opacity: 0.6;
+    opacity: 0.5;
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.footer-social-list a:hover {
+.footer-social-horizontal a:hover {
     color: var(--blanco);
 }
 
-.footer-social-list a:hover img {
-opacity: 1;
-transform: scale(1.1);
+.footer-social-horizontal a:hover img {
+    opacity: 1;
+    transform: translateY(-1px);
 }
-/* =========================================
-RESPONSIVE
-========================================= */
-@media (max-width: 800px) {
-.hero {
-padding-top: 130px;
-padding-bottom: 20px;
-min-height: auto;
+
+/* Adaptación móvil (Se apila al centro solo si la pantalla es muy pequeña) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 6%;
+    }
+    
+    .footer-horizontal-container {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-left-brand {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-social-horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
 }
-.projects-section,
-.services-tabs-section {
-padding: 50px 6%;
-}
-.header {
-flex-direction: column;
-height: auto;
-padding: 15px 6%;
-gap: 14px;
-}
-.header-logo {
-font-size: 19px;
-letter-spacing: 6px;
-}
-.header-nav {
-gap: 20px;
-flex-wrap: wrap;
-justify-content: center;
-}
-.header-nav a {
-font-size: 12px;
-letter-spacing: 2px;
-}
-.project-card {
-flex: 0 0 100%;
-}
-/* Pestañas Verticales en Móvil */
-.tabs-nav-container {
-flex-direction: column;
-}
-.tab-btn {
-border-right: none;
-border-bottom: 1px solid var(--borde);
-padding: 16px;
-}
-.tab-btn.active {
-border-bottom: none;
-border-left: 3px solid var(--rojo);
-}
-.tab-panel {
-padding: 30px 20px;
-}
-.panel-layout {
-flex-direction: column-reverse;
-gap: 25px;
-}
-.panel-text, .panel-image {
-flex: 0 0 100%;
-width: 100%;
-}
-.panel-text h3 {
-font-size: 20px;
-}
-}
-@media (max-width: 700px) {
-/* El footer pasa de horizontal a vertical centrado en celulares */
-.footer-split-container {
-flex-direction: column;
-align-items: center;
-text-align: center;
-gap: 45px;
-}
-.footer-left-block {
-align-items: center;
-}
-.footer-right-block {
-align-items: center;
-text-align: center;
-}
-.footer-social-list a {
-justify-content: center;
-}
-}
+
+
+
