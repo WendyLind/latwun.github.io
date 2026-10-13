@@ -17,6 +17,9 @@
 
 body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--modelos-bg);
 }
 
 .modelos-header {
@@ -86,6 +89,7 @@ body {
     min-height: 65vh;
     margin: 0 auto;
     padding: clamp(56px, 8vw, 104px) 0 96px;
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio disponible */
 }
 
 .modelos-intro {
@@ -279,8 +283,38 @@ body {
     display: none;
 }
 
+/* =========================================
+   Sección: Footer (Corregido)
+========================================= */
+
 .modelos-footer {
-    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: auto; /* Empuja el footer al fondo si hay poco contenido */
+    padding: 48px 20px;
+    text-align: center;
+    border-top: 1px solid var(--modelos-line);
+}
+
+.modelos-footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+}
+
+.modelos-footer img.footer-logo {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 54px !important;
+    max-height: 54px !important;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 /* Responsive */
@@ -350,32 +384,3 @@ body {
         transition: none;
     }
 }
-
-/* Corregir el tamaño del logo inferior */
-.modelos-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 28px 20px;
-    text-align: center;
-}
-
-.modelos-footer a {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
-    justify-content: center;
-}
-
-.modelos-footer img.footer-logo {
-    display: block;
-    width: 54px !important;
-    height: auto !important;
-    max-width: 54px !important;
-    max-height: 54px;
-    margin: 0 auto;
-    object-fit: contain;
-}
-
