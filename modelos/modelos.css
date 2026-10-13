@@ -1,173 +1,48 @@
 /* =========================================
    LATWUN — GALERÍA DE MODELAJE 3D
    Archivo: modelos/modelos.css
-   Adaptado con el lenguaje visual de index
 ========================================= */
 
-:root {
-    --negro: #080808;
-    --negro-suave: #101010;
-    --blanco: #ffffff;
-    --gris: #a8a8a8;
-    --gris-oscuro: #555555;
-    --borde: #242424;
-    
-    /* Tu nuevo acento personalizado reemplazando el rojo */
-    --modelos-accent: #c7ff3d; 
-}
-
-/* =========================================
-   RESET & BASE (Estilo Index)
-========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--negro);
-    color: var(--blanco);
-    font-family: "Montserrat", sans-serif;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* =========================================
-   HEADER (Calco del Index)
-========================================= */
-.modelos-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-    background: rgba(8, 8, 8, 0.94);
-    border-bottom: 1px solid var(--borde);
-    z-index: 1000;
-}
-
-.modelos-header .header-logo {
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 8px;
-}
-
-/* El punto final adaptado al nuevo color */
-.modelos-header .header-logo::after {
-    content: ".";
-    color: var(--modelos-accent);
-}
-
-.modelos-nav {
-    display: flex;
-    align-items: center;
-    gap: 45px; /* Mismo espaciado que los menús del index */
-}
-
-.modelos-nav a {
+/* Banner específico para la sección de modelos */
+.dynamic-models-banner {
     position: relative;
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    padding-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.modelos-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background: var(--modelos-accent);
-    transition: 0.3s ease;
-}
-
-.modelos-nav a:hover {
-    color: var(--modelos-accent);
-}
-
-.modelos-nav a:hover::after {
-    width: 100%;
-}
-
-/* =========================================
-   CONTENIDO PRINCIPAL
-========================================= */
-.modelos-main {
-    width: 100%;
-    max-width: 1250px; /* Igual al ancho del wrapper de proyectos/servicios */
-    margin: 0 auto;
-    padding: 175px 6% 100px; /* 175px arriba para salvar el header fixed */
-    flex-grow: 1;
-}
-
-/* INTRODUCCIÓN (Basado en Títulos del Index) */
-.modelos-intro {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
+    background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b02.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .modelos-etiqueta {
-    color: var(--modelos-accent);
+    color: var(--rojo);
     font-family: "Josefin Sans", sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 5px;
     margin-bottom: 15px;
-}
-
-.modelos-intro h1 {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: 5px;
-    margin: 0 0 20px 0;
     text-transform: uppercase;
 }
 
-.modelos-intro p {
-    max-width: 650px;
-    color: var(--gris);
-    font-size: 14px;
-    line-height: 2;
+.modelos-titulo-principal {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(32px, 6vw, 54px);
+    font-weight: 600;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 /* =========================================
-   CUADRÍCULA DE LA GALERÍA (Estilo Malla de Servicios)
+   CUADRÍCULA DE LA GALERÍA (Malla de Servicios)
 ========================================= */
-.modelos-galeria-section {
-    margin-top: 20px;
-}
-
 .modelos-galeria {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px; /* Efecto malla idéntico al index */
+    gap: 1px;
     background: var(--borde);
     border: 1px solid var(--borde);
 }
 
-/* TARJETAS DE MODELO */
 .modelo-card {
     position: relative;
     display: flex;
@@ -183,11 +58,10 @@ body {
     outline: none;
 }
 
-/* CONTENEDOR DE IMAGEN (Estilo Ventana de Proyectos) */
 .modelo-card-imagen {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9; /* Adaptado al formato panorámico cinemático del index */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--negro-suave);
 }
@@ -204,42 +78,12 @@ body {
     transform: scale(1.04);
 }
 
-/* FALLBACK PARA CUANDO NO HAY IMAGEN */
-.modelo-imagen-fallback {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 8px;
-    padding: 20px;
-    color: var(--gris-oscuro);
-    text-align: center;
-}
-
-.modelo-imagen-fallback strong {
-    color: var(--modelos-accent);
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
-.modelo-imagen-fallback span {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 3px;
-}
-
-/* INFORMACIÓN (Estilo Project/Service Info) */
 .modelo-card-info {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
-    padding: 30px; /* Proporcional a los paddings internos del index */
+    padding: 30px;
 }
 
 .modelo-card-texto {
@@ -248,38 +92,35 @@ body {
 
 .modelo-card-numero {
     display: block;
-    color: var(--modelos-accent);
+    color: var(--rojo);
     font-family: "Josefin Sans", sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .modelo-card-titulo {
     margin: 0;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     line-height: 1.3;
 }
 
 .modelo-card-flecha {
     flex-shrink: 0;
-    padding-top: 4px;
     color: var(--gris-oscuro);
     font-size: 18px;
     transition: color 0.25s, transform 0.25s;
 }
 
 .modelo-card:hover .modelo-card-flecha {
-    color: var(--modelos-accent);
+    color: var(--rojo);
     transform: translate(3px, -3px);
 }
 
-/* MENSAJE DE GALERÍA VACÍA */
 .modelos-vacio {
-    margin-top: 40px;
     padding: 60px 40px;
     border: 1px dashed var(--borde);
     color: var(--gris);
@@ -288,114 +129,8 @@ body {
     letter-spacing: 1px;
 }
 
-.modelos-vacio[hidden] {
-    display: none;
-}
-
 /* =========================================
-   FOOTER (Alineado con Index)
-========================================= */
-.modelos-footer {
-    padding: 70px 6%;
-    border-top: 1px solid var(--borde);
-    text-align: center;
-    background: var(--negro);
-}
-
-.modelos-footer .footer-logo-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px; /* Forzado a los 80px del index */
-    margin-bottom: 25px;
-}
-
-.modelos-footer .footer-logo {
-    display: block;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 80px !important;
-    object-fit: contain;
-}
-
-.modelos-footer p {
-    color: var(--gris-oscuro);
-    font-size: 9px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-/* =========================================
-   RESPONSIVE (Alineado con Index)
-========================================= */
-@media (max-width: 1024px) {
-    .modelos-galeria {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 800px) {
-    .modelos-header {
-        padding: 0 6%;
-    }
-
-    .modelos-nav {
-        gap: 24px;
-    }
-
-    .modelos-nav a {
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-
-    .modelos-main {
-        padding-top: 140px;
-    }
-
-    .modelos-intro h1 {
-        font-size: 26px;
-        letter-spacing: 3px;
-    }
-}
-
-@media (max-width: 600px) {
-    .modelos-header {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 6%;
-        gap: 12px;
-    }
-
-    .modelos-nav {
-        width: 100%;
-        justify-content: center;
-        gap: 18px;
-    }
-
-    .modelos-main {
-        padding-top: 160px;
-    }
-
-    .modelos-galeria {
-        grid-template-columns: 1fr;
-    }
-    
-    .modelo-card-info {
-        padding: 24px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .modelo-card,
-    .modelo-card-imagen img,
-    .modelo-card-flecha,
-    .modelos-nav a,
-    .modelos-nav a::after {
-        transition: none;
-    }
-}
-/* =========================================
-   INTERFAZ DEL VISOR 3D (Estilo Sketchfab)
+   INTERFAZ DE MODAL (Estilo Sketchfab)
 ========================================= */
 .visor-modal {
     position: fixed;
@@ -443,11 +178,10 @@ body {
     font-size: 32px;
     cursor: pointer;
     z-index: 2005;
-    transition: color 0.2s;
 }
 
 .visor-cerrar:hover {
-    color: var(--modelos-accent);
+    color: var(--rojo);
 }
 
 .visor-layout {
@@ -456,22 +190,18 @@ body {
     height: 100%;
 }
 
-/* El render interactivo ocupa el 65% del ancho */
 .visor-render {
     flex: 0 0 65%;
     height: 100%;
     background: #0d0d0f;
     border-right: 1px solid var(--borde);
-    position: relative;
 }
 
 .visor-render model-viewer {
     width: 100%;
     height: 100%;
-    --poster-color: transparent;
 }
 
-/* La información lateral ocupa el 35% */
 .visor-info {
     flex: 0 0 35%;
     height: 100%;
@@ -482,7 +212,7 @@ body {
 }
 
 .visor-numero {
-    color: var(--modelos-accent);
+    color: var(--rojo);
     font-family: "Josefin Sans", sans-serif;
     font-size: 13px;
     font-weight: 600;
@@ -492,21 +222,21 @@ body {
 
 .visor-titulo {
     font-family: "Josefin Sans", sans-serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
 .visor-descripcion {
     color: var(--gris);
     font-size: 13px;
     line-height: 1.8;
-    margin-bottom: auto; /* Empuja los botones hacia abajo */
 }
 
 .visor-acciones {
-    margin-top: 30px;
+    margin-top: auto;
+    padding-top: 30px;
 }
 
 .btn-cgtrader {
@@ -527,12 +257,24 @@ body {
 }
 
 .btn-cgtrader:hover {
-    border-color: var(--modelos-accent);
-    color: var(--modelos-accent);
+    border-color: var(--rojo);
+    color: var(--rojo);
     background: var(--negro-suave);
 }
 
-/* Adaptación móvil (Pantalla dividida pasa a vertical) */
+/* RESPONSIVE MODELOS */
+@media (max-width: 1024px) {
+    .modelos-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .modelos-galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 900px) {
     .visor-contenedor {
         height: 90vh;
@@ -541,17 +283,12 @@ body {
         flex-direction: column;
     }
     .visor-render {
-        flex: 0 0 50%;
+        flex: 0 0 45%;
         border-right: none;
         border-bottom: 1px solid var(--borde);
     }
     .visor-info {
-        flex: 0 0 50%;
+        flex: 0 0 55%;
         padding: 25px;
     }
-    .visor-titulo {
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
 }
-
