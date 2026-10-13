@@ -394,3 +394,164 @@ body {
         transition: none;
     }
 }
+/* =========================================
+   INTERFAZ DEL VISOR 3D (Estilo Sketchfab)
+========================================= */
+.visor-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.visor-modal.visor-activo {
+    display: flex;
+}
+
+.visor-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 4, 4, 0.85);
+    backdrop-filter: blur(4px);
+}
+
+.visor-contenedor {
+    position: relative;
+    width: min(1200px, 92vw);
+    height: min(680px, 85vh);
+    background: var(--negro);
+    border: 1px solid var(--borde);
+    z-index: 2001;
+    overflow: hidden;
+}
+
+.visor-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--blanco);
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2005;
+    transition: color 0.2s;
+}
+
+.visor-cerrar:hover {
+    color: var(--modelos-accent);
+}
+
+.visor-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* El render interactivo ocupa el 65% del ancho */
+.visor-render {
+    flex: 0 0 65%;
+    height: 100%;
+    background: #0d0d0f;
+    border-right: 1px solid var(--borde);
+    position: relative;
+}
+
+.visor-render model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+}
+
+/* La información lateral ocupa el 35% */
+.visor-info {
+    flex: 0 0 35%;
+    height: 100%;
+    padding: 45px 35px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.visor-numero {
+    color: var(--modelos-accent);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.visor-titulo {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.visor-descripcion {
+    color: var(--gris);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: auto; /* Empuja los botones hacia abajo */
+}
+
+.visor-acciones {
+    margin-top: 30px;
+}
+
+.btn-cgtrader {
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--borde);
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    transition: all 0.25s ease;
+}
+
+.btn-cgtrader:hover {
+    border-color: var(--modelos-accent);
+    color: var(--modelos-accent);
+    background: var(--negro-suave);
+}
+
+/* Adaptación móvil (Pantalla dividida pasa a vertical) */
+@media (max-width: 900px) {
+    .visor-contenedor {
+        height: 90vh;
+    }
+    .visor-layout {
+        flex-direction: column;
+    }
+    .visor-render {
+        flex: 0 0 50%;
+        border-right: none;
+        border-bottom: 1px solid var(--borde);
+    }
+    .visor-info {
+        flex: 0 0 50%;
+        padding: 25px;
+    }
+    .visor-titulo {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+}
+
