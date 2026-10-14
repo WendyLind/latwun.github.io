@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de videojuegos interactivos, experiencias retro y proyectos de horror de LATWUN.">
+    <title>Juegos | LATWUN</title>
+
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Conexiones en cascada hacia la raíz -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="juegos.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER (Estilo Base Global)
+    ========================================== -->
+    <header class="header">
+        <a href="../index.html#inicio" class="header-logo">LATWUN</a>
+        <nav class="header-nav" aria-label="Navegación principal">
+            <a href="../index.html#inicio">INICIO</a>
+            <a href="#proyectos-juegos" class="active-nav-link">JUEGOS</a>
+            <a href="../modelos/index_modelos.html">MODELOS</a>
+            <a href="../index.html#redes">REDES</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- =========================================
+             HERO / INTRODUCCIÓN (CON BANNER DE FONDO b03)
+        ========================================== -->
+        <section id="inicio" class="hero dynamic-juegos-banner">
+            <div class="hero-content">
+                <span class="juegos-etiqueta">03 / PROYECTOS INTERACTIVOS</span>
+                <h1 class="juegos-titulo-principal">VIDEOJUEGOS</h1>
+                <p class="hero-description">
+                    Explora mundos digitales, experiencias jugables y demos experimentales inspiradas en estéticas retro, mecánicas arcade y horror psicológico.
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================================
+             CUADRÍCULA DE JUEGOS (FORMATO RECTANGULAR GRANDE)
+        ========================================== -->
+        <section id="proyectos-juegos" class="projects-section juegos-galeria-section" aria-label="Catálogo de Videojuegos">
+            <div class="juegos-galeria" id="juegosGaleria">
+                <!-- juegos.js insertará aquí las tarjetas rectangulares -->
+            </div>
+            
+            <p class="juegos-vacio" id="juegosVacio" hidden>
+                Próximamente habrá nuevos lanzamientos disponibles.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         FOOTER (Unificado Horizontal Compacto)
+    ========================================== -->
+    <footer class="footer" id="redes">
+        <div class="footer-horizontal-container">
+            
+            <div class="footer-left-brand">
+                <img src="../img/logo.png" class="footer-brand-logo" alt="Logo LATWUN">
+                <p>© 2026 LATWUN</p>
+            </div>
+            
+            <ul class="footer-social-horizontal">
+                <li>
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="../img/ig.png" alt="Instagram"> INSTAGRAM
+                    </a>
+                </li>
+                <li>
+                    <a href="https://itch.io" target="_blank">
+                        <img src="../img/itch.png" alt="Itch.io"> ITCH.IO
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" target="_blank">
+                        <img src="../img/yt.png" alt="YouTube"> YOUTUBE
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="juegos.js"></script>
+</body>
+</html>
