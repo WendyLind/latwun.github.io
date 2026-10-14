@@ -1,0 +1,229 @@
+/* =========================================
+   LATWUN — BITÁCORAS & PROCESOS CREATIVOS
+   Archivo: blogs/blogs.css
+   Paleta: Edición Azul Cibernético / Eléctrico
+========================================= */
+
+/* Contenedor y base estructural de la sección */
+.blog-galeria-section {
+    background: #080808;
+    width: 100%;
+    display: block;
+    padding: 60px 6% 100px; /* Alineado milimétricamente con el layout global */
+}
+
+/* =========================================
+   HERO / ADAPTACIÓN DE ESPACIADO EN PC (Arreglado)
+========================================= */
+.dynamic-blog-banner {
+    position: relative;
+    min-height: auto !important; /* Elimina la restricción de 100vh que causaba el gran vacío negro */
+    padding: 180px 6% 40px !important; /* Margen superior para salvar la barra fija del header */
+    background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b04.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Unificación del Logotipo corporativo en el encabezado */
+.header-logo {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    letter-spacing: 8px !important;
+}
+
+/* Sincronización del menú del encabezado con tu tono azul */
+.header-nav a.active-nav-link {
+    color: #00b4d8 !important;
+}
+
+.header-nav a.active-nav-link::after {
+    width: 100% !important;
+    background: #00b4d8 !important;
+}
+
+/* Etiquetas y títulos con el tono azul neón */
+.blog-etiqueta {
+    color: #00b4d8;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 180, 216, 0.25); /* Sutil aura digital */
+}
+
+.blog-titulo-principal {
+    color: #ffffff;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(32px, 6vw, 54px);
+    font-weight: 600;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   MALLA EDITORIAL DE TARJETAS VERTICALES
+========================================= */
+.blog-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas balanceadas tipo revista de desarrollo */
+    gap: 24px;
+    background: transparent;
+}
+
+.blog-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #101010;
+    border: 1px solid #242424;
+    text-decoration: none;
+    color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    border-color: #00b4d8; /* Borde iluminado en azul al pasar el cursor */
+    box-shadow: 0 10px 25px rgba(0, 180, 216, 0.12);
+}
+
+/* Proporción de portada vertical tipo póster o libro */
+.blog-card-imagen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Formato vertical estilizado */
+    overflow: hidden;
+    background: #080808;
+    border-bottom: 1px solid #242424;
+}
+
+.blog-card-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.blog-card:hover .blog-card-imagen img {
+    transform: scale(1.03);
+}
+
+/* Bloque informativo interno */
+.blog-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 30px;
+}
+
+.blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #00b4d8; /* Fecha e índice en azul */
+}
+
+.blog-card-titulo {
+    margin: 8px 0 0;
+    color: #ffffff;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.blog-card-extracto {
+    color: #a8a8a8;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 6px;
+}
+
+.blog-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.blog-btn-link {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    transition: color 0.25s ease;
+}
+
+.blog-card:hover .blog-btn-link {
+    color: #00b4d8;
+}
+
+.blog-flecha {
+    color: #555555;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.blog-card:hover .blog-flecha {
+    color: #00b4d8;
+    transform: translateX(4px);
+}
+
+.blog-vacio {
+    padding: 80px 40px;
+    border: 1px dashed #242424;
+    color: #a8a8a8;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   RESPONSIVE (Ajustes de Adaptabilidad)
+========================================= */
+@media (max-width: 980px) {
+    .blog-galeria {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 700px) {
+    .dynamic-blog-banner {
+        padding: 140px 6% 30px !important;
+    }
+    
+    .blog-galeria-section {
+        padding: 40px 6% 60px;
+    }
+
+    .blog-galeria {
+        grid-template-columns: 1fr; /* 1 sola columna en dispositivos móviles */
+        gap: 20px;
+    }
+    
+    .blog-card-imagen {
+        aspect-ratio: 4 / 3; /* Colapsa a horizontal en teléfonos para no requerir tanto scroll vertical */
+    }
+    
+    .blog-card-info {
+        padding: 25px;
+    }
+    
+    .blog-card-titulo {
+        font-size: 19px;
+    }
+}
