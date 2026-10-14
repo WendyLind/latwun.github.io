@@ -1,0 +1,205 @@
+/* =========================================
+   LATWUN — PORTAFOLIO DE VIDEOJUEGOS
+   Archivo: juegos/juegos.css
+   Paleta: Edición Morado Synthwave / Cyberpunk
+========================================= */
+
+.juegos-galeria-section {
+    background: #080808;
+    width: 100%;
+    display: block;
+}
+
+/* Banner específico con imagen b03.jpg */
+.dynamic-juegos-banner {
+    position: relative;
+    background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b03.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Indicadores de tono morado neón */
+.juegos-etiqueta {
+    color: #9d4edd; /* Morado vibrante */
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.25);
+}
+
+.juegos-titulo-principal {
+    color: #ffffff;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(32px, 6vw, 54px);
+    font-weight: 600;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Enlace activo del header específico */
+.header-nav a.active-nav-link {
+    color: #9d4edd;
+}
+.header-nav a.active-nav-link::after {
+    width: 100%;
+    background: #9d4edd;
+}
+
+/* =========================================
+   MALLA PANORÁMICA DE RECTÁNGULOS GRANDES
+========================================= */
+.juegos-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Solo 2 columnas para que las tarjetas sean gigantes */
+    gap: 24px; /* Mayor separación interna estilo catálogo premium */
+}
+
+.juego-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #101010;
+    border: 1px solid #242424;
+    text-decoration: none;
+    color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.juego-card:hover {
+    transform: translateY(-4px);
+    border-color: #9d4edd;
+    box-shadow: 0 10px 25px rgba(157, 78, 221, 0.15);
+}
+
+/* Proporción panorámica rectangular grande (tipo banner de Steam) */
+.juego-card-imagen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 21 / 9; /* Formato ultra-ancho rectangular */
+    overflow: hidden;
+    background: #080808;
+    border-bottom: 1px solid #242424;
+}
+
+.juego-card-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.juego-card:hover .juego-card-imagen img {
+    transform: scale(1.03);
+}
+
+/* Contenedor de información extendido */
+.juego-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 35px; /* Más espacio para descripciones de mecánicas */
+}
+
+.juego-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.juego-tag {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    background: rgba(157, 78, 221, 0.1);
+    border: 1px solid rgba(157, 78, 221, 0.25);
+    color: #9d4edd;
+}
+
+.juego-card-titulo {
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.juego-card-descripcion {
+    color: #a8a8a8;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 4px;
+}
+
+.juego-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.juego-btn-link {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    transition: color 0.25s ease;
+}
+
+.juego-card:hover .juego-btn-link {
+    color: #9d4edd;
+}
+
+.juego-flecha {
+    color: #555555;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.juego-card:hover .juego-flecha {
+    color: #9d4edd;
+    transform: translateX(4px);
+}
+
+.juegos-vacio {
+    padding: 80px 40px;
+    border: 1px dashed #242424;
+    color: #a8a8a8;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   RESPONSIVE (Adaptación del Muro)
+========================================= */
+@media (max-width: 900px) {
+    .juegos-galeria {
+        grid-template-columns: 1fr; /* Una columna masiva en tablets y celulares */
+        gap: 20px;
+    }
+    
+    .juego-card-imagen {
+        aspect-ratio: 16 / 9; /* En celulares colapsa a 16:9 para mejor visualización de capturas */
+    }
+    
+    .juego-card-info {
+        padding: 25px;
+    }
+    
+    .juego-card-titulo {
+        font-size: 20px;
+    }
+}
