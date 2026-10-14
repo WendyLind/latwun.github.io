@@ -1,24 +1,127 @@
 /* =========================================
    LATWUN — PORTAFOLIO DE VIDEOJUEGOS
    Archivo: juegos/juegos.css
-   Paleta: Edición Morado Synthwave / Cyberpunk
+   Basado estrictamente en style.css (Edición Morada)
 ========================================= */
 
-/* Contenedor y base estructural de la sección */
-.juegos-galeria-section {
-    background: #080808;
-    width: 100%;
-    display: block;
-    padding: 60px 6% 100px; /* Alineación milimétrica con la cuadrícula global */
+:root {
+    --negro: #080808;
+    --negro-suave: #101010;
+    --morado: #9d4edd; /* Tu color clave asignado */
+    --morado-claro: #b5179e;
+    --blanco: #ffffff;
+    --gris: #a8a8a8;
+    --gris-oscuro: #555555;
+    --borde: #242424;
 }
 
 /* =========================================
-   HERO / ADAPTACIÓN DE ESPACIADO EN PC (Corregido)
+   RESET
 ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   HEADER & NAVEGACIÓN ACTIVA
+========================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    background: rgba(8, 8, 8, 0.94);
+    border-bottom: 1px solid var(--borde);
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.header-logo {
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    white-space: nowrap;
+}
+
+.header-logo::after {
+    content: ".";
+    color: var(--morado);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header-nav a {
+    position: relative;
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.header-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--morado);
+    transition: 0.3s ease;
+}
+
+.header-nav a:hover,
+.header-nav a.active-nav-link {
+    color: var(--morado);
+}
+
+.header-nav a:hover::after,
+.header-nav a.active-nav-link::after {
+    width: 100%;
+}
+
+/* =========================================
+   HERO / INTRODUCCIÓN ADAPTADO (Sin Vacíos)
+========================================= */
+.hero {
+    min-height: auto !important; /* Elimina el enorme vacío de 100vh en PC */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 180px 6% 40px !important; /* Separación exacta para salvar el header fixed */
+}
+
 .dynamic-juegos-banner {
     position: relative;
-    min-height: auto !important; /* Elimina la restricción de 100vh que causaba el gran vacío negro */
-    padding: 180px 6% 40px !important; /* Margen superior para salvar la barra fija del header */
     background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b03.jpg");
     background-size: cover;
     background-position: center;
@@ -26,26 +129,21 @@
     background-attachment: fixed;
 }
 
-/* Sincronización del menú del encabezado con tu tono morado */
-.header-nav a.active-nav-link {
-    color: #9d4edd !important;
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.header-nav a.active-nav-link::after {
-    width: 100% !important;
-    background: #9d4edd !important;
-}
-
-/* Etiquetas y títulos con el tono morado neón */
 .juegos-etiqueta {
-    color: #9d4edd;
+    color: var(--morado);
     font-family: "Josefin Sans", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 5px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(157, 78, 221, 0.25); /* Sutil resplandor de neón */
+    letter-spacing: 7px;
+    margin-bottom: 25px;
 }
 
 .juegos-titulo-principal {
@@ -59,12 +157,22 @@
 }
 
 /* =========================================
-   MALLA PANORÁMICA DE RECTÁNGULOS GRANDES
+   SECCIONES GENERALES
+========================================= */
+.juegos-galeria-section {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 60px 6% 100px; /* Reducida la holgura superior */
+}
+
+/* =========================================
+   MALLA PANORÁMICA DE VIDEOJUEGOS
 ========================================= */
 .juegos-galeria {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas masivas para formato extendido */
-    gap: 24px; /* Mayor separación interna para capturas cinematográficas */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas grandes */
+    gap: 24px;
     background: transparent;
 }
 
@@ -72,133 +180,168 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background: #101010;
-    border: 1px solid #242424;
+    background: var(--negro-suave);
+    border: 1px solid var(--borde);
     text-decoration: none;
-    color: #ffffff;
+    color: inherit;
     overflow: hidden;
     transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .juego-card:hover {
     transform: translateY(-4px);
-    border-color: #9d4edd; /* Borde iluminado al pasar el cursor */
+    border-color: var(--morado);
     box-shadow: 0 10px 25px rgba(157, 78, 221, 0.15);
 }
 
-/* Proporción panorámica rectangular grande (Tipo banner de Steam) */
 .juego-card-imagen {
-    position: relative;
     width: 100%;
-    aspect-ratio: 21 / 9; /* Formato ultra-ancho horizontal */
+    aspect-ratio: 21 / 9; /* Rectángulos grandes panorámicos */
     overflow: hidden;
-    background: #080808;
-    border-bottom: 1px solid #242424;
+    background: var(--negro);
+    border-bottom: 1px solid var(--borde);
 }
 
 .juego-card-imagen img {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    display: block;
+    transition: 0.5s;
 }
 
 .juego-card:hover .juego-card-imagen img {
     transform: scale(1.03);
 }
 
-/* Contenedor de información extendido */
 .juego-card-info {
+    padding: 35px; /* Misma proporción de aire interno */
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 35px; /* Más aire interno para albergar las sinopsis */
 }
 
-/* Etiquetas de metadatos o etiquetas de género */
 .juego-card-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 4px;
 }
 
 .juego-tag {
     font-family: "Josefin Sans", sans-serif;
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     padding: 4px 10px;
     background: rgba(157, 78, 221, 0.1);
-    border: 1px solid rgba(157, 78, 221, 0.25);
-    color: #9d4edd;
+    color: var(--morado);
+    border: 1px solid rgba(157, 78, 221, 0.2);
 }
 
 .juego-card-titulo {
-    margin: 0;
-    color: #ffffff;
     font-family: "Josefin Sans", sans-serif;
     font-size: 24px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    color: var(--blanco);
 }
 
 .juego-card-descripcion {
-    color: #a8a8a8;
-    font-size: 13px;
-    line-height: 1.7;
-    margin-top: 4px;
-}
-
-/* Pie de tarjeta con gatillo de enlace directo */
-.juego-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.juego-btn-link {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: #ffffff;
-    transition: color 0.25s ease;
-}
-
-.juego-card:hover .juego-btn-link {
-    color: #9d4edd;
-}
-
-.juego-flecha {
-    color: #555555;
-    transition: transform 0.25s ease, color 0.25s ease;
-}
-
-.juego-card:hover .juego-flecha {
-    color: #9d4edd;
-    transform: translateX(4px);
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 .juegos-vacio {
-    padding: 80px 40px;
-    border: 1px dashed #242424;
-    color: #a8a8a8;
+    padding: 60px 40px;
+    border: 1px dashed var(--borde);
+    color: var(--gris);
     font-size: 14px;
     text-align: center;
     letter-spacing: 1px;
 }
 
 /* =========================================
-   RESPONSIVE (Ajustes de Adaptabilidad)
+   FOOTER (Alineado del original)
+========================================= */
+.footer {
+    padding: 35px 6%;
+    border-top: 1px solid var(--borde);
+    background: var(--negro);
+}
+
+.footer-horizontal-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-brand-logo {
+    width: 48px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-left-brand p {
+    color: var(--gris-oscuro);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.footer-social-horizontal {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.footer-social-horizontal a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gris);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: color 0.25s ease;
+}
+
+.footer-social-horizontal a img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social-horizontal a:hover {
+    color: var(--blanco);
+}
+
+.footer-social-horizontal a:hover img {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   RESPONSIVE
 ========================================= */
 @media (max-width: 900px) {
-    .dynamic-juegos-banner {
-        padding: 140px 6% 30px !important;
+    .hero {
+        padding-top: 140px;
+        padding-bottom: 30px !important;
     }
     
     .juegos-galeria-section {
@@ -206,19 +349,25 @@
     }
 
     .juegos-galeria {
-        grid-template-columns: 1fr; /* Colapsa a una única columna masiva en dispositivos móviles */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
     .juego-card-imagen {
-        aspect-ratio: 16 / 9; /* En celulares pasa a 16:9 estándar para optimizar las capturas */
+        aspect-ratio: 16 / 9;
     }
-    
-    .juego-card-info {
-        padding: 25px;
+}
+
+@media (max-width: 768px) {
+    .footer-horizontal-container {
+        flex-direction: column;
+        gap: 25px;
     }
-    
-    .juego-card-titulo {
-        font-size: 20px;
+    .footer-left-brand {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-social-horizontal {
+        gap: 20px;
     }
 }
