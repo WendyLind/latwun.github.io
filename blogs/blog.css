@@ -1,151 +1,72 @@
-/* =========================================
-   LATWUN — PORTAFOLIO DE BLOGS
-   Archivo: blogs/blogs.css
-   Basado estrictamente en style.css (Edición Azul)
-========================================= */
-
-:root {
-    --negro: #080808;
-    --negro-suave: #101010;
-    --azul: #00b4d8; /* Tu color clave asignado */
-    --azul-claro: #90e0ef;
-    --blanco: #ffffff;
-    --gris: #a8a8a8;
-    --gris-oscuro: #555555;
-    --borde: #242424;
-}
 
 /* =========================================
-   RESET
+   LATWUN — BLOG Y BITÁCORA
+   Archivo: blogs/blog.css
+   Paleta: Verde oscuro
 ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--negro);
-    color: var(--blanco);
-    font-family: "Montserrat", sans-serif;
-    overflow-x: hidden;
-}
 
 /* =========================================
-   HEADER & NAVEGACIÓN ACTIVA
+   CONTENEDOR PRINCIPAL
 ========================================= */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+.blog-galeria-section {
+    background: #080808;
     width: 100%;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-    background: rgba(8, 8, 8, 0.94);
-    border-bottom: 1px solid var(--borde);
-    z-index: 1000;
-    backdrop-filter: blur(8px);
+    display: block;
+    padding: 60px 6% 100px;
 }
 
-.header-logo {
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 8px;
-    white-space: nowrap;
-}
-
-.header-logo::after {
-    content: ".";
-    color: var(--azul);
-}
-
-.header-nav {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
-
-.header-nav a {
-    position: relative;
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    padding-bottom: 6px;
-    transition: color 0.3s ease;
-}
-
-.header-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background: var(--azul);
-    transition: 0.3s ease;
-}
-
-.header-nav a:hover,
-.header-nav a.active-nav-link {
-    color: var(--azul);
-}
-
-.header-nav a:hover::after,
-.header-nav a.active-nav-link::after {
-    width: 100%;
-}
 
 /* =========================================
-   HERO / INTRODUCCIÓN ADAPTADO (Arreglado)
+   HERO / BANNER
 ========================================= */
-.hero {
-    min-height: auto !important; /* Elimina la restricción de 100vh que causaba el gran vacío negro */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 180px 6% 40px !important; /* Margen exacto para librar la barra fija del header */
-}
 
 .dynamic-blog-banner {
     position: relative;
-    background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b04.jpg");
+    min-height: auto !important;
+    padding: 180px 6% 40px !important;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 8, 8, 0.75),
+            rgba(8, 8, 8, 0.85)
+        ),
+        url("../img/banners/b04.jpg");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-.hero-content {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+/* =========================================
+   NAVEGACIÓN
+========================================= */
+
+.header-nav a.active-nav-link {
+    color: #4caa75 !important;
 }
 
+.header-nav a.active-nav-link::after {
+    width: 100% !important;
+    background: #4caa75 !important;
+}
+
+
+/* =========================================
+   TÍTULOS DEL HERO
+========================================= */
+
 .blog-etiqueta {
-    color: var(--azul);
+    color: #4caa75;
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 5px;
     margin-bottom: 15px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(0, 180, 216, 0.25);
+    text-shadow: 0 0 10px rgba(76, 170, 117, 0.2);
 }
 
 .blog-titulo-principal {
@@ -158,219 +79,195 @@ body {
     text-transform: uppercase;
 }
 
-/* =========================================
-   SECCIONES GENERALES
-========================================= */
-.blog-galeria-section {
-    width: 100%;
-    max-width: 1250px;
-    margin: auto;
-    padding: 60px 6% 100px; /* Alineación milimétrica con la cuadrícula global */
-}
 
 /* =========================================
-   MALLA EDITORIAL VERTICAL DE BLOGS
+   CUADRÍCULA DE ARTÍCULOS
 ========================================= */
+
 .blog-galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas verticales balanceadas estilo revista */
-    gap: 24px;
-    background: transparent;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #242424;
+    border: 1px solid #242424;
 }
+
+
+/* =========================================
+   TARJETAS
+========================================= */
 
 .blog-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    background: var(--negro-suave);
-    border: 1px solid var(--borde);
+    background: #080808;
+    color: #ffffff;
     text-decoration: none;
-    color: inherit;
-    overflow: hidden;
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .blog-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--azul); /* Borde iluminado al pasar el cursor */
-    box-shadow: 0 10px 25px rgba(0, 180, 216, 0.12);
+    background: #101510;
+    outline: none;
 }
 
+
+/* =========================================
+   IMAGEN DEL ARTÍCULO
+========================================= */
+
 .blog-card-imagen {
+    position: relative;
     width: 100%;
-    aspect-ratio: 3 / 4; /* Formato vertical elegante tipo póster */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: var(--negro);
-    border-bottom: 1px solid var(--borde);
+    background: #101510;
 }
 
 .blog-card-imagen img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: 0.5s;
+    transition: transform 0.5s ease;
 }
 
 .blog-card:hover .blog-card-imagen img {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
+
+
+/* =========================================
+   INFORMACIÓN DEL ARTÍCULO
+========================================= */
 
 .blog-card-info {
-    padding: 30px;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 30px;
 }
 
-.blog-card-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.blog-card-texto {
+    min-width: 0;
+}
+
+
+/* Categoría / número */
+
+.blog-card-categoria {
+    display: block;
+    color: #4caa75;
     font-family: "Josefin Sans", sans-serif;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--azul); /* Metadatos en azul */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
+
+/* Título */
+
 .blog-card-titulo {
+    margin: 0;
+    color: #ffffff;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: 1px;
     line-height: 1.3;
-    color: var(--blanco);
 }
 
-.blog-card-extracto {
-    color: var(--gris);
-    font-size: 14px;
-    line-height: 1.7;
+
+/* Fecha */
+
+.blog-card-fecha {
+    display: block;
+    margin-top: 12px;
+    color: #777777;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
 }
+
+
+/* Descripción */
+
+.blog-card-descripcion {
+    margin-top: 14px;
+    color: #a8a8a8;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* Flecha */
+
+.blog-card-flecha {
+    flex-shrink: 0;
+    color: #555555;
+    font-size: 18px;
+    transition: color 0.25s, transform 0.25s;
+}
+
+.blog-card:hover .blog-card-flecha {
+    color: #4caa75;
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   MENSAJE SIN PUBLICACIONES
+========================================= */
 
 .blog-vacio {
     padding: 60px 40px;
-    border: 1px dashed var(--borde);
-    color: var(--gris);
+    border: 1px dashed #242424;
+    color: #a8a8a8;
     font-size: 14px;
     text-align: center;
     letter-spacing: 1px;
 }
 
+
 /* =========================================
-   FOOTER (Alineación Horizontal Compacta)
+   ACCESIBILIDAD
 ========================================= */
-.footer {
-    padding: 35px 6%;
-    border-top: 1px solid var(--borde);
-    background: var(--negro);
+
+.blog-card:focus-visible {
+    outline: 2px solid #4caa75;
+    outline-offset: -3px;
 }
 
-.footer-horizontal-container {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-left-brand {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.footer-brand-logo {
-    width: 48px;
-    height: auto;
-    object-fit: contain;
-}
-
-.footer-left-brand p {
-    color: var(--gris-oscuro);
-    font-size: 10px;
-    letter-spacing: 2px;
-    font-family: "Josefin Sans", sans-serif;
-}
-
-.footer-social-horizontal {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.footer-social-horizontal a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--gris);
-    text-decoration: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    transition: color 0.25s ease;
-}
-
-.footer-social-horizontal a img {
-    width: 14px;
-    height: 14px;
-    object-fit: contain;
-    opacity: 0.5;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.footer-social-horizontal a:hover {
-    color: var(--blanco);
-}
-
-.footer-social-horizontal a:hover img {
-    opacity: 1;
-    transform: translateY(-1px);
-}
 
 /* =========================================
    RESPONSIVE
 ========================================= */
-@media (max-width: 980px) {
+
+@media (max-width: 1024px) {
+
     .blog-galeria {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
-@media (max-width: 700px) {
-    .hero {
-        padding-top: 140px;
-        padding-bottom: 30px !important;
+@media (max-width: 800px) {
+
+    .dynamic-blog-banner {
+        padding: 140px 6% 30px !important;
+        background-attachment: scroll;
     }
-    
+
     .blog-galeria-section {
         padding: 40px 6% 60px;
     }
 
     .blog-galeria {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
-    
-    .blog-card-imagen {
-        aspect-ratio: 4 / 3; /* Formato horizontal adaptado en celulares para ahorrar scroll */
-    }
-}
 
-@media (max-width: 768px) {
-    .footer-horizontal-container {
-        flex-direction: column;
-        gap: 25px;
-    }
-    .footer-left-brand {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .footer-social-horizontal {
-        gap: 20px;
-    }
 }
