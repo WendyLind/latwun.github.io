@@ -9,11 +9,16 @@
     background: #080808;
     width: 100%;
     display: block;
+    padding: 60px 6% 100px; /* Alineado con los márgenes del index */
 }
 
-/* Banner superior dinámico con parallax */
+/* =========================================
+   HERO / ADAPTACIÓN DE ESPACIADO EN PC (Arreglado)
+========================================= */
 .dynamic-models-banner {
     position: relative;
+    min-height: auto !important; /* Elimina el enorme vacío de 100vh en monitores */
+    padding: 180px 6% 40px !important; /* Compensación perfecta para salvar el header fixed */
     background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b02.jpg");
     background-size: cover;
     background-position: center;
@@ -21,16 +26,26 @@
     background-attachment: fixed;
 }
 
-/* Etiquetas y títulos con el nuevo tono verde experimental */
+/* Sincronización del menú del encabezado con tu tono verde */
+.header-nav a.active-nav-link {
+    color: #c7ff3d !important;
+}
+
+.header-nav a.active-nav-link::after {
+    width: 100% !important;
+    background: #c7ff3d !important;
+}
+
+/* Etiquetas y títulos con el tono verde experimental */
 .modelos-etiqueta {
-    color: #c7ff3d; /* Cambiado a verde neón */
+    color: #c7ff3d;
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 5px;
     margin-bottom: 15px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(199, 255, 61, 0.2); /* Sutil resplandor radiactivo */
+    text-shadow: 0 0 10px rgba(199, 255, 61, 0.2);
 }
 
 .modelos-titulo-principal {
@@ -103,7 +118,7 @@
 
 .modelo-card-numero {
     display: block;
-    color: #c7ff3d; /* Indicador numérico en verde */
+    color: #c7ff3d;
     font-family: "Josefin Sans", sans-serif;
     font-size: 11px;
     letter-spacing: 2px;
@@ -127,7 +142,6 @@
     transition: color 0.25s, transform 0.25s;
 }
 
-/* El botón de flecha brilla en verde al pasar el cursor sobre la tarjeta */
 .modelo-card:hover .modelo-card-flecha {
     color: #c7ff3d;
     transform: translate(3px, -3px);
@@ -143,7 +157,7 @@
 }
 
 /* =========================================
-   INTERFAZ DE MODAL (Estilo Sketchfab / CGTrader)
+   INTERFAZ DE MODAL (Optimizado para Sketchfab Embed)
 ========================================= */
 .visor-modal {
     position: fixed;
@@ -195,7 +209,7 @@
 }
 
 .visor-cerrar:hover {
-    color: #c7ff3d; /* Botón cerrar iluminado */
+    color: #c7ff3d;
 }
 
 .visor-layout {
@@ -211,7 +225,10 @@
     border-right: 1px solid #242424;
 }
 
-.visor-render model-viewer {
+/* Adaptación fluida para los iframes embebidos */
+.sketchfab-embed-wrapper,
+.sketchfab-embed-wrapper iframe {
+    display: block;
     width: 100%;
     height: 100%;
 }
@@ -226,7 +243,7 @@
 }
 
 .visor-numero {
-    color: #c7ff3d; /* Número de modelo en el visualizador lateral */
+    color: #c7ff3d;
     font-family: "Josefin Sans", sans-serif;
     font-size: 13px;
     font-weight: 600;
@@ -249,7 +266,6 @@
     line-height: 1.8;
 }
 
-/* Caja de botones de adquisición apilados */
 .visor-acciones {
     margin-top: auto;
     display: flex;
@@ -279,15 +295,14 @@
     background: #101010;
 }
 
-/* Efectos de iluminación específicos según la plataforma de compra */
 .btn-platform-itch:hover {
-    border-color: #ff5050; /* Conserva su color de marca Itch de forma sutil */
+    border-color: #ff5050;
     color: #ff5050;
     box-shadow: 0 0 15px rgba(255, 80, 80, 0.15);
 }
 
 .btn-platform-cg:hover {
-    border-color: #c7ff3d; /* Se adapta al verde neón de la sección */
+    border-color: #c7ff3d;
     color: #c7ff3d;
     box-shadow: 0 0 15px rgba(199, 255, 61, 0.2);
 }
@@ -302,6 +317,14 @@
 }
 
 @media (max-width: 800px) {
+    .dynamic-models-banner {
+        padding: 140px 6% 30px !important;
+    }
+    
+    .modelos-galeria-section {
+        padding: 40px 6% 60px;
+    }
+
     .modelos-galeria {
         grid-template-columns: 1fr;
     }
