@@ -1,9 +1,17 @@
 /* =========================================
    LATWUN — GALERÍA DE MODELAJE 3D
    Archivo: modelos/modelos.css
+   Paleta: Edición Especial Verde Experimental
 ========================================= */
 
-/* Banner específico para la sección de modelos */
+/* Contenedor y base estructural de la sección */
+.modelos-galeria-section {
+    background: #080808;
+    width: 100%;
+    display: block;
+}
+
+/* Banner superior dinámico con parallax */
 .dynamic-models-banner {
     position: relative;
     background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b02.jpg");
@@ -13,17 +21,20 @@
     background-attachment: fixed;
 }
 
+/* Etiquetas y títulos con el nuevo tono verde experimental */
 .modelos-etiqueta {
-    color: var(--rojo);
+    color: #c7ff3d; /* Cambiado a verde neón */
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 5px;
     margin-bottom: 15px;
     text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(199, 255, 61, 0.2); /* Sutil resplandor radiactivo */
 }
 
 .modelos-titulo-principal {
+    color: #ffffff;
     font-family: "Josefin Sans", sans-serif;
     font-size: clamp(32px, 6vw, 54px);
     font-weight: 600;
@@ -33,28 +44,28 @@
 }
 
 /* =========================================
-   CUADRÍCULA DE LA GALERÍA (Malla de Servicios)
+   CUADRÍCULA DE LA GALERÍA (Malla Estilo Servicios)
 ========================================= */
 .modelos-galeria {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
-    background: var(--borde);
-    border: 1px solid var(--borde);
+    background: #242424; /* Color de rejilla */
+    border: 1px solid #242424;
 }
 
 .modelo-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    background: var(--negro);
-    color: var(--blanco);
+    background: #080808;
+    color: #ffffff;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .modelo-card:hover {
-    background: var(--negro-suave);
+    background: #101010;
     outline: none;
 }
 
@@ -63,7 +74,7 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: var(--negro-suave);
+    background: #101010;
 }
 
 .modelo-card-imagen img {
@@ -92,7 +103,7 @@
 
 .modelo-card-numero {
     display: block;
-    color: var(--rojo);
+    color: #c7ff3d; /* Indicador numérico en verde */
     font-family: "Josefin Sans", sans-serif;
     font-size: 11px;
     letter-spacing: 2px;
@@ -101,6 +112,7 @@
 
 .modelo-card-titulo {
     margin: 0;
+    color: #ffffff;
     font-family: "Josefin Sans", sans-serif;
     font-size: 20px;
     font-weight: 500;
@@ -110,27 +122,28 @@
 
 .modelo-card-flecha {
     flex-shrink: 0;
-    color: var(--gris-oscuro);
+    color: #555555;
     font-size: 18px;
     transition: color 0.25s, transform 0.25s;
 }
 
+/* El botón de flecha brilla en verde al pasar el cursor sobre la tarjeta */
 .modelo-card:hover .modelo-card-flecha {
-    color: var(--rojo);
+    color: #c7ff3d;
     transform: translate(3px, -3px);
 }
 
 .modelos-vacio {
     padding: 60px 40px;
-    border: 1px dashed var(--borde);
-    color: var(--gris);
+    border: 1px dashed #242424;
+    color: #a8a8a8;
     font-size: 14px;
     text-align: center;
     letter-spacing: 1px;
 }
 
 /* =========================================
-   INTERFAZ DE MODAL (Estilo Sketchfab)
+   INTERFAZ DE MODAL (Estilo Sketchfab / CGTrader)
 ========================================= */
 .visor-modal {
     position: fixed;
@@ -162,8 +175,8 @@
     position: relative;
     width: min(1200px, 92vw);
     height: min(680px, 85vh);
-    background: var(--negro);
-    border: 1px solid var(--borde);
+    background: #080808;
+    border: 1px solid #242424;
     z-index: 2001;
     overflow: hidden;
 }
@@ -174,14 +187,15 @@
     right: 20px;
     background: transparent;
     border: none;
-    color: var(--blanco);
+    color: #ffffff;
     font-size: 32px;
     cursor: pointer;
     z-index: 2005;
+    transition: color 0.25s ease;
 }
 
 .visor-cerrar:hover {
-    color: var(--rojo);
+    color: #c7ff3d; /* Botón cerrar iluminado */
 }
 
 .visor-layout {
@@ -194,7 +208,7 @@
     flex: 0 0 65%;
     height: 100%;
     background: #0d0d0f;
-    border-right: 1px solid var(--borde);
+    border-right: 1px solid #242424;
 }
 
 .visor-render model-viewer {
@@ -212,7 +226,7 @@
 }
 
 .visor-numero {
-    color: var(--rojo);
+    color: #c7ff3d; /* Número de modelo en el visualizador lateral */
     font-family: "Josefin Sans", sans-serif;
     font-size: 13px;
     font-weight: 600;
@@ -221,6 +235,7 @@
 }
 
 .visor-titulo {
+    color: #ffffff;
     font-family: "Josefin Sans", sans-serif;
     font-size: 24px;
     font-weight: 600;
@@ -229,13 +244,17 @@
 }
 
 .visor-descripcion {
-    color: var(--gris);
+    color: #a8a8a8;
     font-size: 13px;
     line-height: 1.8;
 }
 
+/* Caja de botones de adquisición apilados */
 .visor-acciones {
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     padding-top: 30px;
 }
 
@@ -246,8 +265,8 @@
     align-items: center;
     justify-content: center;
     background: transparent;
-    border: 1px solid var(--borde);
-    color: var(--blanco);
+    border: 1px solid #242424;
+    color: #ffffff;
     text-decoration: none;
     font-family: "Josefin Sans", sans-serif;
     font-size: 12px;
@@ -257,12 +276,25 @@
 }
 
 .btn-cgtrader:hover {
-    border-color: var(--rojo);
-    color: var(--rojo);
-    background: var(--negro-suave);
+    background: #101010;
 }
 
-/* RESPONSIVE MODELOS */
+/* Efectos de iluminación específicos según la plataforma de compra */
+.btn-platform-itch:hover {
+    border-color: #ff5050; /* Conserva su color de marca Itch de forma sutil */
+    color: #ff5050;
+    box-shadow: 0 0 15px rgba(255, 80, 80, 0.15);
+}
+
+.btn-platform-cg:hover {
+    border-color: #c7ff3d; /* Se adapta al verde neón de la sección */
+    color: #c7ff3d;
+    box-shadow: 0 0 15px rgba(199, 255, 61, 0.2);
+}
+
+/* =========================================
+   RESPONSIVE (Ajustes de Adaptabilidad)
+========================================= */
 @media (max-width: 1024px) {
     .modelos-galeria {
         grid-template-columns: repeat(2, 1fr);
@@ -285,29 +317,10 @@
     .visor-render {
         flex: 0 0 45%;
         border-right: none;
-        border-bottom: 1px solid var(--borde);
+        border-bottom: 1px solid #242424;
     }
     .visor-info {
         flex: 0 0 55%;
         padding: 25px;
     }
 }
-/* Botones de acción del panel del visor */
-.visor-acciones {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* Margen entre botones */
-    padding-top: 30px;
-}
-
-.btn-platform-itch:hover {
-    border-color: #ff5050;
-    color: #ff5050;
-}
-
-.btn-platform-cg:hover {
-    border-color: #00d2ff;
-    color: #00d2ff;
-}
-
