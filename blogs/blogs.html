@@ -1,31 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ideas, bitácoras de desarrollo y procesos creativos de los proyectos de LATWUN.">
-    <title>Blog | LATWUN</title>
+    <meta name="description" content="Blog de LATWUN: artículos sobre desarrollo de videojuegos, modelaje 3D low poly y proyectos indie.">
+    <title>Blog | Latwun</title>
 
     <link rel="icon" type="image/png" href="../img/favicon.png">
-    
-    <!-- Fuentes (Corregidas las rutas preconnect para evitar bloqueos de CORS y unificar los bolds) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Conexiones en cascada hacia la raíz -->
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="blogs.css">
+    <link rel="stylesheet" href="blog.css">
 </head>
 
 <body>
 
-    <!-- =========================================
-         HEADER (Estilo Base Global — Sincronizado)
-    ========================================== -->
+    <!-- HEADER -->
     <header class="header">
         <a href="../index.html#inicio" class="header-logo">LATWUN</a>
+
         <nav class="header-nav" aria-label="Navegación principal">
             <a href="../index.html#servicios">SERVICIOS</a>
             <a href="../juegos/index_juegos.html">JUEGOS</a>
@@ -36,67 +36,70 @@
 
     <main>
 
-        <!-- =========================================
-             HERO / INTRODUCCIÓN (CON BANNER DE FONDO b04)
-        ========================================== -->
+        <!-- HERO / INTRODUCCIÓN -->
         <section id="inicio" class="hero dynamic-blog-banner">
             <div class="hero-content">
-                <span class="blog-etiqueta">04 / BITÁCORAS & IDEAS</span>
-                <h1 class="blog-titulo-principal">NUESTRO BLOG</h1>
+                <span class="blog-etiqueta">04 / BLOG Y BITÁCORA</span>
+                <h1 class="blog-titulo-principal">BLOG</h1>
                 <p class="hero-description">
-                    Explora los procesos creativos, actualizaciones de desarrollo, metodologías técnicas y las historias detrás de cada videojuego y asset.
+                    Ideas, procesos creativos y apuntes sobre el desarrollo de videojuegos indie, el modelaje 3D y el mundo de LATWUN.
                 </p>
             </div>
         </section>
 
-        <!-- =========================================
-             CUADRÍCULA DE BLOG (FORMATO EDITORIAL VERTICAL)
-        ========================================== -->
-        <section id="articulos-blog" class="blog-galeria-section" aria-label="Artículos del Blog">
+        <!-- GALERÍA DE ARTÍCULOS -->
+        <section class="projects-section blog-galeria-section" aria-label="Artículos del blog">
+
             <div class="blog-galeria" id="blogGaleria">
-                <!-- blogs.js insertará aquí las tarjetas verticales -->
+
+                <!--
+                    Añade aquí las tarjetas de los artículos.
+                    Cada tarjeta puede enlazar a una entrada individual.
+                -->
+
             </div>
-            
-            <p class="blog-vacio" id="blogVacio" hidden>
-                Próximamente habrá nuevas lecturas y bitácoras disponibles.
+
+            <p class="blog-vacio" id="blogVacio">
+                Próximamente habrá nuevas publicaciones disponibles.
             </p>
+
         </section>
 
     </main>
 
-    <!-- =========================================
-         FOOTER (Unificado Horizontal Compacto)
-    ========================================== -->
+    <!-- FOOTER -->
     <footer class="footer" id="redes">
         <div class="footer-horizontal-container">
-            
+
             <div class="footer-left-brand">
                 <img src="../img/logo.png" class="footer-brand-logo" alt="Logo LATWUN">
                 <p>© 2026 LATWUN</p>
             </div>
-            
+
             <ul class="footer-social-horizontal">
+
                 <li>
-                    <a href="https://instagram.com" target="_blank">
+                    <a href="https://instagram.com/latwun_lel" target="_blank" rel="noopener noreferrer">
                         <img src="../img/ig.png" alt="Instagram"> INSTAGRAM
                     </a>
                 </li>
+
                 <li>
-                    <a href="https://itch.io" target="_blank">
+                    <a href="https://latwun.itch.io" target="_blank" rel="noopener noreferrer">
                         <img src="../img/itch.png" alt="Itch.io"> ITCH.IO
                     </a>
                 </li>
+
                 <li>
-                    <a href="https://youtube.com" target="_blank">
+                    <a href="https://youtube.com/@Latwun_2007" target="_blank" rel="noopener noreferrer">
                         <img src="../img/yt.png" alt="YouTube"> YOUTUBE
                     </a>
                 </li>
+
             </ul>
 
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
-    <script src="blogs.js"></script>
 </body>
 </html>
