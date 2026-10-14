@@ -5,26 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Videojuegos indie, experiencias retro y proyectos de horror de LATWUN."
-    >
-
-    <title>Videojuegos Indie | Latwun</title>
+    <meta name="description" content="Videojuegos indie, experiencias retro y proyectos de horror de LATWUN.">
+    <title>Videojuegos Indie | LATWUN</title>
 
     <link rel="icon" type="image/png" href="../img/favicon.png">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Estilos globales y específicos -->
+    <!-- Estilos -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="juegos.css">
 </head>
@@ -33,10 +24,7 @@
 
     <!-- HEADER -->
     <header class="header">
-
-        <a href="../index.html#inicio" class="header-logo">
-            Latwun
-        </a>
+        <a href="../index.html#inicio" class="header-logo">LATWUN</a>
 
         <nav class="header-nav" aria-label="Navegación principal">
             <a href="../index.html#servicios">SERVICIOS</a>
@@ -44,99 +32,64 @@
             <a href="../modelos/index_modelos.html">MODELOS</a>
             <a href="../blogs/blogs.html">BLOG</a>
         </nav>
-
     </header>
 
     <main>
 
-        <!-- HERO -->
+        <!-- HERO / INTRODUCCIÓN -->
         <section id="inicio" class="hero dynamic-juegos-banner">
-
             <div class="hero-content">
-
-                <h1 class="juegos-titulo-principal">
-                    02 / Videojuegos Indie
-                </h1>
-
+                <span class="juegos-etiqueta">02 / VIDEOJUEGOS INDIE</span>
+                <h1 class="juegos-titulo-principal">VIDEOJUEGOS</h1>
+                <p class="hero-description">
+                    Explora videojuegos independientes, experiencias retro y proyectos experimentales de LATWUN.
+                </p>
             </div>
-
         </section>
 
-        <!-- GALERÍA DE VIDEOJUEGOS -->
-        <section
-            id="proyectos-juegos"
-            class="projects-section juegos-galeria-section"
-            aria-label="Catálogo de videojuegos"
-        >
-
+        <!-- GALERÍA DINÁMICA -->
+        <section class="projects-section juegos-galeria-section" aria-label="Galería de videojuegos">
             <div class="juegos-galeria" id="juegosGaleria">
-                <!-- Las tarjetas se generan desde juegos.js -->
+                <!-- juegos.js insertará aquí las tarjetas -->
             </div>
 
             <p class="juegos-vacio" id="juegosVacio" hidden>
-                Próximamente habrá nuevos lanzamientos disponibles.
+                Próximamente habrá videojuegos disponibles.
             </p>
-
         </section>
 
     </main>
 
     <!-- FOOTER -->
     <footer class="footer" id="redes">
-
         <div class="footer-horizontal-container">
 
             <div class="footer-left-brand">
-
-                <img
-                    src="../img/logo.png"
-                    class="footer-brand-logo"
-                    alt="Logo de Latwun"
-                >
-
-                <p>© 2026 Latwun</p>
-
+                <img src="../img/logo.png" class="footer-brand-logo" alt="Logo LATWUN">
+                <p>© 2026 LATWUN</p>
             </div>
 
             <ul class="footer-social-horizontal">
-
                 <li>
-                    <a
-                        href="https://instagram.com/latwun_lel"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img src="../img/ig.png" alt="">
-                        INSTAGRAM
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <img src="../img/ig.png" alt="Instagram"> INSTAGRAM
                     </a>
                 </li>
 
                 <li>
-                    <a
-                        href="https://latwun.itch.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img src="../img/itch.png" alt="">
-                        ITCH.IO
+                    <a href="https://latwun.itch.io" target="_blank" rel="noopener noreferrer">
+                        <img src="../img/itch.png" alt="Itch.io"> ITCH.IO
                     </a>
                 </li>
 
                 <li>
-                    <a
-                        href="https://youtube.com/@Latwun_2007"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img src="../img/yt.png" alt="">
-                        YOUTUBE
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                        <img src="../img/yt.png" alt="YouTube"> YOUTUBE
                     </a>
                 </li>
-
             </ul>
 
         </div>
-
     </footer>
 
     <!-- SCRIPTS -->
