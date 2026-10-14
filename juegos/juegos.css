@@ -9,16 +9,16 @@
     background: #080808;
     width: 100%;
     display: block;
-    padding: 60px 6% 100px; /* Alineación de márgenes con el index */
+    padding: 60px 6% 100px; /* Alineación milimétrica con la cuadrícula global */
 }
 
 /* =========================================
-   HERO / ADAPTACIÓN DE ESPACIADO EN PC (Arreglado)
+   HERO / ADAPTACIÓN DE ESPACIADO EN PC (Corregido)
 ========================================= */
 .dynamic-juegos-banner {
     position: relative;
     min-height: auto !important; /* Elimina la restricción de 100vh que causaba el gran vacío negro */
-    padding: 180px 6% 40px !important; /* Margen superior perfecto para salvar el header fixed */
+    padding: 180px 6% 40px !important; /* Margen superior para salvar la barra fija del header */
     background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b03.jpg");
     background-size: cover;
     background-position: center;
@@ -26,16 +26,7 @@
     background-attachment: fixed;
 }
 
-/* =========================================
-   HEADER / UNIFICACIÓN LOGO Y ENLACES (Arreglado)
-========================================= */
-.header-logo {
-    font-size: 22px !important;
-    font-weight: 600 !important;
-    letter-spacing: 8px !important;
-}
-
-/* Enlace activo del header específico iluminado en morado */
+/* Sincronización del menú del encabezado con tu tono morado */
 .header-nav a.active-nav-link {
     color: #9d4edd !important;
 }
@@ -45,16 +36,16 @@
     background: #9d4edd !important;
 }
 
-/* Indicadores de tono morado neón */
+/* Etiquetas y títulos con el tono morado neón */
 .juegos-etiqueta {
-    color: #9d4edd; /* Morado vibrante */
+    color: #9d4edd;
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 5px;
     margin-bottom: 15px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(157, 78, 221, 0.25);
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.25); /* Sutil resplandor de neón */
 }
 
 .juegos-titulo-principal {
@@ -72,8 +63,9 @@
 ========================================= */
 .juegos-galeria {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Solo 2 columnas para que las tarjetas sean gigantes */
-    gap: 24px; /* Mayor separación interna estilo catálogo premium */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas masivas para formato extendido */
+    gap: 24px; /* Mayor separación interna para capturas cinematográficas */
+    background: transparent;
 }
 
 .juego-card {
@@ -90,15 +82,15 @@
 
 .juego-card:hover {
     transform: translateY(-4px);
-    border-color: #9d4edd;
+    border-color: #9d4edd; /* Borde iluminado al pasar el cursor */
     box-shadow: 0 10px 25px rgba(157, 78, 221, 0.15);
 }
 
-/* Proporción panorámica rectangular grande (tipo banner de Steam) */
+/* Proporción panorámica rectangular grande (Tipo banner de Steam) */
 .juego-card-imagen {
     position: relative;
     width: 100%;
-    aspect-ratio: 21 / 9; /* Formato ultra-ancho rectangular */
+    aspect-ratio: 21 / 9; /* Formato ultra-ancho horizontal */
     overflow: hidden;
     background: #080808;
     border-bottom: 1px solid #242424;
@@ -121,9 +113,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 35px; /* Más espacio para descripciones de mecánicas */
+    padding: 35px; /* Más aire interno para albergar las sinopsis */
 }
 
+/* Etiquetas de metadatos o etiquetas de género */
 .juego-card-tags {
     display: flex;
     flex-wrap: wrap;
@@ -144,6 +137,7 @@
 
 .juego-card-titulo {
     margin: 0;
+    color: #ffffff;
     font-family: "Josefin Sans", sans-serif;
     font-size: 24px;
     font-weight: 500;
@@ -157,6 +151,7 @@
     margin-top: 4px;
 }
 
+/* Pie de tarjeta con gatillo de enlace directo */
 .juego-card-footer {
     display: flex;
     justify-content: space-between;
@@ -199,9 +194,9 @@
 }
 
 /* =========================================
-   RESPONSIVE (Adaptación del Muro)
+   RESPONSIVE (Ajustes de Adaptabilidad)
 ========================================= */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .dynamic-juegos-banner {
         padding: 140px 6% 30px !important;
     }
@@ -211,12 +206,12 @@
     }
 
     .juegos-galeria {
-        grid-template-columns: 1fr; /* Una columna masiva en móviles */
+        grid-template-columns: 1fr; /* Colapsa a una única columna masiva en dispositivos móviles */
         gap: 20px;
     }
     
     .juego-card-imagen {
-        aspect-ratio: 16 / 9; /* En celulares pasa a formato estándar para mejor visualización */
+        aspect-ratio: 16 / 9; /* En celulares pasa a 16:9 estándar para optimizar las capturas */
     }
     
     .juego-card-info {
