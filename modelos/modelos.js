@@ -9,10 +9,10 @@ const LISTA_MODELOS = [
         id: "001",
         titulo: "Tostadora Cartoon Retro",
         descripcion: "Un asset tridimensional low poly con texturas estilizadas a mano. Diseñado y optimizado especialmente para entornos interactivos, cocinas de horror psicológico o juegos casuales.",
-        archivo3d: "001/modelo.gltf", 
+        archivo3d: "001/modelo.glb", 
         gifPortada: "001/portada.gif",
-        linkItch: "https://itch.io",
-        linkCGTrader: "https://cgtrader.com"
+        linkItch: "https://latwun.itch.io/tostadora-low-poly-cartoon",
+        linkCGTrader: "https://www.cgtrader.com/free-3d-models/furniture/kitchen-furniture/tostadora-low-poly-cartoon"
     },
     {
         id: "002",
