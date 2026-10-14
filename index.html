@@ -8,10 +8,10 @@
 
     <link rel="icon" type="image/png" href="img/favicon.png">
 
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fuentes (Corregidas para evitar bloqueos de seguridad y CORS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,7 +19,7 @@
 <body>
 
     <!-- =========================================
-         BARRA SUPERIOR
+         BARRA SUPERIOR (Ajustada: Servicios, Juegos, Modelos, Blog)
     ========================================== -->
     <header class="header">
         <a href="#inicio" class="header-logo">LATWUN</a>
@@ -27,7 +27,7 @@
             <a href="#servicios">SERVICIOS</a>
             <a href="juegos/index_juegos.html">JUEGOS</a>
             <a href="modelos/index_modelos.html">MODELOS</a>
-            <a href="#redes">REDES</a>
+            <a href="blogs/blogs.html">BLOG</a>
         </nav>
     </header>
 
@@ -53,7 +53,7 @@
         </section>
 
         <!-- =========================================
-             PROYECTOS DESTACADOS (SIN DUPLICADOS)
+             PROYECTOS DESTACADOS
         ========================================== -->
         <section class="projects-section">
             <div class="section-title">
@@ -100,7 +100,7 @@
                             </div>
                         </a>
 
-                        <!-- DESTACADO 4: REDES -->
+                        <!-- DESTACADO 4: REDES (Apunta directamente al footer horizontal) -->
                         <a href="#redes" class="project-card">
                             <div class="project-image">
                                 <img src="img/ig.png" alt="Redes sociales de Latwun">
@@ -141,7 +141,7 @@
                     <div class="panel-layout">
                         <div class="panel-text">
                             <h3>Desarrollo de Videojuegos Experimentales</h3>
-                            <p>Programación, prototipado y diseño de mecánicas interactives enfocadas en estéticas de horror retro, low-poly y narrativas surrealistas para PC o plataformas web.</p>
+                            <p>Programación, prototipado y diseño de mecánicas interactivas enfocadas en estéticas de horror retro, low-poly y narrativas surrealistas para PC o plataformas web.</p>
                         </div>
                         <div class="panel-image">
                             <img src="img/services-dev.jpg" alt="Proceso de Desarrollo">
@@ -179,7 +179,7 @@
     </main>
 
     <!-- =========================================
-         FOOTER HORIZONTAL COMPACTO
+         FOOTER HORIZONTAL COMPACTO UNIFICADO
     ========================================== -->
     <footer class="footer" id="redes">
         <div class="footer-horizontal-container">
@@ -211,7 +211,6 @@
 
         </div>
     </footer>
-
 
     <!-- SCRIPTS -->
     <script src="script.js"></script>
