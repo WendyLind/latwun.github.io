@@ -4,20 +4,45 @@
    Paleta: Edición Morado Synthwave / Cyberpunk
 ========================================= */
 
+/* Contenedor y base estructural de la sección */
 .juegos-galeria-section {
     background: #080808;
     width: 100%;
     display: block;
+    padding: 60px 6% 100px; /* Alineación de márgenes con el index */
 }
 
-/* Banner específico con imagen b03.jpg */
+/* =========================================
+   HERO / ADAPTACIÓN DE ESPACIADO EN PC (Arreglado)
+========================================= */
 .dynamic-juegos-banner {
     position: relative;
+    min-height: auto !important; /* Elimina la restricción de 100vh que causaba el gran vacío negro */
+    padding: 180px 6% 40px !important; /* Margen superior perfecto para salvar el header fixed */
     background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b03.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+/* =========================================
+   HEADER / UNIFICACIÓN LOGO Y ENLACES (Arreglado)
+========================================= */
+.header-logo {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    letter-spacing: 8px !important;
+}
+
+/* Enlace activo del header específico iluminado en morado */
+.header-nav a.active-nav-link {
+    color: #9d4edd !important;
+}
+
+.header-nav a.active-nav-link::after {
+    width: 100% !important;
+    background: #9d4edd !important;
 }
 
 /* Indicadores de tono morado neón */
@@ -40,15 +65,6 @@
     letter-spacing: 6px;
     margin-bottom: 20px;
     text-transform: uppercase;
-}
-
-/* Enlace activo del header específico */
-.header-nav a.active-nav-link {
-    color: #9d4edd;
-}
-.header-nav a.active-nav-link::after {
-    width: 100%;
-    background: #9d4edd;
 }
 
 /* =========================================
@@ -185,14 +201,22 @@
 /* =========================================
    RESPONSIVE (Adaptación del Muro)
 ========================================= */
-@media (max-width: 900px) {
+@media (max-width: 800px) {
+    .dynamic-juegos-banner {
+        padding: 140px 6% 30px !important;
+    }
+    
+    .juegos-galeria-section {
+        padding: 40px 6% 60px;
+    }
+
     .juegos-galeria {
-        grid-template-columns: 1fr; /* Una columna masiva en tablets y celulares */
+        grid-template-columns: 1fr; /* Una columna masiva en móviles */
         gap: 20px;
     }
     
     .juego-card-imagen {
-        aspect-ratio: 16 / 9; /* En celulares colapsa a 16:9 para mejor visualización de capturas */
+        aspect-ratio: 16 / 9; /* En celulares pasa a formato estándar para mejor visualización */
     }
     
     .juego-card-info {
