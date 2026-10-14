@@ -7,7 +7,7 @@
 :root {
     --negro: #080808;
     --negro-suave: #101010;
-    --morado: #9d4edd; /* Tu color clave asignado */
+    --morado: #9d4edd;
     --morado-claro: #b5179e;
     --blanco: #ffffff;
     --gris: #a8a8a8;
@@ -109,15 +109,15 @@ body {
 }
 
 /* =========================================
-   HERO / INTRODUCCIÓN ADAPTADO (Sin Vacíos)
+   HERO / INTRODUCCIÓN ADAPTADO (Arreglado)
 ========================================= */
 .hero {
-    min-height: auto !important; /* Elimina el enorme vacío de 100vh en PC */
+    min-height: auto !important; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 180px 6% 40px !important; /* Separación exacta para salvar el header fixed */
+    padding: 180px 6% 40px !important; 
 }
 
 .dynamic-juegos-banner {
@@ -135,6 +135,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .juegos-etiqueta {
@@ -144,6 +145,7 @@ body {
     font-weight: 600;
     letter-spacing: 7px;
     margin-bottom: 25px;
+    text-transform: uppercase;
 }
 
 .juegos-titulo-principal {
@@ -152,8 +154,17 @@ body {
     font-size: clamp(32px, 6vw, 54px);
     font-weight: 600;
     letter-spacing: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-transform: uppercase;
+    line-height: 1.2; /* Evita que el título se amontone u ocupe espacio muerto */
+}
+
+.hero-description {
+    max-width: 650px;
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 2;
+    margin: 0 auto;
 }
 
 /* =========================================
@@ -163,7 +174,7 @@ body {
     width: 100%;
     max-width: 1250px;
     margin: auto;
-    padding: 60px 6% 100px; /* Reducida la holgura superior */
+    padding: 60px 6% 100px; 
 }
 
 /* =========================================
@@ -171,7 +182,7 @@ body {
 ========================================= */
 .juegos-galeria {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas grandes */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 24px;
     background: transparent;
 }
@@ -196,7 +207,7 @@ body {
 
 .juego-card-imagen {
     width: 100%;
-    aspect-ratio: 21 / 9; /* Rectángulos grandes panorámicos */
+    aspect-ratio: 21 / 9; 
     overflow: hidden;
     background: var(--negro);
     border-bottom: 1px solid var(--borde);
@@ -215,7 +226,7 @@ body {
 }
 
 .juego-card-info {
-    padding: 35px; /* Misma proporción de aire interno */
+    padding: 35px; 
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -262,7 +273,7 @@ body {
 }
 
 /* =========================================
-   FOOTER (Alineado del original)
+   FOOTER (Diseño Compacto Unificado)
 ========================================= */
 .footer {
     padding: 35px 6%;
