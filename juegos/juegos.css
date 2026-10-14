@@ -1,384 +1,389 @@
+
 /* =========================================
-   LATWUN — PORTAFOLIO DE VIDEOJUEGOS
+   LATWUN — VIDEOJUEGOS INDIE
    Archivo: juegos/juegos.css
-   Basado estrictamente en style.css (Edición Morada)
+   Paleta: Verde oscuro experimental
 ========================================= */
 
-:root {
-    --negro: #080808;
-    --negro-suave: #101010;
-    --morado: #9d4edd;
-    --morado-claro: #b5179e;
-    --blanco: #ffffff;
-    --gris: #a8a8a8;
-    --gris-oscuro: #555555;
-    --borde: #242424;
-}
 
 /* =========================================
-   RESET
+   HERO / BANNER PRINCIPAL
 ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--negro);
-    color: var(--blanco);
-    font-family: "Montserrat", sans-serif;
-    overflow-x: hidden;
-}
-
-/* =========================================
-   HEADER & NAVEGACIÓN ACTIVA
-========================================= */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-    background: rgba(8, 8, 8, 0.94);
-    border-bottom: 1px solid var(--borde);
-    z-index: 1000;
-    backdrop-filter: blur(8px);
-}
-
-.header-logo {
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 8px;
-    white-space: nowrap;
-}
-
-.header-logo::after {
-    content: ".";
-    color: var(--morado);
-}
-
-.header-nav {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
-
-.header-nav a {
-    position: relative;
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    padding-bottom: 6px;
-    transition: color 0.3s ease;
-}
-
-.header-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background: var(--morado);
-    transition: 0.3s ease;
-}
-
-.header-nav a:hover,
-.header-nav a.active-nav-link {
-    color: var(--morado);
-}
-
-.header-nav a:hover::after,
-.header-nav a.active-nav-link::after {
-    width: 100%;
-}
-
-/* =========================================
-   HERO / INTRODUCCIÓN ADAPTADO (Arreglado)
-========================================= */
-.hero {
-    min-height: auto !important; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 180px 6% 40px !important; 
-}
 
 .dynamic-juegos-banner {
     position: relative;
-    background-image: linear-gradient(rgba(8, 8, 8, 0.75), rgba(8, 8, 8, 0.85)), url("../img/banners/b03.jpg");
+
+    min-height: auto !important;
+
+    padding: 180px 6% 65px !important;
+
+    background-color: #080808;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 8, 8, 0.68),
+            rgba(8, 8, 8, 0.88)
+        ),
+        url("../img/banners/b03.jpg");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-.hero-content {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+/* =========================================
+   LOGO Y NAVEGACIÓN
+========================================= */
+
+/* Evita que el estilo global transforme Latwun en LATWUN */
+.header .header-logo {
+    text-transform: none;
 }
 
-.juegos-etiqueta {
-    color: var(--morado);
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 7px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
+/* Enlace activo */
+.header-nav a.active-nav-link {
+    color: #4caa75 !important;
 }
+
+.header-nav a.active-nav-link::after {
+    width: 100% !important;
+    background: #4caa75 !important;
+}
+
+
+/* =========================================
+   TÍTULO PRINCIPAL
+========================================= */
 
 .juegos-titulo-principal {
+    margin: 0;
+
     color: #ffffff;
+
     font-family: "Josefin Sans", sans-serif;
     font-size: clamp(32px, 6vw, 54px);
     font-weight: 600;
-    letter-spacing: 6px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    line-height: 1.2; /* Evita que el título se amontone u ocupe espacio muerto */
+
+    line-height: 1.2;
+    letter-spacing: 4px;
+
+    text-transform: none;
+
+    text-shadow: 0 0 22px rgba(22, 75, 53, 0.25);
 }
 
-.hero-description {
-    max-width: 650px;
-    color: var(--gris);
-    font-size: 14px;
-    line-height: 2;
-    margin: 0 auto;
-}
 
 /* =========================================
-   SECCIONES GENERALES
+   SECCIÓN DE LA GALERÍA
 ========================================= */
+
 .juegos-galeria-section {
+    display: block;
     width: 100%;
-    max-width: 1250px;
-    margin: auto;
-    padding: 60px 6% 100px; 
+
+    padding: 60px 6% 100px;
+
+    background: #080808;
 }
 
+
 /* =========================================
-   MALLA PANORÁMICA DE VIDEOJUEGOS
+   CUADRÍCULA DE VIDEOJUEGOS
 ========================================= */
+
 .juegos-galeria {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 24px;
-    background: transparent;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: #242424;
+    border: 1px solid #242424;
 }
+
+
+/* Tarjeta individual */
 
 .juego-card {
     position: relative;
+
     display: flex;
     flex-direction: column;
-    background: var(--negro-suave);
-    border: 1px solid var(--borde);
+
+    min-width: 0;
+
+    color: #ffffff;
+    background: #080808;
+
     text-decoration: none;
-    color: inherit;
-    overflow: hidden;
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .juego-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--morado);
-    box-shadow: 0 10px 25px rgba(157, 78, 221, 0.15);
+    background: #101510;
 }
 
+
+/* =========================================
+   IMAGEN DEL JUEGO
+========================================= */
+
 .juego-card-imagen {
+    position: relative;
+
     width: 100%;
-    aspect-ratio: 21 / 9; 
+    aspect-ratio: 16 / 9;
+
     overflow: hidden;
-    background: var(--negro);
-    border-bottom: 1px solid var(--borde);
+
+    background: #101510;
 }
 
 .juego-card-imagen img {
+    display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
-    display: block;
-    transition: 0.5s;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
 }
 
 .juego-card:hover .juego-card-imagen img {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
-.juego-card-info {
-    padding: 35px; 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.juego-card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.juego-tag {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    padding: 4px 10px;
-    background: rgba(157, 78, 221, 0.1);
-    color: var(--morado);
-    border: 1px solid rgba(157, 78, 221, 0.2);
-}
-
-.juego-card-titulo {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: var(--blanco);
-}
-
-.juego-card-descripcion {
-    color: var(--gris);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.juegos-vacio {
-    padding: 60px 40px;
-    border: 1px dashed var(--borde);
-    color: var(--gris);
-    font-size: 14px;
-    text-align: center;
-    letter-spacing: 1px;
-}
 
 /* =========================================
-   FOOTER (Diseño Compacto Unificado)
+   INFORMACIÓN DE CADA JUEGO
 ========================================= */
-.footer {
-    padding: 35px 6%;
-    border-top: 1px solid var(--borde);
-    background: var(--negro);
-}
 
-.footer-horizontal-container {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
+.juego-card-info {
     display: flex;
+
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px;
 }
 
-.footer-left-brand {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+.juego-card-texto {
+    min-width: 0;
 }
 
-.footer-brand-logo {
-    width: 48px;
-    height: auto;
-    object-fit: contain;
-}
 
-.footer-left-brand p {
-    color: var(--gris-oscuro);
-    font-size: 10px;
-    letter-spacing: 2px;
-    font-family: "Josefin Sans", sans-serif;
-}
+/* Número o categoría */
 
-.footer-social-horizontal {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
+.juego-card-numero {
+    display: block;
 
-.footer-social-horizontal a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--gris);
-    text-decoration: none;
+    margin-bottom: 12px;
+
+    color: #4caa75;
+
     font-family: "Josefin Sans", sans-serif;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 2px;
-    transition: color 0.25s ease;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-.footer-social-horizontal a img {
-    width: 14px;
-    height: 14px;
-    object-fit: contain;
-    opacity: 0.5;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+
+/* Nombre del videojuego */
+
+.juego-card-titulo {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(20px, 2vw, 27px);
+    font-weight: 600;
+
+    line-height: 1.3;
+    letter-spacing: 1px;
 }
 
-.footer-social-horizontal a:hover {
-    color: var(--blanco);
+
+/* Descripción */
+
+.juego-card-descripcion {
+    margin: 0;
+
+    color: #a8a8a8;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+
+    line-height: 1.8;
 }
 
-.footer-social-horizontal a:hover img {
-    opacity: 1;
-    transform: translateY(-1px);
+
+/* Flecha decorativa */
+
+.juego-card-flecha {
+    flex-shrink: 0;
+
+    color: #555555;
+    font-size: 20px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
+
+.juego-card:hover .juego-card-flecha {
+    color: #4caa75;
+    transform: translate(3px, -3px);
+}
+
+
+/* Etiquetas opcionales */
+
+.juego-card-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.juego-card-etiqueta {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    border: 1px solid #244332;
+
+    color: #7dc99b;
+    background: #0c160f;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 
 /* =========================================
-   RESPONSIVE
+   MENSAJE SIN RESULTADOS
 ========================================= */
-@media (max-width: 900px) {
-    .hero {
-        padding-top: 140px;
-        padding-bottom: 30px !important;
+
+.juegos-vacio {
+    padding: 60px 30px;
+
+    border: 1px dashed #242424;
+
+    color: #a8a8a8;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+
+    line-height: 1.8;
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   EFECTOS DE INTERACCIÓN
+========================================= */
+
+.juego-card:focus-visible {
+    outline: 2px solid #4caa75;
+    outline-offset: -3px;
+}
+
+.juego-card:focus-visible .juego-card-titulo {
+    color: #7dc99b;
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .dynamic-juegos-banner {
+        background-attachment: scroll;
     }
-    
+
+    .juegos-galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .juego-card-info {
+        padding: 24px;
+    }
+
+}
+
+
+/* =========================================
+   MÓVILES
+========================================= */
+
+@media (max-width: 700px) {
+
+    .dynamic-juegos-banner {
+        padding: 140px 6% 45px !important;
+    }
+
+    .juegos-titulo-principal {
+        font-size: clamp(27px, 7vw, 38px);
+        letter-spacing: 2px;
+    }
+
     .juegos-galeria-section {
-        padding: 40px 6% 60px;
+        padding: 35px 6% 60px;
     }
 
     .juegos-galeria {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
-    
-    .juego-card-imagen {
-        aspect-ratio: 16 / 9;
+
+    .juego-card-info {
+        padding: 24px;
+        gap: 12px;
     }
+
+    .juego-card-titulo {
+        font-size: 22px;
+    }
+
 }
 
-@media (max-width: 768px) {
-    .footer-horizontal-container {
-        flex-direction: column;
-        gap: 25px;
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .juego-card,
+    .juego-card-imagen img,
+    .juego-card-flecha {
+        transition: none;
     }
-    .footer-left-brand {
-        flex-direction: column;
-        gap: 10px;
+
+    .juego-card:hover .juego-card-imagen img {
+        transform: none;
     }
-    .footer-social-horizontal {
-        gap: 20px;
-    }
+
 }
