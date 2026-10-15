@@ -19,19 +19,19 @@ const LISTA_MODELOS = [
         sketchfabId: "fa98413ce9184ae89cc9071e9b5d0b2e",
         slug: "tostadora-low-poly-cartoon",
         gifPortada: "001/portada.gif",
-        linkItch: "https://itch.io",
-        linkCGTrader: "https://cgtrader.com"
+        linkItch: "https://latwun.itch.io/tostadora-low-poly-cartoon",
+        linkCGTrader: "https://www.cgtrader.com/free-3d-models/furniture/kitchen-furniture/tostadora-low-poly-cartoon"
     },
     {
         id: "002",
-        titulo: "Mansion Terror Low Poly",
+        titulo: "Mansion - Low Poly",
         descripcion:
             "Estructura modular de una mansión victoriana abandonada. Pensada para proyectos de terror, exploración y videojuegos de estética retro.",
         sketchfabId: "tu-id-mansion-aqui",
         slug: "mansion-terror-low-poly",
         gifPortada: "002/portada.gif",
-        linkItch: "https://itch.io",
-        linkCGTrader: ""
+        linkItch: "https://latwun.itch.io/low-poly-cartoon-mansion-game-ready-3d",
+        linkCGTrader: "https://www.cgtrader.com/3d-models/exterior/house/low-poly-cartoon-mansion-game-ready-3d-environment"
     },
     {
         id: "003",
@@ -41,8 +41,8 @@ const LISTA_MODELOS = [
         sketchfabId: "tu-id-vending-aqui",
         slug: "vending-machine-low-poly",
         gifPortada: "003/portada.gif",
-        linkItch: "https://itch.io",
-        linkCGTrader: "https://cgtrader.com"
+        linkItch: "https://latwun.itch.io/vending-machine-low-poly-game-ready-3d-model-low-poly-3d-model",
+        linkCGTrader: "https://www.cgtrader.com/3d-models/furniture/other/vending-machine-low-poly-game-ready-3d-model"
     },
     {
         id: "004",
@@ -52,8 +52,8 @@ const LISTA_MODELOS = [
         sketchfabId: "tu-id-lagarto-aqui",
         slug: "lagarto-demonio-low-poly",
         gifPortada: "004/portada.gif",
-        linkItch: "https://itch.io",
-        linkCGTrader: "https://cgtrader.com"
+        linkItch: "https://latwun.itch.io/lagarto-demonio-low-poly-game-ready",
+        linkCGTrader: "https://www.cgtrader.com/free-3d-models/animal/other/lagarto-demonio-low-poly-game-ready"
     },
     {
         id: "005",
@@ -63,8 +63,8 @@ const LISTA_MODELOS = [
         sketchfabId: "tu-id-cocina-aqui",
         slug: "kitchen-low-poly-game-asset",
         gifPortada: "005/portada.gif",
-        linkItch: "https://itch.io",
-        linkCGTrader: "https://cgtrader.com"
+        linkItch: "https://latwun.itch.io/kitchen-low-poly-game-asset",
+        linkCGTrader: "https://www.cgtrader.com/3d-models/exterior/house/kitchen-low-poly-game-asset"
     }
 ];
 
