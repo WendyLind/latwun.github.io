@@ -27,7 +27,7 @@ const LISTA_MODELOS = [
         titulo: "Mansion - Low Poly",
         descripcion:
             "Estructura modular de una mansión victoriana abandonada. Pensada para proyectos de terror, exploración y videojuegos de estética retro.",
-        sketchfabId: "tu-id-mansion-aqui",
+        sketchfabId: "c0c94a6d56f441dbb698afe67029ba2c",
         slug: "mansion-terror-low-poly",
         gifPortada: "002/portada.gif",
         linkItch: "https://latwun.itch.io/low-poly-cartoon-mansion-game-ready-3d",
@@ -38,7 +38,7 @@ const LISTA_MODELOS = [
         titulo: "Máquina Expendedora Retro",
         descripcion:
             "Asset clásico de una máquina expendedora desgastada, con iluminación interna emisiva. Ideal para pasillos oscuros, estaciones de metro y juegos survival horror.",
-        sketchfabId: "tu-id-vending-aqui",
+        sketchfabId: "3431ef085f0a40b3941bdda61491b597",
         slug: "vending-machine-low-poly",
         gifPortada: "003/portada.gif",
         linkItch: "https://latwun.itch.io/vending-machine-low-poly-game-ready-3d-model-low-poly-3d-model",
@@ -49,7 +49,7 @@ const LISTA_MODELOS = [
         titulo: "Lagarto Demonio Mutante",
         descripcion:
             "Criatura hostil de estética low poly, diseñada para videojuegos de terror retro y escenarios con limitaciones gráficas.",
-        sketchfabId: "tu-id-lagarto-aqui",
+        sketchfabId: "a2e4920dbb214a42b228a6d8aa5264b1",
         slug: "lagarto-demonio-low-poly",
         gifPortada: "004/portada.gif",
         linkItch: "https://latwun.itch.io/lagarto-demonio-low-poly-game-ready",
@@ -60,7 +60,7 @@ const LISTA_MODELOS = [
         titulo: "Cocina Abandonada Pack",
         descripcion:
             "Conjunto de muebles, electrodomésticos y utensilios corroídos para ambientar videojuegos experimentales, simuladores y escenarios de horror.",
-        sketchfabId: "tu-id-cocina-aqui",
+        sketchfabId: "0650902787074a3989f00e684bc309a6",
         slug: "kitchen-low-poly-game-asset",
         gifPortada: "005/portada.gif",
         linkItch: "https://latwun.itch.io/kitchen-low-poly-game-asset",
