@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
             plataforma: "PC / Windows",
             estado: "DEMO",
             descripcion: "Look Back: Backrooms es un juego indie en pixel art que fusiona Look Back con The Backrooms.",
-            portada: "img/juego-02.jpg",
+            portada: "portadas/002.jpg",
             tienda: "https://latwun.itch.io/look-back-backrooms",
             color: "#45205f",
-            textoBoton: "Próximamente"
+            textoBoton: "Demo Disponible"
         },
 
         {
