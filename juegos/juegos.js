@@ -39,15 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             id: "002",
-            titulo: "PROYECTO 02",
-            subtitulo: "Una experiencia independiente",
-            genero: "Aventura / Horror",
+            titulo: "Look Back: Backrooms",
+            subtitulo: "Un fan game basado en Look Back en los Backrooms.",
+            genero: "RPG / Pixel Art",
             plataforma: "PC / Windows",
-            estado: "En desarrollo",
-            descripcion:
-                "Un segundo proyecto de LATWUN. Esta ficha podrá enlazar directamente a su página de compra o descarga cuando esté disponible.",
+            estado: "DEMO",
+            descripcion: "Look Back: Backrooms es un juego indie en pixel art que fusiona Look Back con The Backrooms.",
             portada: "img/juego-02.jpg",
-            tienda: "",
+            tienda: "https://latwun.itch.io/look-back-backrooms",
             color: "#45205f",
             textoBoton: "Próximamente"
         },
@@ -61,10 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
             estado: "En preparación",
             descripcion:
                 "Utiliza este espacio para presentar otro videojuego de tu colección.",
-            portada: "img/juego-03.jpg",
-            tienda: "",
+            portada: "portadas/002.jpg",
+            tienda: "https://latwun.itch.io/look-back-backrooms",
             color: "#164b40",
-            textoBoton: "Próximamente"
+            textoBoton: "Demo Disponible"
         }
     ];
 
